@@ -300,7 +300,6 @@ a{color:inherit}
 .scard__img{position:relative;min-height:320px}
 .scard__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .scard__img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,26,56,0) 60%,rgba(255,253,249,.0) 100%)}
-.scard__num{position:absolute;left:22px;top:22px;z-index:2;width:64px;height:64px;border-radius:50%;background:rgba(255,253,249,.94);display:grid;place-items:center;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy);box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
 .scard__body{padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:18px}
 .scard__body .eyebrow{color:var(--red)}
 .scard__body h3{font-size:clamp(30px,3.2vw,44px);line-height:1.08;color:var(--navy)}
@@ -337,8 +336,7 @@ a{color:inherit}
 .xcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
 .xcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,26,56,.05) 0%,rgba(6,26,56,.12) 42%,rgba(6,26,56,.94) 100%)}
 .xcard:hover img{transform:scale(1.05)}
-.xcard__top{position:absolute;left:22px;right:22px;top:22px;z-index:2;display:flex;justify-content:space-between;align-items:center}
-.xcard__num{width:54px;height:54px;border-radius:50%;background:rgba(255,253,249,.95);display:grid;place-items:center;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--navy)}
+.xcard__top{position:absolute;left:22px;right:22px;top:22px;z-index:2;display:flex;justify-content:flex-end;align-items:center}
 .xcard__icon{width:50px;height:50px;border-radius:16px;background:rgba(6,26,56,.5);border:1px solid rgba(230,205,143,.5);backdrop-filter:blur(8px);display:grid;place-items:center;color:var(--gold-2)}
 .xcard__icon svg{width:24px;height:24px}
 .xcard__body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:28px 28px 30px;display:flex;flex-direction:column;gap:10px;color:#fff}
@@ -631,12 +629,12 @@ a{color:inherit}
 /* ============================================================
    BARRA DE ROLAGEM E CURSOR: identidade da página
    ============================================================ */
-html{scrollbar-width:thin;scrollbar-color:var(--navy-2) var(--cream-2)}
-::-webkit-scrollbar{width:17px;height:17px}
+html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
+::-webkit-scrollbar{width:20px;height:20px}
 ::-webkit-scrollbar-track{background:var(--cream-2)}
-::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#153B78 0%,#0F2E5A 55%,#0B2447 100%);border-radius:999px;border:3px solid var(--cream-2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}
-::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#1B4587 0%,#153B78 55%,#123468 100%)}
-::-webkit-scrollbar-thumb:active{background:linear-gradient(180deg,#0F2E5A,#061A38)}
+::-webkit-scrollbar-thumb{background:linear-gradient(90deg,#D42A43 0%,#B5182F 52%,#951328 100%);border-radius:999px;border:3px solid var(--cream-2);box-shadow:inset 1px 0 0 rgba(255,255,255,.38),inset -1px 0 0 rgba(0,0,0,.2)}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(90deg,#DE334C 0%,#C21C34 52%,#9F152B 100%)}
+::-webkit-scrollbar-thumb:active{background:linear-gradient(90deg,#B5182F,#7A0F22)}
 ::-webkit-scrollbar-corner{background:var(--cream-2)}
 @media (pointer:fine){
   html,body,*,*::before,*::after{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 32 32'%3E %3Cpath d='M3,2 L3,25 L9.2,19.2 L13.2,27.6 L16.9,25.8 L13,17.6 L20.5,17.6 Z' fill='%230B2447' stroke='%23FFFDF9' stroke-width='1.9' stroke-linejoin='round'/%3E%3C/svg%3E") 2 1,auto}
@@ -761,7 +759,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--navy-2) var(--cream-2)}
     </div>
     <div class="stack" id="stack" data-stack>
       <article class="scard" style="--i:0">
-        <div class="scard__img"><span class="scard__num">01</span><img src="assets/evento-entrega.webp" alt="Mulher em momento de entrega na imersão" loading="lazy"></div>
+        <div class="scard__img"><img src="assets/evento-entrega.webp" alt="Mulher em momento de entrega na imersão" loading="lazy"></div>
         <div class="scard__body">
           <span class="eyebrow">Primeiro movimento</span>
           <h3>O que você vai acessar</h3>
@@ -770,7 +768,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--navy-2) var(--cream-2)}
         </div>
       </article>
       <article class="scard" style="--i:1">
-        <div class="scard__img"><span class="scard__num">02</span><img src="assets/evento-abraco.webp" alt="Abraço emocionado" loading="lazy"></div>
+        <div class="scard__img"><img src="assets/evento-abraco.webp" alt="Abraço emocionado" loading="lazy"></div>
         <div class="scard__body">
           <span class="eyebrow">Segundo movimento</span>
           <h3>O que você vai soltar</h3>
@@ -779,7 +777,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--navy-2) var(--cream-2)}
         </div>
       </article>
       <article class="scard" style="--i:2">
-        <div class="scard__img"><span class="scard__num">03</span><img src="assets/evento-grupo.webp" alt="Grupo da imersão" loading="lazy"></div>
+        <div class="scard__img"><img src="assets/evento-grupo.webp" alt="Grupo da imersão" loading="lazy"></div>
         <div class="scard__body">
           <span class="eyebrow">Terceiro movimento</span>
           <h3>Quem você vai encontrar</h3>
@@ -827,37 +825,37 @@ html{scrollbar-width:thin;scrollbar-color:var(--navy-2) var(--cream-2)}
         <div class="exp__track" id="expTrack">
           <article class="xcard is-active">
             <img src="assets/vivi-conduzindo.webp" alt="Vivi Marques conduzindo a imersão ao vivo" loading="lazy" style="object-position:center 18%">
-            <div class="xcard__top"><span class="xcard__num">01</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span></div>
+            <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span></div>
             <div class="xcard__body"><h3>Um dia de imersão presencial</h3><p>Com Vivi Marques ao vivo, em Orlando. Não pela tela. Ao vivo.</p></div>
           </article>
           <article class="xcard">
             <img src="assets/evento-material.webp" alt="Participante preenchendo o material da metodologia Vida Memorável" loading="lazy">
-            <div class="xcard__top"><span class="xcard__num">02</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21z"/><path d="M21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5A2.5 2.5 0 0 1 21 21z"/></svg></span></div>
+            <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21z"/><path d="M21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5A2.5 2.5 0 0 1 21 21z"/></svg></span></div>
             <div class="xcard__body"><h3>Metodologia Vida Memorável</h3><p>A mesma metodologia que transformou a vida de mais de 8.000 mulheres só em 2025.</p></div>
           </article>
           <article class="xcard">
             <img src="assets/evento-experiencia.webp" alt="Participantes vivendo a experiência da imersão" loading="lazy">
-            <div class="xcard__top"><span class="xcard__num">03</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="14" r="4"/><path d="M11 11l9-9M16 6l2 2M19 3l2 2"/></svg></span></div>
+            <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="14" r="4"/><path d="M11 11l9-9M16 6l2 2M19 3l2 2"/></svg></span></div>
             <div class="xcard__body"><h3>Experiência, não conteúdo</h3><p>Não é mais um curso. Não é conteúdo para consumir sozinha. É uma experiência que abre o que está fechado.</p></div>
           </article>
           <article class="xcard">
             <img src="assets/evento-dinamica.webp" alt="Abraço emocionado durante dinâmica da imersão" loading="lazy" style="object-position:center 25%">
-            <div class="xcard__top"><span class="xcard__num">04</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span></div>
+            <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span></div>
             <div class="xcard__body"><h3>Dinâmicas de acesso interno</h3><p>Porque o bloqueio não é de informação. É de acesso interno.</p></div>
           </article>
           <article class="xcard">
             <img src="assets/evento-grupo-vivi.webp" alt="Grupo de mulheres da imersão com Vivi Marques" loading="lazy" style="object-position:center 30%">
-            <div class="xcard__top"><span class="xcard__num">05</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M14.5 20a5 5 0 0 1 7-3.5"/></svg></span></div>
+            <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M14.5 20a5 5 0 0 1 7-3.5"/></svg></span></div>
             <div class="xcard__body"><h3>Mulheres no mesmo nível</h3><p>Um encontro com mulheres que também querem propósito real, fé viva e uma vida memorável.</p></div>
           </article>
           <article class="xcard">
             <img src="assets/evento-transformacao.webp" alt="Abraço de transformação ao fim da imersão" loading="lazy" style="object-position:center 30%">
-            <div class="xcard__top"><span class="xcard__num">06</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2L6.7 19l1.4-6-4.6-4 6.1-.5z"/></svg></span></div>
+            <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2L6.7 19l1.4-6-4.6-4 6.1-.5z"/></svg></span></div>
             <div class="xcard__body"><h3>Transformação irreversível</h3><p>Elas não voltam melhoradas. Voltam irreversíveis.</p></div>
           </article>
           <article class="xcard">
             <img src="assets/evento-coffee.webp" alt="Coffee break da Imersão Vida Memorável" loading="lazy" style="object-position:center 40%">
-            <div class="xcard__top"><span class="xcard__num">07</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M7 5.5c0-1 1-1 1-2M11 5.5c0-1 1-1 1-2"/></svg></span></div>
+            <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M7 5.5c0-1 1-1 1-2M11 5.5c0-1 1-1 1-2"/></svg></span></div>
             <div class="xcard__body"><h3>Um lindo coffee break</h3><p>Preparado com carinho para você viver o dia inteiro de imersão com conforto e leveza.</p></div>
           </article>
         </div>
