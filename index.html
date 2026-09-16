@@ -1190,16 +1190,18 @@ const CONFIG = {
   /* contadores animados: sobem do zero quando entram na tela */
   const fmtNum = n => n.toLocaleString('pt-BR');
   const runCount = el => {
-    if (el.dataset.done) return; el.dataset.done = '1';
     const target = Number(el.dataset.count) || 0, suffix = el.dataset.suffix || '';
+    if (el._raf) cancelAnimationFrame(el._raf);
     if (reduced) { el.textContent = fmtNum(target) + suffix; return; }
     const dur = 1700, t0 = performance.now();
-    const step = now => { const p = Math.min(1, (now - t0) / dur); const e = 1 - Math.pow(1 - p, 3); el.textContent = fmtNum(Math.round(target * e)) + suffix; if (p < 1) requestAnimationFrame(step); };
-    el.textContent = '0' + suffix; requestAnimationFrame(step);
+    const step = now => { const p = Math.min(1, (now - t0) / dur); const e = 1 - Math.pow(1 - p, 3); el.textContent = fmtNum(Math.round(target * e)) + suffix; if (p < 1) el._raf = requestAnimationFrame(step); else el._raf = null; };
+    el.textContent = '0' + suffix; el._raf = requestAnimationFrame(step);
   };
+  const resetCount = el => { if (el._raf) cancelAnimationFrame(el._raf); el._raf = null; if (!reduced) el.textContent = '0' + (el.dataset.suffix || ''); };
   const countEls = $$('[data-count]');
   if ('IntersectionObserver' in window) {
-    const cio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { runCount(en.target); cio.unobserve(en.target); } }), { threshold: 0.35 });
+    /* reconta toda vez que entra na tela (descendo ou subindo) e zera ao sair */
+    const cio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) runCount(en.target); else resetCount(en.target); }), { threshold: 0.35 });
     countEls.forEach(el => cio.observe(el));
   } else countEls.forEach(runCount);
   requestAnimationFrame(() => {
