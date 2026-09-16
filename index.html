@@ -204,7 +204,7 @@ a{color:inherit}
 .marquee{background:var(--navy-deep);border-top:1px solid rgba(230,205,143,.16);border-bottom:1px solid rgba(230,205,143,.16);overflow:hidden;padding-block:16px}
 .marquee__track{display:flex;gap:56px;width:max-content;animation:marquee 34s linear infinite}
 .marquee__track span{font-family:var(--serif);font-size:20px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2);white-space:nowrap;display:inline-flex;align-items:center;gap:56px}
-.marquee__track span::after{content:"★";font-size:11px;color:var(--gold)}
+.marquee__track span::after{content:"★";font-size:22px;line-height:1;color:var(--gold-2);transform:translateY(-1px);text-shadow:0 0 12px rgba(230,205,143,.45)}
 @keyframes marquee{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.marquee__track{animation:none}}
 
