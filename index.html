@@ -1208,10 +1208,13 @@ const CONFIG = {
     const cio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) runCount(en.target); else resetCount(en.target); }), { threshold: 0.35 });
     countEls.forEach(el => cio.observe(el));
   } else countEls.forEach(runCount);
-  requestAnimationFrame(() => {
-    $$('[data-lot-fill]').forEach(el => el.style.width = pct + '%');
-    $$('[data-lot-ring]').forEach(el => el.style.strokeDashoffset = (157 - 157 * pct / 100));
-  });
+  /* barras e anel do lote: carregam toda vez que entram na tela, zeram ao sair */
+  const fills = $$('[data-lot-fill]'), rings = $$('[data-lot-ring]');
+  const setGauge = (el, on) => { if (el.hasAttribute('data-lot-ring')) el.style.strokeDashoffset = on ? (157 - 157 * pct / 100) : 157; else el.style.width = on ? pct + '%' : '0%'; };
+  if ('IntersectionObserver' in window && !reduced) {
+    const gio = new IntersectionObserver(es => es.forEach(en => setGauge(en.target, en.isIntersecting)), { threshold: 0.3 });
+    [...fills, ...rings].forEach(el => { setGauge(el, false); gio.observe(el); });
+  } else { requestAnimationFrame(() => [...fills, ...rings].forEach(el => setGauge(el, true))); }
   const number = String(CONFIG.whatsappNumber).replace(/\D/g, '');
   const waBase = 'https://wa.me/' + number + '?text=';
   $$('[data-wa]').forEach(a => a.href = waBase + encodeURIComponent('Olá! Quero garantir minha vaga na Imersão Vida Memorável em Orlando (21/11).'));
