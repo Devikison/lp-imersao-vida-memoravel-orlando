@@ -261,7 +261,7 @@ a{color:inherit}
 .on-navy .divider__line{background:linear-gradient(90deg,rgba(230,205,143,0) 0%,rgba(230,205,143,.5) 40%,var(--gold-2) 100%)}
 .on-navy .divider__line--r{background:linear-gradient(90deg,var(--gold-2) 0%,rgba(230,205,143,.5) 60%,rgba(230,205,143,0) 100%)}
 .on-navy .divider__line::after,.footer .divider__line::after{background:var(--gold-2)}
-.footer .divider{max-width:520px;margin-block:4px}
+.footer .divider{max-width:none}
 /* ============================================================
    SPLIT (photo + text)
    ============================================================ */
@@ -537,16 +537,23 @@ a{color:inherit}
 .team{padding:24px 26px;border-radius:var(--r-lg);background:var(--white);border:1px solid rgba(201,165,92,.3);display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-md)}
 .team b{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--navy)}
 .team p{font-size:15.5px;color:var(--ink-2)}
-.faq__list{display:flex;flex-direction:column;gap:12px}
-.faq__item{border-radius:var(--r-md);background:var(--white);border:1px solid rgba(201,165,92,.22);overflow:hidden;transition:box-shadow .4s,border-color .4s}
-.faq__item[open]{box-shadow:var(--shadow-md);border-color:rgba(201,165,92,.45)}
-.faq__item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 24px;font-family:var(--serif);font-size:clamp(21px,2vw,25px);font-weight:600;color:var(--navy)}
-.faq__item summary::-webkit-details-marker{display:none}
-.faq__sign{flex:none;width:34px;height:34px;border-radius:50%;background:var(--cream);color:var(--navy);display:grid;place-items:center;transition:background .3s,color .3s,transform .45s var(--ease)}
-.faq__sign svg{width:16px;height:16px}
-.faq__item[open] .faq__sign{background:var(--red);color:#fff;transform:rotate(45deg)}
-.faq__a{padding:0 24px 24px;font-size:16px;line-height:1.72;color:var(--ink-2);max-width:60ch}
-
+.faq__list{display:flex;flex-direction:column;gap:14px}
+.faq__item{position:relative;border-radius:var(--r-md);background:linear-gradient(180deg,#FFFDF9 0%,#F7F3EC 100%);border:1px solid rgba(201,165,92,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -2px 0 rgba(201,165,92,.12),0 1px 2px rgba(6,26,56,.05),0 14px 30px -24px rgba(6,26,56,.3);overflow:hidden;transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .6s var(--ease)}
+.faq__item:hover{transform:translateY(-2px);border-color:rgba(201,165,92,.6);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 0 rgba(201,165,92,.16),0 2px 4px rgba(6,26,56,.05),0 26px 48px -26px rgba(6,26,56,.38)}
+.faq__item.is-open{border-color:rgba(201,165,92,.7);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 0 rgba(201,165,92,.18),0 2px 4px rgba(6,26,56,.05),0 30px 56px -28px rgba(6,26,56,.42)}
+.faq__q{width:100%;background:transparent;border:0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 24px;font-family:var(--serif);font-size:clamp(21px,2vw,25px);font-weight:600;color:var(--navy);text-align:left;line-height:1.25;transition:color .45s var(--ease)}
+.faq__q:hover{color:var(--navy-3)}
+.faq__q:focus-visible{outline:2px solid var(--gold);outline-offset:-6px;border-radius:var(--r-md)}
+.faq__sign{flex:none;width:40px;height:40px;border-radius:50%;background:linear-gradient(180deg,#F0DBA4 0%,#D9BC7A 55%,#C3A05A 100%);color:var(--navy-deep);display:grid;place-items:center;border:1px solid rgba(168,137,74,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -2px 0 rgba(0,0,0,.14),0 8px 18px -10px rgba(201,165,92,.9);transition:transform .7s var(--ease),background .5s var(--ease),color .5s var(--ease),box-shadow .5s var(--ease)}
+.faq__sign svg{width:15px;height:15px}
+.faq__item.is-open .faq__sign{transform:rotate(135deg);background:linear-gradient(180deg,#1E4B90 0%,#0F2E5A 55%,#081F45 100%);color:var(--gold-2);border-color:#04142E;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),inset 0 -2px 0 rgba(0,0,0,.28),0 8px 18px -10px rgba(6,26,56,.8)}
+.faq__body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .65s var(--ease)}
+.faq__item.is-open .faq__body{grid-template-rows:1fr}
+.faq__body-in{overflow:hidden;min-height:0}
+.faq__answer{margin:0 24px 24px;padding:16px 20px 18px;border-left:3px solid var(--gold);background:rgba(201,165,92,.09);border-radius:0 14px 14px 0;display:flex;flex-direction:column;gap:6px;opacity:0;transform:translateY(-8px);transition:opacity .55s var(--ease) .12s,transform .55s var(--ease) .12s}
+.faq__item.is-open .faq__answer{opacity:1;transform:none}
+.faq__label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.faq__a{padding:0;font-size:16px;line-height:1.72;color:var(--ink-2);max-width:60ch}
 /* ============================================================
    FECHAMENTO
    ============================================================ */
@@ -1105,22 +1112,22 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
       </div>
     </div>
     <div class="faq__list">
-      <details class="faq__item rv" data-d="1" open>
-        <summary>Quem pode participar? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="faq__a">A imersão é exclusiva para mulheres que querem ter uma vida memorável. Mulheres que têm carreira, fé e família, e sentem que chegou a vez delas.</p>
-      </details>
-      <details class="faq__item rv" data-d="2">
-        <summary>O evento é presencial? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="faq__a">Sim. 100% presencial, no dia 21 de novembro de 2026, em Orlando, Flórida, <span data-bind="eventTime">11h às 18h</span>, com a Vivi&nbsp;Marques ao vivo. Não é pela tela.</p>
-      </details>
-      <details class="faq__item rv" data-d="3">
-        <summary>As vagas são limitadas? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="faq__a">Sim. As vagas são limitadas pela capacidade do espaço. Quando lotar, não há lista de espera e não há nova data confirmada.</p>
-      </details>
-      <details class="faq__item rv" data-d="4">
-        <summary>Como garanto a minha vaga? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="faq__a">Clique em “Falar com a equipe”, preencha seus dados e você será direcionada para o WhatsApp. Nossa equipe confirma o valor do lote atual, as condições de pagamento e a disponibilidade de vaga.</p>
-      </details>
+      <div class="faq__item rv is-open" data-d="1">
+        <button class="faq__q" type="button" aria-expanded="true">Quem pode participar? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq__body"><div class="faq__body-in"><div class="faq__answer"><span class="faq__label">Resposta</span><p class="faq__a">A imersão é exclusiva para mulheres que querem ter uma vida memorável. Mulheres que têm carreira, fé e família, e sentem que chegou a vez delas.</p></div></div></div>
+      </div>
+      <div class="faq__item rv" data-d="2">
+        <button class="faq__q" type="button" aria-expanded="false">O evento é presencial? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq__body"><div class="faq__body-in"><div class="faq__answer"><span class="faq__label">Resposta</span><p class="faq__a">Sim. 100% presencial, no dia 21 de novembro de 2026, em Orlando, Flórida, <span data-bind="eventTime">11h às 18h</span>, com a Vivi&nbsp;Marques ao vivo. Não é pela tela.</p></div></div></div>
+      </div>
+      <div class="faq__item rv" data-d="3">
+        <button class="faq__q" type="button" aria-expanded="false">As vagas são limitadas? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq__body"><div class="faq__body-in"><div class="faq__answer"><span class="faq__label">Resposta</span><p class="faq__a">Sim. As vagas são limitadas pela capacidade do espaço. Quando lotar, não há lista de espera e não há nova data confirmada.</p></div></div></div>
+      </div>
+      <div class="faq__item rv" data-d="4">
+        <button class="faq__q" type="button" aria-expanded="false">Como garanto a minha vaga? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq__body"><div class="faq__body-in"><div class="faq__answer"><span class="faq__label">Resposta</span><p class="faq__a">Clique em “Falar com a equipe”, preencha seus dados e você será direcionada para o WhatsApp. Nossa equipe confirma o valor do lote atual, as condições de pagamento e a disponibilidade de vaga.</p></div></div></div>
+      </div>
     </div>
   </div>
   <div class="container"><div class="divider divider--edge divider--bottom" aria-hidden="true"><span class="divider__line"></span><span class="divider__stars"><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__main"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i></span><span class="divider__line divider__line--r"></span></div></div>
@@ -1366,7 +1373,11 @@ const CONFIG = {
 
   /* ---------- FAQ: one open at a time ---------- */
   const items = $$('.faq__item');
-  items.forEach(d => d.addEventListener('toggle', () => { if (d.open) items.forEach(o => { if (o !== d) o.open = false; }); }));
+  items.forEach(it => { const q = it.querySelector('.faq__q'); q.addEventListener('click', () => {
+    const wasOpen = it.classList.contains('is-open');
+    items.forEach(o => { o.classList.remove('is-open'); o.querySelector('.faq__q').setAttribute('aria-expanded', 'false'); });
+    if (!wasOpen) { it.classList.add('is-open'); q.setAttribute('aria-expanded', 'true'); }
+  }); });
 })();
 </script>
 </body>
