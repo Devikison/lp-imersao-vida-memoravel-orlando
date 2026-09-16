@@ -74,6 +74,7 @@ a{color:inherit}
 
 .on-navy .eyebrow{color:var(--gold-2)}
 .stack-gap{display:flex;flex-direction:column;gap:22px}
+.br-desk{display:none}@media (min-width:901px){.br-desk{display:inline}}
 .flag{display:inline-block;width:28px;height:auto;border-radius:4px;box-shadow:0 0 0 1px rgba(255,255,255,.28),0 2px 6px rgba(0,0,0,.25);vertical-align:middle;flex:none}
 .flag--xs{width:18px;border-radius:3px;vertical-align:-2px;margin-right:6px}
 .flag--md{width:36px;border-radius:5px;vertical-align:-4px;margin-right:10px;box-shadow:0 0 0 1px rgba(11,36,71,.15),0 2px 6px rgba(0,0,0,.18)}
@@ -672,7 +673,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
       <div class="hero__mobile-img" data-in="1"><img src="assets/vivi-hero.webp" alt="Vivi Marques"></div>
       <span class="pill" data-in="1"><img class="flag" src="assets/us-flag.svg" alt="Bandeira dos Estados Unidos">Orlando, Flórida · 21 de novembro de 2026</span>
       <h1 class="h1" data-in="2">Antes de cuidar de todo mundo de novo, faça a única coisa que ninguém pode fazer por você: <em>se transformar primeiro.</em></h1>
-      <p class="lead" data-in="3">Viva uma experiência <b>presencial e profunda de 1 dia</b> com Vivi&nbsp;Marques, onde você acessa o que <b>nenhum livro, terapia ou curso</b> conseguiu te destravar.</p>
+      <p class="lead" data-in="3">Viva uma experiência <b>presencial e profunda de 1 dia</b> com Vivi&nbsp;Marques, onde você acessa o que <b>nenhum livro,</b><br class="br-desk"> <b>terapia ou curso</b> conseguiu te destravar.</p>
       <div class="cta-row" data-in="4">
         <button class="btn btn--primary btn--lg js-open" type="button">Garantir minha vaga agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <a class="btn btn--ghost" href="#imersao" data-anchor>Como funciona a Imersão</a>
