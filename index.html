@@ -46,8 +46,8 @@
    BASE
    ============================================================ */
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:auto}
-body{margin:0;background:var(--navy-deep);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;overflow-x:clip;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto;overflow-x:clip}
+body{margin:0;background:var(--navy-deep);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;overflow-x:clip;touch-action:pan-y pinch-zoom;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 [hidden]{display:none!important}
 button{font:inherit}
@@ -509,13 +509,17 @@ a{color:inherit}
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer{background:#04122A;color:rgba(255,253,249,.85);padding-block:44px;font-size:12.5px;line-height:1.6}
-.footer__inner{display:flex;flex-direction:column;gap:18px}
-.footer__row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;align-items:center}
-.footer__row img{height:34px;width:auto}
+.footer{background:linear-gradient(180deg,var(--navy-deep) 0%,#04122A 100%);color:rgba(255,253,249,.82);padding-block:60px 52px;border-top:1px solid rgba(230,205,143,.18);text-align:center}
+.footer__inner{display:flex;flex-direction:column;align-items:center;gap:14px}
+.footer__logo{height:42px;width:auto;margin-bottom:4px}
+.footer__name{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--gold-2);letter-spacing:.02em}
+.footer__rule{width:72px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-block:4px}
+.footer__line{font-size:13.5px;line-height:1.7;color:rgba(255,253,249,.82)}
 .footer a{color:var(--gold-2);text-decoration:none}
 .footer a:hover{text-decoration:underline}
-.footer__rule{height:1px;background:rgba(230,205,143,.2)}
+.footer__legal{font-size:12.5px;line-height:1.7;color:rgba(255,253,249,.66);max-width:72ch}
+.footer__place{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,253,249,.55);margin-top:10px;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
+.footer__place .flag{margin:0}
 
 /* ============================================================
    STICKY CTA (mobile) + MODALS
@@ -577,7 +581,7 @@ a{color:inherit}
   .auth__stats div,.ticket__facts div{align-items:center}
   .fact{flex-direction:column;align-items:center;text-align:center;gap:10px}
   .fact div{align-items:center}
-  .badge-float{left:50%!important;right:auto!important;transform:translateX(-50%);bottom:-18px!important;top:auto!important;white-space:nowrap}
+  .badge-float{left:50%!important;right:auto!important;transform:translateX(-50%);bottom:-18px!important;top:auto!important;white-space:normal;width:max-content;max-width:calc(100% - 24px);justify-content:center;text-align:center}
   .badge-float span{max-width:none}
   .split__media{margin-bottom:30px}
   .story__quote cite{justify-content:center}
@@ -1048,15 +1052,14 @@ a{color:inherit}
 <!-- ============================================================ FOOTER -->
 <footer class="footer">
   <div class="container footer__inner">
-    <div class="footer__row">
-      <img src="assets/logo-vivi-marques.webp" alt="Vivi Marques">
-      <span>Instituto VM LTDA © 2026 Instituto VM · <a href="https://vminstituto.com.br" target="_blank" rel="noopener">vminstituto.com.br</a> · CNPJ <span data-bind="cnpj">00.000.000/0001-00</span></span>
-    </div>
-    <div class="footer__rule"></div>
-    <p><a href="#">Política de privacidade</a> · Depoimentos são experiências individuais reais e não constituem garantia de resultado.</p>
+    <img class="footer__logo" src="assets/logo-vivi-marques.webp" alt="Vivi Marques">
+    <span class="footer__name">Instituto VM LTDA</span>
+    <span class="footer__rule"></span>
+    <p class="footer__line">© 2026 Instituto VM · <a href="https://vminstituto.com.br" target="_blank" rel="noopener">vminstituto.com.br</a> · CNPJ <span data-bind="cnpj">64.535.169/001-29</span></p>
+    <p class="footer__legal"><a href="#">Política de privacidade</a> · Depoimentos são experiências individuais reais e não constituem garantia de resultado.</p>
+    <p class="footer__place"><img class="flag flag--xs" src="assets/us-flag.svg" alt="">Imersão Vida Memorável · Orlando, Flórida · 24 de novembro de 2026</p>
   </div>
 </footer>
-
 <!-- ============================================================ STICKY CTA -->
 <div class="sticky" id="sticky">
   <div class="sticky__txt"><b>Orlando · 24 nov</b><small><span data-lot-pct>0</span>% do lote preenchido</small></div>
@@ -1103,7 +1106,7 @@ const CONFIG = {
   venue: 'Local a confirmar',           // endereço / venue em Orlando
   whatsappNumber: '5511999999999',      // somente números, com DDI
   careerYears: 20,                      // anos de carreira da Vivi
-  cnpj: '00.000.000/0001-00',           // CNPJ do rodapé
+  cnpj: '64.535.169/001-29',            // CNPJ do rodapé
   videos: {                             // depoimentos em vídeo (mp4) — coloque os arquivos em assets/videos/
     mara:   { name: 'Mara Lívia',     src: 'assets/videos/Mara.mp4' },
     luana:  { name: 'Luana Gabriela', src: 'assets/videos/Luana.mp4' },
