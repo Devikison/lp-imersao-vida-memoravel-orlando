@@ -370,7 +370,8 @@ a{color:inherit}
 .when__map svg{width:min(1180px,118%);height:auto;transform:translateY(4%)}
 .when__map path{fill:rgba(201,165,92,.14);stroke:rgba(201,165,92,.42);stroke-width:1.6;stroke-linejoin:round}
 .when .container{position:relative}
-.pass{display:grid;grid-template-columns:minmax(0,1fr) 250px;background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);border:1px solid rgba(201,165,92,.4);max-width:1040px;margin-inline:auto;position:relative}
+.pass-wrap{max-width:1040px;margin-inline:auto;filter:drop-shadow(0 30px 44px rgba(6,26,56,.26))}
+.pass{--nx:-100px;--ny:-100px;display:grid;grid-template-columns:minmax(0,1fr) 250px;background:var(--white);border-radius:var(--r-xl);border:1px solid rgba(201,165,92,.4);position:relative;overflow:hidden;-webkit-mask:radial-gradient(circle at var(--nx) 0,transparent 11px,#000 12px),radial-gradient(circle at var(--nx) 100%,transparent 11px,#000 12px),radial-gradient(circle at 0 var(--ny),transparent 11px,#000 12px),radial-gradient(circle at 100% var(--ny),transparent 11px,#000 12px);-webkit-mask-composite:source-in;mask:radial-gradient(circle at var(--nx) 0,transparent 11px,#000 12px),radial-gradient(circle at var(--nx) 100%,transparent 11px,#000 12px),radial-gradient(circle at 0 var(--ny),transparent 11px,#000 12px),radial-gradient(circle at 100% var(--ny),transparent 11px,#000 12px);mask-composite:intersect}
 .pass__main{display:flex;flex-direction:column;min-width:0}
 .pass__bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 28px;background:linear-gradient(135deg,var(--navy-3),var(--navy-deep));color:#fff;border-radius:var(--r-xl) 0 0 0}
 .pass__brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:21px}
@@ -390,9 +391,7 @@ a{color:inherit}
 .pass__grid small{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .pass__grid b{font-family:var(--serif);font-size:clamp(19px,1.7vw,23px);line-height:1.15;color:var(--navy);font-weight:600}
 .pass__foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 28px 24px;border-top:1px solid rgba(201,165,92,.25);background:var(--cream);border-radius:0 0 0 var(--r-xl)}
-.pass__stub{position:relative;border-left:2px dashed rgba(201,165,92,.65);background:var(--white);display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:22px 22px 24px;border-radius:0 var(--r-xl) var(--r-xl) 0}
-.pass__stub::before,.pass__stub::after{content:"";position:absolute;left:-14px;width:26px;height:26px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 1px rgba(201,165,92,.4)}
-.pass__stub::before{top:-14px}.pass__stub::after{bottom:-14px}
+.pass__stub{position:relative;border-left:2px dashed rgba(201,165,92,.65);background:var(--white);display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:22px 22px 24px}
 .pass__stub small{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .pass__stub b{font-family:var(--serif);font-size:22px;color:var(--navy);display:block;line-height:1.15;font-weight:600}
 .pass__barcode{height:64px;border-radius:4px;opacity:.85;background:repeating-linear-gradient(90deg,var(--navy) 0 2px,transparent 2px 5px,var(--navy) 5px 6px,transparent 6px 9px,var(--navy) 9px 12px,transparent 12px 14px,var(--navy) 14px 15px,transparent 15px 19px)}
@@ -401,9 +400,7 @@ a{color:inherit}
   .pass{grid-template-columns:1fr}
   .pass__bar{border-radius:var(--r-xl) var(--r-xl) 0 0;justify-content:center;text-align:center}
   .pass__foot{border-radius:0;justify-content:center}
-  .pass__stub{border-left:0;border-top:2px dashed rgba(201,165,92,.65);border-radius:0 0 var(--r-xl) var(--r-xl);align-items:center;text-align:center}
-  .pass__stub::before,.pass__stub::after{top:-14px;bottom:auto}
-  .pass__stub::before{left:-14px}.pass__stub::after{left:auto;right:-14px}
+  .pass__stub{border-left:0;border-top:2px dashed rgba(201,165,92,.65);align-items:center;text-align:center}
   .pass__stamp{align-self:center}
   .pass__grid{grid-template-columns:repeat(2,1fr);text-align:center}
   .pass__grid div{align-items:center}
@@ -416,22 +413,20 @@ a{color:inherit}
    ============================================================ */
 .invest{background:var(--white);position:relative}
 .ticket{position:relative;max-width:440px;margin-inline:auto;filter:drop-shadow(0 30px 40px rgba(6,26,56,.22))}
-.ticket__head{padding:26px 28px 24px;background:linear-gradient(160deg,var(--navy-3) 0%,var(--navy-deep) 100%);color:#fff;border-radius:var(--r-xl) var(--r-xl) 0 0;display:flex;flex-direction:column;gap:12px}
+.ticket__in{--n1:-100px;--n2:-100px;position:relative;border-radius:var(--r-xl);overflow:hidden;background:var(--white);border:1px solid rgba(201,165,92,.4);-webkit-mask:radial-gradient(circle at 0 var(--n1),transparent 11px,#000 12px),radial-gradient(circle at 100% var(--n1),transparent 11px,#000 12px),radial-gradient(circle at 0 var(--n2),transparent 11px,#000 12px),radial-gradient(circle at 100% var(--n2),transparent 11px,#000 12px);-webkit-mask-composite:source-in;mask:radial-gradient(circle at 0 var(--n1),transparent 11px,#000 12px),radial-gradient(circle at 100% var(--n1),transparent 11px,#000 12px),radial-gradient(circle at 0 var(--n2),transparent 11px,#000 12px),radial-gradient(circle at 100% var(--n2),transparent 11px,#000 12px);mask-composite:intersect}
+.ticket__head{padding:26px 28px 24px;background:linear-gradient(160deg,var(--navy-3) 0%,var(--navy-deep) 100%);color:#fff;display:flex;flex-direction:column;gap:12px}
 .ticket__head small{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-3)}
 .ticket__head b{font-family:var(--serif);font-size:30px;font-weight:500;line-height:1.1}
 .ticket__lot{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-2),var(--gold));padding:8px 12px;border-radius:999px}
-.ticket__perf{position:relative;height:0;border-top:2px dashed rgba(201,165,92,.55);margin:0 20px;background:var(--white)}
-.ticket__perf::before,.ticket__perf::after{content:"";position:absolute;top:-14px;width:28px;height:28px;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px rgba(201,165,92,.35)}
-.ticket__perf::before{left:-34px}.ticket__perf::after{right:-34px}
-.ticket__body{padding:26px 28px;display:flex;flex-direction:column;gap:22px;background:var(--white);border-inline:1px solid rgba(201,165,92,.4)}
+.ticket__perf{height:0;border-top:2px dashed rgba(201,165,92,.55);margin:0 22px}
+.ticket__body{padding:26px 28px;display:flex;flex-direction:column;gap:22px;background:var(--white)}
 .ticket__facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .ticket__facts div{padding:12px 12px;border-radius:var(--r-sm);background:var(--cream);display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center}
 .ticket__facts small{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .ticket__facts span{font-family:var(--serif);font-size:22px;line-height:1.1;color:var(--navy);font-weight:600}
 .ticket__price{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--navy);text-align:center}
-.ticket__stub{padding:18px 28px 24px;background:var(--cream);border-radius:0 0 var(--r-xl) var(--r-xl);border:1px solid rgba(201,165,92,.4);border-top:2px dashed rgba(201,165,92,.55);display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
-.ticket__stub::before,.ticket__stub::after{content:"";position:absolute;top:-15px;width:28px;height:28px;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px rgba(201,165,92,.35)}
-.ticket__stub::before{left:-15px}.ticket__stub::after{right:-15px}
+.ticket__stub{padding:18px 28px 24px;background:var(--cream);display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
+.ticket__stub::before{content:"";position:absolute;left:22px;right:22px;top:-1px;border-top:2px dashed rgba(201,165,92,.55)}
 .ticket__stub div{display:flex;flex-direction:column;gap:2px}
 .ticket__stub small{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .ticket__stub b{font-family:var(--serif);font-size:20px;color:var(--navy);font-weight:600;line-height:1.1}
@@ -562,6 +557,9 @@ a{color:inherit}
   .lead,.split__copy p,.auth__bio,.scard__body p,.story p,.qbox p,.thesis-sub,.faq__intro p,.h2,.h1{margin-inline:auto}
   .h2{max-width:none}
   .rv--left,.rv--right{transform:translateY(34px)}
+  .qcards{display:flex;flex-direction:column;gap:18px;padding-bottom:20px}
+  .qcard{position:sticky;top:calc(var(--header-h) + 14px + var(--i)*14px);transform-origin:top center;will-change:transform;box-shadow:var(--shadow-lg);border-color:rgba(201,165,92,.35);min-height:220px;justify-content:center}
+  .qcard:hover{transform:none}
   .split{grid-template-columns:minmax(0,1fr)}
   .split__copy,.split__media{min-width:0;max-width:100%}
   .lot-card{margin-inline:auto;width:100%;max-width:420px;padding:8px 16px 8px 8px;gap:12px;text-align:left}
@@ -681,10 +679,10 @@ a{color:inherit}
       <span class="eyebrow rv">Isso é para você</span>
       <h2 class="h2 rv" data-d="1" style="max-width:52ch">Você tem carreira, tem fé, tem família. E em algum momento do dia uma voz pergunta: <em>quando é a minha vez?</em></h2>
     </div>
-    <div class="qcards">
-      <div class="qcard rv" data-d="1"><span class="qcard__mark">“</span><p>Acorda, cumpre, entrega, dorme e repete. Em algum momento sente que está morrendo aos poucos sem que ninguém perceba.</p></div>
-      <div class="qcard rv" data-d="2"><span class="qcard__mark">“</span><p>Cuida dos filhos, aparece para a família, sorri nas fotos. Mas à noite, quando fecha a porta do quarto, sente um vazio que não consegue nomear.</p></div>
-      <div class="qcard rv" data-d="3"><span class="qcard__mark">“</span><p>Sabe exatamente o que precisa fazer. Não faz. E se pune por isso todo dia.</p></div>
+    <div class="qcards" data-stack>
+      <div class="qcard rv" data-d="1" style="--i:0"><span class="qcard__mark">“</span><p>Acorda, cumpre, entrega, dorme e repete. Em algum momento sente que está morrendo aos poucos sem que ninguém perceba.</p></div>
+      <div class="qcard rv" data-d="2" style="--i:1"><span class="qcard__mark">“</span><p>Cuida dos filhos, aparece para a família, sorri nas fotos. Mas à noite, quando fecha a porta do quarto, sente um vazio que não consegue nomear.</p></div>
+      <div class="qcard rv" data-d="3" style="--i:2"><span class="qcard__mark">“</span><p>Sabe exatamente o que precisa fazer. Não faz. E se pune por isso todo dia.</p></div>
     </div>
     <div class="stack-gap center" style="gap:18px">
       <p class="thesis rv rv--scale">Vivendo a vida errada<br>dentro da <span class="u">vida certa.</span></p>
@@ -705,7 +703,7 @@ a{color:inherit}
       <h2 class="h2 rv" data-d="1">Uma imersão. Um dia. <em>Uma transformação para a vida inteira.</em></h2>
       <p class="lead rv" data-d="2">Uma jornada em 3 movimentos que muda não só quem você é, mas a vida que você constrói:</p>
     </div>
-    <div class="stack" id="stack">
+    <div class="stack" id="stack" data-stack>
       <article class="scard" style="--i:0">
         <div class="scard__img"><span class="scard__num">01</span><img src="assets/evento-entrega.webp" alt="Mulher em momento de entrega na imersão" loading="lazy"></div>
         <div class="scard__body">
@@ -873,7 +871,7 @@ a{color:inherit}
       <h2 class="h2 rv" data-d="1">Quando e onde vai acontecer a <em>Imersão Vida Memorável?</em></h2>
       <p class="lead rv" data-d="2">Vagas limitadas pela capacidade do espaço. Quando lotar, não há lista de espera.</p>
     </div>
-    <div class="pass rv rv--scale" data-d="2">
+    <div class="pass-wrap rv rv--scale" data-d="2"><div class="pass">
       <div class="pass__main">
         <div class="pass__bar">
           <span class="pass__brand"><img src="assets/logo-vivi-marques.webp" alt="">Imersão Vida Memorável</span>
@@ -903,7 +901,7 @@ a{color:inherit}
         <span class="pass__stamp">Lote atual</span>
         <div><small>Assento</small><b>A sua vez</b></div>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -921,7 +919,7 @@ a{color:inherit}
       </ul>
     </div>
     <div class="split__media rv rv--right">
-      <div class="ticket">
+      <div class="ticket"><div class="ticket__in">
         <div class="ticket__head"><small>Ingresso · Lote atual</small><b>Imersão Vida Memorável</b><span class="ticket__lot">Menor valor disponível</span></div>
         <div class="ticket__perf"></div>
         <div class="ticket__body">
@@ -942,7 +940,7 @@ a{color:inherit}
           <div><small>Orlando, Flórida</small><b>24 NOV 2026</b></div>
           <span class="ticket__code" aria-hidden="true"></span>
         </div>
-      </div>
+      </div></div>
     </div>
   </div>
 </section>
@@ -1173,27 +1171,24 @@ const CONFIG = {
     rv.forEach(el => io.observe(el));
   } else { rv.forEach(el => el.classList.add('in')); }
 
-  /* ---------- scroll stacking ---------- */
-  const cards = $$('#stack .scard');
-  const headerH = () => header.offsetHeight;
-  const stackTick = () => {
-    const n = cards.length;
+  /* ---------- scroll stacking (qualquer grupo com data-stack) ---------- */
+  const stacks = $$('[data-stack]').map(s => Array.from(s.children));
+  const stackTick = () => stacks.forEach(cards => {
+    const n = cards.length; if (!n) return;
+    if (getComputedStyle(cards[0]).position !== 'sticky') { cards.forEach(c => { c.style.transform = ''; c.style.filter = ''; }); return; }
+    const gap = parseFloat(getComputedStyle(cards[0].parentElement).rowGap) || 0;
     cards.forEach((c, i) => {
       if (i === n - 1) { c.style.transform = ''; c.style.filter = ''; return; }
-      const next = cards[i + 1].getBoundingClientRect();
-      const r = c.getBoundingClientRect();
-      const stickTop = headerH() + 24 + i * 22;
-      const gap = 32;
-      const start = r.top + r.height + gap;             // next card position when nothing covered
-      const end = stickTop + (i + 1) * 0 + 22;          // next card when fully stacked (its own sticky top ≈ ours + 22)
-      const span = Math.max(1, start - (r.top + 22));
-      const p = Math.max(0, Math.min(1, (start - next.top) / span));
+      const r = c.getBoundingClientRect(), next = cards[i + 1].getBoundingClientRect();
+      const topI = parseFloat(getComputedStyle(c).top) || 0, topN = parseFloat(getComputedStyle(cards[i + 1]).top) || 0;
+      const start = r.top + r.height + gap;
+      const end = r.top + (topN - topI);
+      const p = Math.max(0, Math.min(1, (start - next.top) / Math.max(1, start - end)));
       c.style.transform = `scale(${1 - p * 0.06}) translateY(${-p * 6}px)`;
       c.style.filter = `brightness(${1 - p * 0.22})`;
     });
-  };
-  if (cards.length && !reduced) { stackTick(); addEventListener('scroll', stackTick, { passive: true }); addEventListener('resize', stackTick); }
-
+  });
+  if (stacks.length && !reduced) { stackTick(); addEventListener('scroll', stackTick, { passive: true }); addEventListener('resize', stackTick); }
   /* ---------- experiência: seção presa com cards horizontais ---------- */
   const pin = $('#expPin'), track = $('#expTrack'), xcards = $$('.xcard'), expFill = $('#expFill'), expNum = $('#expNum');
   const mqDesk = matchMedia('(min-width: 901px)');
@@ -1239,6 +1234,20 @@ const CONFIG = {
   $('#vmodalClose').addEventListener('click', vclose);
   vmodal.addEventListener('click', e => { if (e.target === vmodal) vclose(); });
   addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (!modal.hidden) close(); if (!vmodal.hidden) vclose(); });
+
+  /* ---------- recortes (picote) do ingresso e do cartão de embarque ---------- */
+  const notch = () => {
+    const tin = $('.ticket__in'), perf = $('.ticket__perf'), stub = $('.ticket__stub');
+    if (tin && perf && stub) { tin.style.setProperty('--n1', perf.offsetTop + 'px'); tin.style.setProperty('--n2', stub.offsetTop + 'px'); }
+    const pass = $('.pass'), pstub = $('.pass__stub');
+    if (pass && pstub) {
+      const mobile = matchMedia('(max-width: 760px)').matches;
+      pass.style.setProperty('--nx', mobile ? '-100px' : pstub.offsetLeft + 'px');
+      pass.style.setProperty('--ny', mobile ? pstub.offsetTop + 'px' : '-100px');
+    }
+  };
+  notch(); addEventListener('resize', notch); addEventListener('load', notch);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(notch);
 
   /* ---------- FAQ: one open at a time ---------- */
   const items = $$('.faq__item');
