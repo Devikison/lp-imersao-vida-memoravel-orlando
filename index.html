@@ -161,18 +161,18 @@ a{color:inherit}
 .hero .h1 em{color:var(--gold-2)}
 .hero .lead{font-size:clamp(16px,1.2vw,18px);color:rgba(255,253,249,.88);max-width:52ch}
 .hero .lead b{font-weight:600;color:#fff}
-.lot-card{display:flex;align-items:center;gap:16px;padding:12px 16px;border-radius:var(--r-md);background:rgba(255,255,255,.07);border:1px solid rgba(230,205,143,.28);backdrop-filter:blur(10px);max-width:440px}
+.lot-card{display:flex;align-items:center;gap:14px;padding:10px 18px 10px 10px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.04));border:1px solid rgba(230,205,143,.38);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 12px 30px -18px rgba(0,0,0,.6);max-width:440px}
 .lot-card__ring{position:relative;width:52px;height:52px;flex:none}
 .lot-card__ring svg{width:52px;height:52px;transform:rotate(-90deg)}
 .lot-card__ring circle{fill:none;stroke-width:5}
 .lot-card__ring .track{stroke:rgba(255,255,255,.14)}
 .lot-card__ring .prog{stroke:var(--gold-2);stroke-linecap:round;stroke-dasharray:157;stroke-dashoffset:157;transition:stroke-dashoffset 1.4s var(--ease) .5s}
-.lot-card__ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--gold-3);font-variant-numeric:tabular-nums}
+.lot-card__ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--gold-3);font-variant-numeric:tabular-nums;white-space:nowrap;letter-spacing:-.02em}
 .lot-card div{display:flex;flex-direction:column;gap:2px}
-.lot-card strong{font-size:14px;font-weight:600;color:#fff}
-.lot-card span{font-size:12.5px;color:rgba(255,253,249,.7)}
+.lot-card strong{font-size:13.5px;font-weight:600;color:#fff;line-height:1.25}
+.lot-card span{font-size:12px;color:rgba(255,253,249,.72);line-height:1.35}
 .hero__chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-size:13px;font-weight:500;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:rgba(255,253,249,.9)}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-size:13px;font-weight:500;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.14);color:rgba(255,253,249,.92)}
 .chip svg{width:14px;height:14px;color:var(--gold-2)}
 .hero__side{position:relative;display:flex;justify-content:flex-end}
 .float-card{position:absolute;right:0;bottom:-10px;display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:var(--r-md);background:rgba(255,253,249,.96);color:var(--navy);box-shadow:var(--shadow-lg);max-width:300px}
@@ -554,7 +554,14 @@ a{color:inherit}
   .cta-col{align-items:center}
   .lead,.split__copy p,.auth__bio,.scard__body p,.story p,.qbox p,.thesis-sub,.faq__intro p,.h2,.h1{margin-inline:auto}
   .h2{max-width:none}
-  .lot-card{margin-inline:auto}
+  .lot-card{margin-inline:auto;width:100%;max-width:420px;padding:8px 16px 8px 8px;gap:12px;text-align:left}
+  .lot-card__ring{width:46px;height:46px}.lot-card__ring svg{width:46px;height:46px}
+  .lot-card__ring b{font-size:11px}
+  .lot-card strong{font-size:13px}.lot-card span{font-size:11.5px}
+  .hero__chips{gap:0;justify-content:center;padding:6px 8px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);max-width:420px;width:100%}
+  .chip{background:none;border:0;box-shadow:none;padding:6px 10px;font-size:12px;position:relative;gap:6px}
+  .chip svg{width:12px;height:12px}
+  .chip+.chip::before{content:"";position:absolute;left:-2px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--gold);transform:translateY(-50%)}
   .recog__item{flex-direction:column;gap:12px}
   .recog__item:hover{transform:none}
   .card__top{position:relative;width:100%}
