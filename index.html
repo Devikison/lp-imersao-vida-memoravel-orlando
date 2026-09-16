@@ -138,7 +138,8 @@ a{color:inherit}
    HERO
    ============================================================ */
 .hero{position:relative;background:var(--navy-deep);color:var(--white);overflow:hidden;min-height:calc(100svh - var(--header-h));display:flex;align-items:center;padding-block:clamp(36px,4.5vw,64px) clamp(104px,11vw,150px)}
-.hero__bg{position:absolute;inset:0;left:40%;z-index:0;overflow:hidden}
+.hero__bg{position:absolute;inset:0;left:36%;z-index:0;overflow:hidden}
+.hero__bg::before,.hero__bg::after{z-index:1}
 .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 .hero__bg::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy-deep) 0%,rgba(6,26,56,.94) 12%,rgba(6,26,56,.62) 30%,rgba(6,26,56,.22) 52%,rgba(6,26,56,.12) 100%)}
 @media (min-width:1500px){.hero__bg{left:46%}}
@@ -261,7 +262,7 @@ a{color:inherit}
 .scard__img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,26,56,0) 60%,rgba(255,253,249,.0) 100%)}
 .scard__num{position:absolute;left:22px;top:22px;z-index:2;width:64px;height:64px;border-radius:50%;background:rgba(255,253,249,.94);display:grid;place-items:center;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy);box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
 .scard__body{padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:18px}
-.scard__body .eyebrow{color:var(--gold)}
+.scard__body .eyebrow{color:var(--red)}
 .scard__body h3{font-size:clamp(30px,3.2vw,44px);line-height:1.08}
 .scard__body p{font-size:clamp(16.5px,1.3vw,18.5px);line-height:1.7;color:var(--ink-2);max-width:48ch}
 .scard__body ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
@@ -351,46 +352,79 @@ a{color:inherit}
 .pstat span{font-size:14px;color:rgba(255,253,249,.78)}
 
 /* ============================================================
-   QUANDO E ONDE
+   QUANDO E ONDE (cartão de embarque)
    ============================================================ */
-.when{background:var(--white)}
-.info{border-radius:var(--r-xl);background:var(--white);border:1px solid rgba(201,165,92,.3);box-shadow:var(--shadow-lg);overflow:hidden}
-.info__head{padding:22px 28px;background:linear-gradient(135deg,var(--navy-3),var(--navy-deep));color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.info__head b{font-family:var(--serif);font-size:24px;font-weight:500}
-.urgency{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--red);padding:9px 14px;border-radius:999px}
-.urgency i{width:7px;height:7px;background:#fff;border-radius:50%;box-shadow:0 0 0 3px rgba(255,255,255,.3);animation:pulse 1.8s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(255,255,255,.12)}}
-.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-.fact{padding:22px 26px;display:flex;gap:14px;align-items:flex-start;border-bottom:1px solid rgba(201,165,92,.2)}
-.fact:nth-child(odd){border-right:1px solid rgba(201,165,92,.2)}
-.fact__ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--cream);display:grid;place-items:center;color:var(--red)}
-.fact__ic svg{width:18px;height:18px}
-.fact div{display:flex;flex-direction:column;gap:3px}
-.fact small{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.fact span{font-family:var(--serif);font-size:clamp(20px,2vw,25px);line-height:1.15;color:var(--navy)}
-@media (max-width:520px){.facts{grid-template-columns:1fr}.fact:nth-child(odd){border-right:0}}
-.info__foot{padding:22px 26px 26px;display:flex;flex-direction:column;gap:16px;background:var(--cream)}
-.chips-row{display:flex;flex-wrap:wrap;gap:8px}
-.chips-row span{font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--white);border:1px solid rgba(201,165,92,.35);color:var(--navy)}
+.when{background:var(--cream);position:relative;overflow:hidden}
+.when__map{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.when__map svg{width:min(1180px,118%);height:auto;transform:translateY(4%)}
+.when__map path{fill:rgba(201,165,92,.14);stroke:rgba(201,165,92,.42);stroke-width:1.6;stroke-linejoin:round}
+.when .container{position:relative}
+.pass{display:grid;grid-template-columns:minmax(0,1fr) 250px;background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);border:1px solid rgba(201,165,92,.4);max-width:1040px;margin-inline:auto;position:relative}
+.pass__main{display:flex;flex-direction:column;min-width:0}
+.pass__bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 28px;background:linear-gradient(135deg,var(--navy-3),var(--navy-deep));color:#fff;border-radius:var(--r-xl) 0 0 0}
+.pass__brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:21px}
+.pass__brand img{height:26px;width:auto}
+.pass__type{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-3)}
+.pass__route{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;padding:28px 28px 22px;border-bottom:1px dashed rgba(201,165,92,.55)}
+.pass__city{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pass__city small{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pass__city b{font-family:var(--serif);font-size:clamp(32px,3.8vw,50px);line-height:1;color:var(--navy);font-weight:500;white-space:nowrap}
+.pass__city span{font-size:14px;color:var(--ink-2)}
+.pass__city--to{text-align:right;align-items:flex-end}
+.pass__plane{display:flex;align-items:center;gap:8px;color:var(--red)}
+.pass__plane i{width:clamp(24px,6vw,90px);height:0;border-top:2px dashed rgba(201,165,92,.7);display:block}
+.pass__plane svg{width:32px;height:32px;flex:none}
+.pass__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 20px;padding:22px 28px}
+.pass__grid div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.pass__grid small{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pass__grid b{font-family:var(--serif);font-size:clamp(19px,1.7vw,23px);line-height:1.15;color:var(--navy);font-weight:600}
+.pass__foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 28px 24px;border-top:1px solid rgba(201,165,92,.25);background:var(--cream);border-radius:0 0 0 var(--r-xl)}
+.pass__stub{position:relative;border-left:2px dashed rgba(201,165,92,.65);background:var(--white);display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:22px 22px 24px;border-radius:0 var(--r-xl) var(--r-xl) 0}
+.pass__stub::before,.pass__stub::after{content:"";position:absolute;left:-14px;width:26px;height:26px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 1px rgba(201,165,92,.4)}
+.pass__stub::before{top:-14px}.pass__stub::after{bottom:-14px}
+.pass__stub small{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pass__stub b{font-family:var(--serif);font-size:22px;color:var(--navy);display:block;line-height:1.15;font-weight:600}
+.pass__barcode{height:64px;border-radius:4px;opacity:.85;background:repeating-linear-gradient(90deg,var(--navy) 0 2px,transparent 2px 5px,var(--navy) 5px 6px,transparent 6px 9px,var(--navy) 9px 12px,transparent 12px 14px,var(--navy) 14px 15px,transparent 15px 19px)}
+.pass__stamp{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red);border:2px solid var(--red);padding:6px 10px;border-radius:6px;transform:rotate(-6deg);opacity:.9}
+@media (max-width:760px){
+  .pass{grid-template-columns:1fr}
+  .pass__bar{border-radius:var(--r-xl) var(--r-xl) 0 0;justify-content:center;text-align:center}
+  .pass__foot{border-radius:0;justify-content:center}
+  .pass__stub{border-left:0;border-top:2px dashed rgba(201,165,92,.65);border-radius:0 0 var(--r-xl) var(--r-xl);align-items:center;text-align:center}
+  .pass__stub::before,.pass__stub::after{top:-14px;bottom:auto}
+  .pass__stub::before{left:-14px}.pass__stub::after{left:auto;right:-14px}
+  .pass__stamp{align-self:center}
+  .pass__grid{grid-template-columns:repeat(2,1fr);text-align:center}
+  .pass__grid div{align-items:center}
+  .pass__route{gap:10px}
+  .pass__city b{font-size:30px}
+}
 
 /* ============================================================
-   INVESTIMENTO
+   INVESTIMENTO (ingresso)
    ============================================================ */
-.invest{background:var(--cream);position:relative}
-.ticket{position:relative;border-radius:var(--r-xl);background:var(--white);box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid rgba(201,165,92,.3)}
-.ticket__head{padding:28px 30px;background:linear-gradient(135deg,var(--navy-3) 0%,var(--navy-deep) 100%);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;position:relative;overflow:hidden}
-.ticket__head::after{content:"";position:absolute;right:-40px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,165,92,.35),rgba(201,165,92,0))}
-.ticket__head b{font-family:var(--serif);font-size:28px;font-weight:500;position:relative}
-.ticket__lot{position:relative;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-2),var(--gold));padding:8px 12px;border-radius:999px}
-.ticket__perf{position:relative;height:0;border-top:2px dashed rgba(201,165,92,.4);margin:0 22px}
-.ticket__perf::before,.ticket__perf::after{content:"";position:absolute;top:-13px;width:26px;height:26px;border-radius:50%;background:var(--cream)}
-.ticket__perf::before{left:-35px}.ticket__perf::after{right:-35px}
-.ticket__body{padding:30px;display:flex;flex-direction:column;gap:24px}
-.ticket__facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.ticket__facts div{padding:14px 16px;border-radius:var(--r-sm);background:var(--cream);display:flex;flex-direction:column;gap:4px}
-.ticket__facts small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.ticket__facts span{font-family:var(--serif);font-size:22px;line-height:1.1;color:var(--navy)}
+.invest{background:var(--white);position:relative}
+.ticket{position:relative;max-width:440px;margin-inline:auto;filter:drop-shadow(0 30px 40px rgba(6,26,56,.22))}
+.ticket__head{padding:26px 28px 24px;background:linear-gradient(160deg,var(--navy-3) 0%,var(--navy-deep) 100%);color:#fff;border-radius:var(--r-xl) var(--r-xl) 0 0;display:flex;flex-direction:column;gap:12px}
+.ticket__head small{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-3)}
+.ticket__head b{font-family:var(--serif);font-size:30px;font-weight:500;line-height:1.1}
+.ticket__lot{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-2),var(--gold));padding:8px 12px;border-radius:999px}
+.ticket__perf{position:relative;height:0;border-top:2px dashed rgba(201,165,92,.55);margin:0 20px;background:var(--white)}
+.ticket__perf::before,.ticket__perf::after{content:"";position:absolute;top:-14px;width:28px;height:28px;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px rgba(201,165,92,.35)}
+.ticket__perf::before{left:-34px}.ticket__perf::after{right:-34px}
+.ticket__body{padding:26px 28px;display:flex;flex-direction:column;gap:22px;background:var(--white);border-inline:1px solid rgba(201,165,92,.4)}
+.ticket__facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ticket__facts div{padding:12px 12px;border-radius:var(--r-sm);background:var(--cream);display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center}
+.ticket__facts small{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ticket__facts span{font-family:var(--serif);font-size:22px;line-height:1.1;color:var(--navy);font-weight:600}
 .ticket__price{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--navy);text-align:center}
+.ticket__stub{padding:18px 28px 24px;background:var(--cream);border-radius:0 0 var(--r-xl) var(--r-xl);border:1px solid rgba(201,165,92,.4);border-top:2px dashed rgba(201,165,92,.55);display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
+.ticket__stub::before,.ticket__stub::after{content:"";position:absolute;top:-15px;width:28px;height:28px;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 1px rgba(201,165,92,.35)}
+.ticket__stub::before{left:-15px}.ticket__stub::after{right:-15px}
+.ticket__stub div{display:flex;flex-direction:column;gap:2px}
+.ticket__stub small{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ticket__stub b{font-family:var(--serif);font-size:20px;color:var(--navy);font-weight:600;line-height:1.1}
+.ticket__code{width:120px;height:46px;border-radius:4px;opacity:.85;background:repeating-linear-gradient(90deg,var(--navy) 0 2px,transparent 2px 5px,var(--navy) 5px 6px,transparent 6px 9px,var(--navy) 9px 12px,transparent 12px 14px)}
 .lot{display:flex;flex-direction:column;gap:8px}
 .lot__bar{height:8px;border-radius:8px;background:var(--cream-2);overflow:hidden}
 .lot__fill{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--red-2),var(--red),#D64A5F);transition:width 1.4s var(--ease) .4s}
@@ -642,7 +676,7 @@ a{color:inherit}
 </section>
 
 <!-- ============================================================ A IMERSÃO — 3 MOVIMENTOS (scroll stacking) -->
-<section class="section mov" id="imersao">
+<section class="section mov on-navy" id="imersao">
   <div class="container">
     <div class="mov__head">
       <span class="eyebrow rv">A Imersão</span>
@@ -764,7 +798,7 @@ a{color:inherit}
 </section>
 
 <!-- ============================================================ DEPOIMENTOS -->
-<section class="section proof">
+<section class="section proof on-navy">
   <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C260,0 540,10 800,60 C1060,110 1260,100 1440,40 L1440,120 L0,120 Z" fill="#F7F3EC"/></svg></div>
   <div class="container">
     <div class="stack-gap center" style="margin-bottom:clamp(40px,5vw,60px)">
@@ -807,35 +841,52 @@ a{color:inherit}
 </section>
 
 <!-- ============================================================ QUANDO E ONDE -->
-<section class="section when">
-  <div class="container split">
-    <div class="split__media rv rv--left">
-      <div class="photo photo--wide photo--frame"><img src="assets/evento-estrutura.webp" alt="Estrutura do evento" loading="lazy"></div>
-      <div class="badge-float badge-float--tr"><b>24<small style="font-size:16px;font-family:var(--sans);font-weight:700;margin-left:4px">NOV</small></b><span>Orlando, Flórida · 2026</span></div>
-    </div>
-    <div class="split__copy">
+<section class="section when" id="quando">
+  <div class="when__map" aria-hidden="true">
+    <svg viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet"><path d="M5 26 L507 12 L508 2 L515 17 L603 36 L622 29 L682 62 L705 84 L724 108 L722 156 L712 178 L782 158 L830 142 L855 108 L910 108 L949 50 L972 60 L988 113 L935 144 L935 187 L905 197 L867 214 L852 254 L840 278 L833 302 L842 341 L801 374 L767 403 L741 439 L741 458 L765 547 L762 576 L736 598 L719 523 L697 466 L672 470 L629 458 L604 487 L578 487 L527 478 L473 521 L469 566 L434 528 L401 473 L315 425 L286 437 L238 437 L173 408 L134 408 L111 372 L75 358 L43 281 L15 218 L9 156 L17 79 Z"/></svg>
+  </div>
+  <div class="container">
+    <div class="sec-head">
       <span class="eyebrow rv">Quando e onde</span>
       <h2 class="h2 rv" data-d="1">Quando e onde vai acontecer a <em>Imersão Vida Memorável?</em></h2>
-      <div class="info rv" data-d="2">
-        <div class="info__head"><b>Convite oficial</b><span class="urgency"><i></i>Vagas limitadas — lote atual</span></div>
-        <div class="facts">
-          <div class="fact"><span class="fact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><small>Data</small><span>24 de novembro de 2026</span></div></div>
-          <div class="fact"><span class="fact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Horário</small><span data-bind="eventTime">11h às 18h</span></div></div>
-          <div class="fact"><span class="fact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small>Cidade</small><span>Orlando, Flórida</span></div></div>
-          <div class="fact"><span class="fact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></span><div><small>Local</small><span data-bind="venue">Local a confirmar</span></div></div>
+      <p class="lead rv" data-d="2">Vagas limitadas pela capacidade do espaço. Quando lotar, não há lista de espera.</p>
+    </div>
+    <div class="pass rv rv--scale" data-d="2">
+      <div class="pass__main">
+        <div class="pass__bar">
+          <span class="pass__brand"><img src="assets/logo-vivi-marques.webp" alt="">Imersão Vida Memorável</span>
+          <span class="pass__type">Cartão de embarque · Orlando 2026</span>
         </div>
-        <div class="info__foot">
-          <div class="chips-row"><span>Mulheres do mesmo nível</span><span>Estrutura</span><span>Ambiente acolhedor</span></div>
-          <p style="font-size:14.5px;color:var(--ink-2)">Vagas limitadas pela capacidade do espaço. Quando lotar, não há lista de espera.</p>
-          <button class="btn btn--navy btn--block js-open" type="button">Garantir minha vaga agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="pass__route">
+          <div class="pass__city"><small>De</small><b>Você</b><span>A vida que você cuida todo dia</span></div>
+          <div class="pass__plane"><i></i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><i></i></div>
+          <div class="pass__city pass__city--to"><small>Para</small><b>Orlando</b><span>Flórida, Estados Unidos</span></div>
         </div>
+        <div class="pass__grid">
+          <div><small>Data</small><b>24 de novembro de 2026</b></div>
+          <div><small>Horário</small><b data-bind="eventTime">11h às 18h</b></div>
+          <div><small>Local</small><b data-bind="venue">Local a confirmar</b></div>
+          <div><small>Formato</small><b>Presencial, ao vivo</b></div>
+          <div><small>Quem embarca</small><b>Mulheres do mesmo nível</b></div>
+          <div><small>Ambiente</small><b>Estrutura · Acolhedor</b></div>
+        </div>
+        <div class="pass__foot">
+          <span class="urgency"><i></i>Vagas limitadas — lote atual</span>
+          <button class="btn btn--primary js-open" type="button">Garantir minha vaga agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="pass__stub">
+        <div><small>Imersão Vida Memorável</small><b>Orlando · 24 NOV 2026</b></div>
+        <div class="pass__barcode"></div>
+        <span class="pass__stamp">Lote atual</span>
+        <div><small>Assento</small><b>A sua vez</b></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================ INVESTIMENTO -->
-<section class="section invest">
+<section class="section invest" id="lote">
   <div class="container split">
     <div class="split__copy">
       <span class="eyebrow rv">Lote atual</span>
@@ -849,7 +900,7 @@ a{color:inherit}
     </div>
     <div class="split__media rv rv--right">
       <div class="ticket">
-        <div class="ticket__head"><b>Imersão Vida Memorável</b><span class="ticket__lot">Lote atual · Ingresso</span></div>
+        <div class="ticket__head"><small>Ingresso · Lote atual</small><b>Imersão Vida Memorável</b><span class="ticket__lot">Menor valor disponível</span></div>
         <div class="ticket__perf"></div>
         <div class="ticket__body">
           <div class="ticket__facts">
@@ -865,6 +916,10 @@ a{color:inherit}
           </div>
           <p class="ticket__note">As vagas são limitadas pela capacidade do espaço. Quando lotar, não há lista de espera e não há nova data confirmada.</p>
         </div>
+        <div class="ticket__stub">
+          <div><small>Orlando, Flórida</small><b>24 NOV 2026</b></div>
+          <span class="ticket__code" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -872,7 +927,7 @@ a{color:inherit}
 
 <!-- ============================================================ AUTORIDADE -->
 <section class="section auth">
-  <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,70 C300,0 620,20 860,70 C1100,120 1300,90 1440,40 L1440,120 L0,120 Z" fill="#F7F3EC"/></svg></div>
+  <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,70 C300,0 620,20 860,70 C1100,120 1300,90 1440,40 L1440,120 L0,120 Z" fill="#FFFDF9"/></svg></div>
   <div class="container split">
     <div class="split__media rv rv--left">
       <span class="photo-ornament"></span>
@@ -898,7 +953,7 @@ a{color:inherit}
 </section>
 
 <!-- ============================================================ HISTÓRIA -->
-<section class="section story">
+<section class="section story on-navy">
   <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,50 C260,120 520,100 760,50 C1000,0 1240,20 1440,80 L1440,120 L0,120 Z" fill="#FFFDF9"/></svg></div>
   <div class="container">
     <div class="sec-head">
@@ -959,7 +1014,7 @@ a{color:inherit}
 </section>
 
 <!-- ============================================================ FECHAMENTO -->
-<section class="final">
+<section class="final on-navy">
   <div class="final__bg"><img src="assets/evento-grupo-vivi.webp" alt="" loading="lazy"></div>
   <div class="container final__inner">
     <span class="eyebrow rv">É a sua vez</span>
