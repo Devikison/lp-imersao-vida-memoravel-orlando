@@ -1,6 +1,6 @@
 # Imersão Vida Memorável · Orlando
 
-Landing page de vendas da Imersão Vida Memorável com Vivi Marques — Orlando, Flórida, 24 de novembro de 2026.
+Landing page de vendas da Imersão Vida Memorável com Vivi Marques — Orlando, Flórida, 21 de novembro de 2026.
 
 ## Estrutura
 
