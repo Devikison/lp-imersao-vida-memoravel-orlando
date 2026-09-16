@@ -239,6 +239,25 @@ a{color:inherit}
 @media (prefers-reduced-motion:reduce){.marquee__track{animation:none}}
 
 /* ============================================================
+   DIVISOR DOURADO COM ESTRELA
+   ============================================================ */
+.divider{display:flex;align-items:center;justify-content:center;gap:18px;width:100%;max-width:760px;margin-inline:auto;padding-block:6px}
+.divider__line{flex:1;height:1px;background:linear-gradient(90deg,rgba(201,165,92,0) 0%,rgba(201,165,92,.55) 40%,var(--gold) 100%);position:relative}
+.divider__line--r{background:linear-gradient(90deg,var(--gold) 0%,rgba(201,165,92,.55) 60%,rgba(201,165,92,0) 100%)}
+.divider__line::after{content:"";position:absolute;top:50%;right:-3px;width:5px;height:5px;border-radius:50%;background:var(--gold);transform:translateY(-50%)}
+.divider__line--r::after{right:auto;left:-3px}
+.divider__stars{display:flex;align-items:center;gap:10px}
+.divider__stars i{display:grid;place-items:center}
+.divider__stars svg{fill:url(#goldStar);filter:drop-shadow(0 0 6px rgba(230,205,143,.55))}
+.divider__main svg{width:22px;height:22px}
+.divider__mini svg{width:11px;height:11px;opacity:.85}
+.divider--top{margin-bottom:clamp(40px,5vw,64px)}
+.divider--bottom{margin-top:clamp(40px,5vw,64px)}
+.on-navy .divider__line{background:linear-gradient(90deg,rgba(230,205,143,0) 0%,rgba(230,205,143,.5) 40%,var(--gold-2) 100%)}
+.on-navy .divider__line--r{background:linear-gradient(90deg,var(--gold-2) 0%,rgba(230,205,143,.5) 60%,rgba(230,205,143,0) 100%)}
+.on-navy .divider__line::after,.footer .divider__line::after{background:var(--gold-2)}
+.footer .divider{max-width:520px;margin-block:4px}
+/* ============================================================
    SPLIT (photo + text)
    ============================================================ */
 .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,6vw,96px);align-items:center}
@@ -672,6 +691,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
   </div>
 </header>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="goldStar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3E4BF"/><stop offset=".5" stop-color="#C9A55C"/><stop offset="1" stop-color="#A8894A"/></linearGradient></defs></svg>
 <main id="top">
 
 <!-- ============================================================ HERO -->
@@ -802,6 +822,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
 
 <!-- ============================================================ PARA QUEM É -->
 <section class="section who">
+  <div class="container"><div class="divider divider--top rv" aria-hidden="true"><span class="divider__line"></span><span class="divider__stars"><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__main"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i></span><span class="divider__line divider__line--r"></span></div></div>
   <div class="container split split--rev">
     <div class="split__media rv rv--right">
       <div class="photo photo--frame"><img src="assets/evento-aplauso.webp" alt="Participante aplaudindo na imersão" loading="lazy"></div>
@@ -972,6 +993,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
 
 <!-- ============================================================ INVESTIMENTO -->
 <section class="section invest" id="lote">
+  <div class="container"><div class="divider divider--top rv" aria-hidden="true"><span class="divider__line"></span><span class="divider__stars"><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__main"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i></span><span class="divider__line divider__line--r"></span></div></div>
   <div class="container split">
     <div class="split__copy">
       <span class="eyebrow rv">Lote atual</span>
@@ -1096,6 +1118,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
       </details>
     </div>
   </div>
+  <div class="container"><div class="divider divider--bottom rv" aria-hidden="true"><span class="divider__line"></span><span class="divider__stars"><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__main"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i></span><span class="divider__line divider__line--r"></span></div></div>
 </section>
 
 <!-- ============================================================ FECHAMENTO -->
@@ -1120,7 +1143,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
   <div class="container footer__inner">
     <img class="footer__logo" src="assets/logo-vivi-marques.webp" alt="Vivi Marques">
     <span class="footer__name">Instituto VM LTDA</span>
-    <span class="footer__rule"></span>
+    <div class="divider" aria-hidden="true"><span class="divider__line"></span><span class="divider__stars"><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__main"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i></span><span class="divider__line divider__line--r"></span></div>
     <p class="footer__line">© 2026 Instituto VM · <a href="https://vminstituto.com.br" target="_blank" rel="noopener">vminstituto.com.br</a> · CNPJ <span data-bind="cnpj">64.535.169/001-29</span></p>
     <p class="footer__legal"><a href="#">Política de privacidade</a> · Depoimentos são experiências individuais reais e não constituem garantia de resultado.</p>
     <p class="footer__place"><img class="flag flag--xs" src="assets/us-flag.svg" alt="">Imersão Vida Memorável · Orlando, Flórida · 21 de novembro de 2026</p>
