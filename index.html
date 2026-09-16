@@ -61,10 +61,14 @@ a{color:inherit}
 .on-navy{background:var(--navy);color:var(--white)}
 .on-navy h1,.on-navy h2,.on-navy h3{color:var(--white)}
 .on-cream{background:var(--cream)}
-.h2{font-size:clamp(34px,4.4vw,58px);line-height:1.08;letter-spacing:-.01em}
+.h2{font-size:clamp(28px,3.1vw,44px);line-height:1.12;letter-spacing:-.01em;max-width:46ch}
+.split__copy .h2{font-size:clamp(26px,2.6vw,37px);max-width:none}
+.sec-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head .h2{margin-inline:auto}
+.sec-head .lead{margin-inline:auto}
 .h2 em,.h1 em{font-style:italic;color:var(--red)}
 .on-navy .h2 em,.on-navy .h1 em{color:var(--gold-2)}
-.lead{font-size:clamp(17px,1.5vw,19.5px);line-height:1.65;color:var(--ink-2);max-width:58ch}
+.lead{font-size:clamp(17px,1.3vw,18.5px);line-height:1.7;color:var(--ink-2);max-width:60ch}
 .on-navy .lead{color:rgba(255,253,249,.86)}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
 
@@ -145,7 +149,7 @@ a{color:inherit}
 .pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:8px 16px 8px 10px;background:rgba(255,255,255,.07);border:1px solid rgba(230,205,143,.4);backdrop-filter:blur(8px);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-3);align-self:flex-start}
 .pill i{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold));display:grid;place-items:center;color:var(--navy-deep);flex:none}
 .pill i svg{width:13px;height:13px}
-.h1{font-size:clamp(32px,3.9vw,58px);line-height:1.06;letter-spacing:-.012em;color:#fff;max-width:18ch}
+.h1{font-size:clamp(30px,3.4vw,48px);line-height:1.1;letter-spacing:-.01em;color:#fff;max-width:22ch}
 .hero .lead{font-size:clamp(16px,1.2vw,18px);color:rgba(255,253,249,.88);max-width:52ch}
 .hero .lead b{font-weight:600;color:#fff}
 .lot-card{display:flex;align-items:center;gap:16px;padding:12px 16px;border-radius:var(--r-md);background:rgba(255,255,255,.07);border:1px solid rgba(230,205,143,.28);backdrop-filter:blur(10px);max-width:440px}
@@ -249,7 +253,7 @@ a{color:inherit}
    ============================================================ */
 .mov{background:linear-gradient(180deg,var(--navy-deep) 0%,var(--navy) 60%,var(--navy-2) 100%);color:var(--white);position:relative}
 .mov__head{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;margin-bottom:clamp(44px,5vw,72px)}
-.mov__head .lead{max-width:48ch}
+.mov__head .lead{max-width:52ch;margin-inline:auto}
 .stack{position:relative;display:flex;flex-direction:column;gap:32px;padding-bottom:clamp(40px,6vw,80px)}
 .scard{position:sticky;top:calc(var(--header-h) + 24px + var(--i)*22px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;border-radius:var(--r-xl);background:var(--white);color:var(--ink);overflow:hidden;box-shadow:var(--shadow-lg);transform-origin:top center;will-change:transform;min-height:420px}
 .scard__img{position:relative;min-height:320px}
@@ -440,7 +444,7 @@ a{color:inherit}
 .final__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:.28}
 .final__bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(6,26,56,.2),var(--navy-deep) 75%)}
 .final__inner{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
-.final h2{font-size:clamp(40px,5.8vw,76px);line-height:1.04;max-width:16ch;color:#fff}
+.final h2{font-size:clamp(36px,4.8vw,64px);line-height:1.08;max-width:24ch;color:#fff}
 .final__date{display:inline-flex;align-items:center;gap:12px;font-family:var(--serif);font-size:22px;color:var(--gold-2)}
 
 
@@ -485,6 +489,35 @@ a{color:inherit}
 .vmodal__x{position:absolute;right:12px;top:12px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,253,249,.92);color:var(--navy);font-size:22px;cursor:pointer;display:grid;place-items:center}
 .vmodal__name{position:absolute;left:14px;bottom:14px;z-index:2;padding:8px 14px;border-radius:999px;background:rgba(6,26,56,.75);color:var(--gold-3);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 
+/* ============================================================
+   MOBILE: copy e botões centralizados
+   ============================================================ */
+@media (max-width:900px){
+  .hero__copy,.split__copy,.faq__intro,.stack-gap,.scard__body,.card,.card--photo .card__body,.qcard,.team,.info__foot,.story__quote,.ticket__body,.recog__item{align-items:center;text-align:center}
+  .pill{align-self:center}
+  .cta-row,.hero__chips,.chips-row,.creds,.scard__body ul,.card__top,.footer__row,.info__head,.ticket__head,.lot__label,.eyebrow{justify-content:center}
+  .cta-col{align-items:center}
+  .lead,.split__copy p,.auth__bio,.scard__body p,.story p,.qbox p,.thesis-sub,.faq__intro p,.h2,.h1{margin-inline:auto}
+  .h2{max-width:none}
+  .lot-card{margin-inline:auto}
+  .recog__item{flex-direction:column;gap:12px}
+  .recog__item:hover{transform:none}
+  .card__top{position:relative;width:100%}
+  .card__n{position:absolute;right:0;top:50%;transform:translateY(-50%)}
+  .points{max-width:34ch;margin-inline:auto}
+  .points li{text-align:left}
+  .footer__row{text-align:center;flex-direction:column;gap:14px}
+  .footer p{text-align:center}
+  .auth__stats,.ticket__facts{text-align:center}
+  .auth__stats div,.ticket__facts div{align-items:center}
+  .fact{flex-direction:column;align-items:center;text-align:center;gap:10px}
+  .fact div{align-items:center}
+  .badge-float{left:50%!important;right:auto!important;transform:translateX(-50%);bottom:-18px!important;top:auto!important;white-space:nowrap}
+  .badge-float span{max-width:none}
+  .split__media{margin-bottom:30px}
+  .story__quote cite{justify-content:center}
+  .qcard__mark{margin-inline:auto}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -539,6 +572,12 @@ a{color:inherit}
 
 <!-- ============================================================ VIRADA -->
 <section class="section virada">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow rv">A grande virada</span>
+      <h2 class="h2 rv" data-d="1">Não é mais um curso. Não é conteúdo para consumir sozinha. <em>É uma experiência que abre o que está fechado.</em></h2>
+    </div>
+  </div>
   <div class="container split">
     <div class="split__media rv rv--left">
       <span class="photo-ornament"></span>
@@ -546,8 +585,6 @@ a{color:inherit}
       <div class="badge-float badge-float--br"><b>8.000+</b><span>mulheres transformaram sua vida só em 2025</span></div>
     </div>
     <div class="split__copy">
-      <span class="eyebrow rv">A grande virada</span>
-      <h2 class="h2 rv" data-d="1">Não é mais um curso. Não é conteúdo para consumir sozinha. <em>É uma experiência que abre o que está fechado.</em></h2>
       <p class="lead rv" data-d="2">Mulheres com a vida organizada por fora, com fé declarada e com tudo que precisariam ter para estar bem. Que já tinham lido, ido à terapia, feito cursos. E que descobriram dentro da imersão o que nenhum desses outros caminhos havia alcançado.</p>
       <p class="rv" data-d="3" style="font-weight:600;color:var(--navy);font-size:18px">Em 2026, essa transformação acontece em Orlando, Flórida.</p>
       <p class="quote-line rv" data-d="4">Ninguém ensina de fora aquilo que ainda não atravessou por dentro.</p>
@@ -573,7 +610,7 @@ a{color:inherit}
   <div class="container ident__inner">
     <div class="stack-gap center">
       <span class="eyebrow rv">Isso é para você</span>
-      <h2 class="h2 rv" data-d="1" style="max-width:24ch">Você tem carreira, tem fé, tem família. E em algum momento do dia uma voz pergunta: <em>quando é a minha vez?</em></h2>
+      <h2 class="h2 rv" data-d="1" style="max-width:52ch">Você tem carreira, tem fé, tem família. E em algum momento do dia uma voz pergunta: <em>quando é a minha vez?</em></h2>
     </div>
     <div class="qcards">
       <div class="qcard rv" data-d="1"><span class="qcard__mark">“</span><p>Acorda, cumpre, entrega, dorme e repete. Em algum momento sente que está morrendo aos poucos sem que ninguém perceba.</p></div>
@@ -715,7 +752,7 @@ a{color:inherit}
   <div class="container">
     <div class="stack-gap center" style="margin-bottom:clamp(40px,5vw,60px)">
       <span class="eyebrow rv">Quem já viveu</span>
-      <h2 class="h2 rv" data-d="1" style="max-width:20ch">Elas foram. Voltaram diferentes. <em>Não melhoradas. Irreversíveis.</em></h2>
+      <h2 class="h2 rv" data-d="1" style="max-width:40ch">Elas foram. Voltaram diferentes. <em>Não melhoradas. Irreversíveis.</em></h2>
       <p class="lead rv" data-d="2">Toque para assistir ao depoimento de quem já viveu a Imersão Vida Memorável.</p>
     </div>
     <div class="vcards">
@@ -846,13 +883,17 @@ a{color:inherit}
 <!-- ============================================================ HISTÓRIA -->
 <section class="section story">
   <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,50 C260,120 520,100 760,50 C1000,0 1240,20 1440,80 L1440,120 L0,120 Z" fill="#FFFDF9"/></svg></div>
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow rv">A história que forjou o método</span>
+      <h2 class="h2 rv" data-d="1">Ninguém ensina de fora aquilo que ainda <em>não atravessou por dentro.</em></h2>
+    </div>
+  </div>
   <div class="container split split--rev">
     <div class="split__media rv rv--right">
       <div class="photo photo--wide photo--frame"><img src="assets/vivi-autografo.webp" alt="Vivi Marques autografando o livro" loading="lazy"></div>
     </div>
     <div class="split__copy">
-      <span class="eyebrow rv">A história que forjou o método</span>
-      <h2 class="h2 rv" data-d="1">Ninguém ensina de fora aquilo que ainda <em>não atravessou por dentro.</em></h2>
       <p class="lead rv" data-d="2">A virada começou quando ela precisou aprender a dedicar a vida a alguém.</p>
       <p class="rv" data-d="3">Nessa jornada, percebeu que só conseguimos oferecer ao outro aquilo que primeiro cultivamos dentro de nós. E foi nesse processo que encontrou as respostas que também precisava para a própria vida. Cada ferida que ela atravessou se tornou parte do método que hoje transborda em outras mulheres.</p>
       <div class="story__quote rv" data-d="4">
