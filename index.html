@@ -370,7 +370,8 @@ a{color:inherit}
 .exp__pin{position:relative;height:calc(100vh + 7 * 58vh)}
 .exp__sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vh,32px);padding-top:calc(var(--header-h) + 8px);padding-bottom:16px}
 .exp__head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.exp__head .h2{max-width:22ch}
+.exp__head .h2{max-width:22ch;font-size:clamp(34px,3.9vw,54px)}
+.who .split__copy .h2{font-size:clamp(34px,3.8vw,52px)}
 .exp__meter{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:22px;color:var(--navy);font-variant-numeric:tabular-nums;padding-bottom:6px}
 .exp__meter i{width:180px;height:4px;border-radius:4px;background:var(--cream-2);overflow:hidden;position:relative;display:block}
 .exp__meter i b{position:absolute;inset:0;width:14.28%;background:linear-gradient(90deg,var(--gold),var(--red));border-radius:4px;transition:width .35s var(--ease)}
@@ -877,7 +878,6 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
     <div class="exp__sticky">
       <div class="container exp__head">
         <div class="stack-gap" style="gap:14px">
-          <span class="eyebrow rv">A experiência</span>
           <h2 class="h2 rv" data-d="1">O que você vai encontrar <em>dentro da Imersão?</em></h2>
         </div>
         <div class="exp__meter"><span id="expNum">01</span><i><b id="expFill"></b></i><span>07</span></div>
