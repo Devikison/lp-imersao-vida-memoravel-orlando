@@ -144,12 +144,12 @@ a{color:inherit}
 @media (min-width:1500px){.hero__bg{left:46%}}
 .hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,26,56,.35) 0%,rgba(6,26,56,0) 30%,rgba(6,26,56,0) 60%,var(--navy-deep) 100%)}
 .hero__glow{position:absolute;left:-10%;top:-20%;width:60vw;height:60vw;max-width:800px;max-height:800px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,165,92,.22),rgba(201,165,92,0) 70%);pointer-events:none;z-index:0}
-.hero__inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,11fr) minmax(0,9fr);gap:40px;align-items:center}
-.hero__copy{display:flex;flex-direction:column;gap:20px;max-width:600px}
+.hero__inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,12fr) minmax(0,8fr);gap:40px;align-items:center}
+.hero__copy{display:flex;flex-direction:column;gap:20px;max-width:680px}
 .pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:8px 16px 8px 10px;background:rgba(255,255,255,.07);border:1px solid rgba(230,205,143,.4);backdrop-filter:blur(8px);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-3);align-self:flex-start}
 .pill i{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold));display:grid;place-items:center;color:var(--navy-deep);flex:none}
 .pill i svg{width:13px;height:13px}
-.h1{font-size:clamp(30px,3.4vw,48px);line-height:1.1;letter-spacing:-.01em;color:#fff;max-width:22ch}
+.h1{font-size:clamp(28px,3vw,42px);line-height:1.12;letter-spacing:-.01em;color:#fff;max-width:26ch}
 .hero .lead{font-size:clamp(16px,1.2vw,18px);color:rgba(255,253,249,.88);max-width:52ch}
 .hero .lead b{font-weight:600;color:#fff}
 .lot-card{display:flex;align-items:center;gap:16px;padding:12px 16px;border-radius:var(--r-md);background:rgba(255,255,255,.07);border:1px solid rgba(230,205,143,.28);backdrop-filter:blur(10px);max-width:440px}
@@ -280,32 +280,45 @@ a{color:inherit}
 .recog__item p{font-family:var(--serif);font-size:clamp(20px,1.9vw,24px);line-height:1.4;color:var(--ink)}
 
 /* ============================================================
-   EXPERIÊNCIA
+   EXPERIÊNCIA (seção presa + cards deslizando na horizontal)
    ============================================================ */
-.exp{background:var(--cream);position:relative}
-.exp__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-@media (max-width:1000px){.exp__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:620px){.exp__grid{grid-template-columns:1fr}}
-.card{position:relative;padding:30px 28px 32px;border-radius:var(--r-lg);background:var(--white);border:1px solid rgba(201,165,92,.2);display:flex;flex-direction:column;gap:16px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s,border-color .5s}
-.card::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2),var(--gold));opacity:0;transition:opacity .5s}
-.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:rgba(201,165,92,.45)}
-.card:hover::before{opacity:1}
-.card__top{display:flex;align-items:center;justify-content:space-between}
-.card__icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy-3),var(--navy));color:var(--gold-2);box-shadow:0 12px 26px -14px rgba(6,26,56,.7);transition:transform .5s var(--ease)}
-.card:hover .card__icon{transform:rotate(-6deg) scale(1.06)}
-.card__icon svg{width:24px;height:24px}
-.card__n{font-family:var(--serif);font-size:15px;letter-spacing:.16em;color:var(--gold)}
-.card h3{font-size:24px;font-weight:600;line-height:1.2}
-.card p{font-size:15.5px;line-height:1.65;color:var(--ink-2)}
-.card--photo{grid-column:span 2;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--navy);color:#fff;border-color:transparent}
-.card--photo h3{color:#fff}
-.card--photo p{color:rgba(255,253,249,.82)}
-.card--photo .card__icon{background:rgba(255,255,255,.08);border:1px solid rgba(230,205,143,.35)}
-.card--photo .card__body{padding:32px 30px;display:flex;flex-direction:column;gap:16px;justify-content:center}
-.card--photo .card__img{position:relative;min-height:240px}
-.card--photo .card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media (max-width:1000px){.card--photo{grid-column:span 2}}
-@media (max-width:620px){.card--photo{grid-column:span 1;grid-template-columns:1fr}.card--photo .card__img{aspect-ratio:16/10;min-height:0}}
+.exp{background:var(--cream);position:relative;padding:0}
+.exp__pin{position:relative;height:calc(100vh + 7 * 58vh)}
+.exp__sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vh,32px);padding-top:calc(var(--header-h) + 8px);padding-bottom:16px}
+.exp__head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.exp__head .h2{max-width:22ch}
+.exp__meter{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:22px;color:var(--navy);font-variant-numeric:tabular-nums;padding-bottom:6px}
+.exp__meter i{width:180px;height:4px;border-radius:4px;background:var(--cream-2);overflow:hidden;position:relative;display:block}
+.exp__meter i b{position:absolute;inset:0;width:14.28%;background:linear-gradient(90deg,var(--gold),var(--red));border-radius:4px;transition:width .35s var(--ease)}
+.exp__trackwrap{padding-left:max(var(--gutter),calc((100% - var(--container)) / 2 + var(--gutter)))}
+.exp__track{display:flex;gap:22px;will-change:transform}
+.xcard{position:relative;flex:none;width:min(500px,76vw);height:min(560px,60vh);border-radius:var(--r-xl);overflow:hidden;background:var(--navy);box-shadow:var(--shadow-lg);isolation:isolate;transition:transform .6s var(--ease),box-shadow .6s}
+.xcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.xcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,26,56,.05) 0%,rgba(6,26,56,.12) 42%,rgba(6,26,56,.94) 100%)}
+.xcard:hover img{transform:scale(1.05)}
+.xcard__top{position:absolute;left:22px;right:22px;top:22px;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.xcard__num{width:54px;height:54px;border-radius:50%;background:rgba(255,253,249,.95);display:grid;place-items:center;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--navy)}
+.xcard__icon{width:50px;height:50px;border-radius:16px;background:rgba(6,26,56,.5);border:1px solid rgba(230,205,143,.5);backdrop-filter:blur(8px);display:grid;place-items:center;color:var(--gold-2)}
+.xcard__icon svg{width:24px;height:24px}
+.xcard__body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:28px 28px 30px;display:flex;flex-direction:column;gap:10px;color:#fff}
+.xcard__body h3{font-size:clamp(24px,2.2vw,30px);font-weight:600;color:#fff;line-height:1.15}
+.xcard__body p{font-size:15.5px;line-height:1.6;color:rgba(255,253,249,.9);max-width:40ch}
+.xcard.is-active{transform:translateY(-10px);box-shadow:0 50px 90px -40px rgba(6,26,56,.6)}
+.exp__hint{display:none}
+.exp__cta{padding:clamp(40px,5vw,64px) 0 clamp(80px,10vw,130px)}
+@media (max-width:900px),(prefers-reduced-motion:reduce){
+  .exp__pin{height:auto}
+  .exp__sticky{position:static;height:auto;overflow:visible;padding-top:clamp(84px,12vw,120px);gap:26px}
+  .exp__trackwrap{padding-left:0}
+  .exp__track{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px var(--gutter) 16px;transform:none!important}
+  .exp__track::-webkit-scrollbar{display:none}
+  .xcard{scroll-snap-align:center;width:min(82vw,420px);height:min(520px,68vh)}
+  .xcard.is-active{transform:none}
+  .exp__hint{display:flex;justify-content:center;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+  .exp__hint svg{width:16px;height:16px;color:var(--gold)}
+  .exp__meter{display:none}
+  .exp__head{justify-content:center;text-align:center}
+}
 
 /* ============================================================
    DEPOIMENTOS
@@ -638,7 +651,7 @@ a{color:inherit}
     </div>
     <div class="stack" id="stack">
       <article class="scard" style="--i:0">
-        <div class="scard__img"><span class="scard__num">01</span><img src="assets/vivi-conduzindo.webp" alt="Vivi Marques conduzindo a imersão ao vivo" loading="lazy"></div>
+        <div class="scard__img"><span class="scard__num">01</span><img src="assets/evento-entrega.webp" alt="Mulher em momento de entrega na imersão" loading="lazy"></div>
         <div class="scard__body">
           <span class="eyebrow">Primeiro movimento</span>
           <h3>O que você vai acessar</h3>
@@ -647,7 +660,7 @@ a{color:inherit}
         </div>
       </article>
       <article class="scard" style="--i:1">
-        <div class="scard__img"><span class="scard__num">02</span><img src="assets/evento-material.webp" alt="Participante preenchendo o material da metodologia Vida Memorável" loading="lazy"></div>
+        <div class="scard__img"><span class="scard__num">02</span><img src="assets/evento-abraco.webp" alt="Abraço emocionado" loading="lazy"></div>
         <div class="scard__body">
           <span class="eyebrow">Segundo movimento</span>
           <h3>O que você vai soltar</h3>
@@ -656,7 +669,7 @@ a{color:inherit}
         </div>
       </article>
       <article class="scard" style="--i:2">
-        <div class="scard__img"><span class="scard__num">03</span><img src="assets/evento-dinamica.webp" alt="Abraço emocionado durante dinâmica da imersão" loading="lazy"></div>
+        <div class="scard__img"><span class="scard__num">03</span><img src="assets/evento-grupo.webp" alt="Grupo da imersão" loading="lazy"></div>
         <div class="scard__body">
           <span class="eyebrow">Terceiro movimento</span>
           <h3>Quem você vai encontrar</h3>
@@ -672,7 +685,7 @@ a{color:inherit}
 <section class="section who">
   <div class="container split split--rev">
     <div class="split__media rv rv--right">
-      <div class="photo photo--frame"><img src="assets/evento-entrega.webp" alt="Mulher em momento de entrega na imersão" loading="lazy"></div>
+      <div class="photo photo--frame"><img src="assets/evento-aplauso.webp" alt="Participante aplaudindo na imersão" loading="lazy"></div>
       <div class="badge-float badge-float--bl"><b>1 dia</b><span>presencial, ao vivo com Vivi Marques</span></div>
     </div>
     <div class="split__copy">
@@ -689,56 +702,60 @@ a{color:inherit}
 </section>
 
 <!-- ============================================================ A EXPERIÊNCIA -->
-<section class="section exp">
+<section class="section exp" id="experiencia">
   <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,50 C240,120 480,110 720,60 C960,10 1200,20 1440,80 L1440,120 L0,120 Z" fill="#FFFDF9"/></svg></div>
-  <div class="container stack-gap" style="gap:clamp(40px,5vw,60px)">
-    <div class="stack-gap center">
-      <span class="eyebrow rv">A experiência</span>
-      <h2 class="h2 rv" data-d="1">O que você vai encontrar <em>dentro da Imersão?</em></h2>
-    </div>
-    <div class="exp__grid">
-      <article class="card card--photo rv" data-d="1">
-        <div class="card__img"><img src="assets/evento-plateia.webp" alt="Plateia da Imersão Vida Memorável" loading="lazy"></div>
-        <div class="card__body">
-          <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="card__n">01</span></div>
-          <h3>Um dia de imersão presencial</h3>
-          <p>Com Vivi Marques ao vivo, em Orlando. Não pela tela. Ao vivo.</p>
+  <div class="exp__pin" id="expPin">
+    <div class="exp__sticky">
+      <div class="container exp__head">
+        <div class="stack-gap" style="gap:14px">
+          <span class="eyebrow rv">A experiência</span>
+          <h2 class="h2 rv" data-d="1">O que você vai encontrar <em>dentro da Imersão?</em></h2>
         </div>
-      </article>
-      <article class="card rv" data-d="2">
-        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21z"/><path d="M21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5A2.5 2.5 0 0 1 21 21z"/></svg></span><span class="card__n">02</span></div>
-        <h3>Metodologia Vida Memorável</h3>
-        <p>A mesma metodologia que transformou a vida de mais de 8.000 mulheres só em 2025.</p>
-      </article>
-      <article class="card rv" data-d="1">
-        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="14" r="4"/><path d="M11 11l9-9M16 6l2 2M19 3l2 2"/></svg></span><span class="card__n">03</span></div>
-        <h3>Experiência, não conteúdo</h3>
-        <p>Não é mais um curso. Não é conteúdo para consumir sozinha. É uma experiência que abre o que está fechado.</p>
-      </article>
-      <article class="card rv" data-d="2">
-        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="card__n">04</span></div>
-        <h3>Dinâmicas de acesso interno</h3>
-        <p>Porque o bloqueio não é de informação. É de acesso interno.</p>
-      </article>
-      <article class="card rv" data-d="3">
-        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M14.5 20a5 5 0 0 1 7-3.5"/></svg></span><span class="card__n">05</span></div>
-        <h3>Mulheres no mesmo nível</h3>
-        <p>Um encontro com mulheres que também querem propósito real, fé viva e uma vida memorável.</p>
-      </article>
-      <article class="card rv" data-d="1">
-        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2L6.7 19l1.4-6-4.6-4 6.1-.5z"/></svg></span><span class="card__n">06</span></div>
-        <h3>Transformação irreversível</h3>
-        <p>Elas não voltam melhoradas. Voltam irreversíveis.</p>
-      </article>
-      <article class="card card--photo rv" data-d="2">
-        <div class="card__body">
-          <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M7 5.5c0-1 1-1 1-2M11 5.5c0-1 1-1 1-2"/></svg></span><span class="card__n">07</span></div>
-          <h3>Um lindo coffee break</h3>
-          <p>Preparado com carinho para você viver o dia inteiro de imersão com conforto e leveza.</p>
+        <div class="exp__meter"><span id="expNum">01</span><i><b id="expFill"></b></i><span>07</span></div>
+      </div>
+      <div class="exp__trackwrap">
+        <div class="exp__track" id="expTrack">
+          <article class="xcard is-active">
+            <img src="assets/vivi-conduzindo.webp" alt="Vivi Marques conduzindo a imersão ao vivo" loading="lazy" style="object-position:center 18%">
+            <div class="xcard__top"><span class="xcard__num">01</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span></div>
+            <div class="xcard__body"><h3>Um dia de imersão presencial</h3><p>Com Vivi Marques ao vivo, em Orlando. Não pela tela. Ao vivo.</p></div>
+          </article>
+          <article class="xcard">
+            <img src="assets/evento-material.webp" alt="Participante preenchendo o material da metodologia Vida Memorável" loading="lazy">
+            <div class="xcard__top"><span class="xcard__num">02</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21z"/><path d="M21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5A2.5 2.5 0 0 1 21 21z"/></svg></span></div>
+            <div class="xcard__body"><h3>Metodologia Vida Memorável</h3><p>A mesma metodologia que transformou a vida de mais de 8.000 mulheres só em 2025.</p></div>
+          </article>
+          <article class="xcard">
+            <img src="assets/evento-experiencia.webp" alt="Participantes vivendo a experiência da imersão" loading="lazy">
+            <div class="xcard__top"><span class="xcard__num">03</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="14" r="4"/><path d="M11 11l9-9M16 6l2 2M19 3l2 2"/></svg></span></div>
+            <div class="xcard__body"><h3>Experiência, não conteúdo</h3><p>Não é mais um curso. Não é conteúdo para consumir sozinha. É uma experiência que abre o que está fechado.</p></div>
+          </article>
+          <article class="xcard">
+            <img src="assets/evento-dinamica.webp" alt="Abraço emocionado durante dinâmica da imersão" loading="lazy" style="object-position:center 25%">
+            <div class="xcard__top"><span class="xcard__num">04</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span></div>
+            <div class="xcard__body"><h3>Dinâmicas de acesso interno</h3><p>Porque o bloqueio não é de informação. É de acesso interno.</p></div>
+          </article>
+          <article class="xcard">
+            <img src="assets/evento-grupo-vivi.webp" alt="Grupo de mulheres da imersão com Vivi Marques" loading="lazy" style="object-position:center 30%">
+            <div class="xcard__top"><span class="xcard__num">05</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M14.5 20a5 5 0 0 1 7-3.5"/></svg></span></div>
+            <div class="xcard__body"><h3>Mulheres no mesmo nível</h3><p>Um encontro com mulheres que também querem propósito real, fé viva e uma vida memorável.</p></div>
+          </article>
+          <article class="xcard">
+            <img src="assets/evento-transformacao.webp" alt="Abraço de transformação ao fim da imersão" loading="lazy" style="object-position:center 30%">
+            <div class="xcard__top"><span class="xcard__num">06</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2L6.7 19l1.4-6-4.6-4 6.1-.5z"/></svg></span></div>
+            <div class="xcard__body"><h3>Transformação irreversível</h3><p>Elas não voltam melhoradas. Voltam irreversíveis.</p></div>
+          </article>
+          <article class="xcard">
+            <img src="assets/evento-coffee.webp" alt="Coffee break da Imersão Vida Memorável" loading="lazy" style="object-position:center 40%">
+            <div class="xcard__top"><span class="xcard__num">07</span><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M7 5.5c0-1 1-1 1-2M11 5.5c0-1 1-1 1-2"/></svg></span></div>
+            <div class="xcard__body"><h3>Um lindo coffee break</h3><p>Preparado com carinho para você viver o dia inteiro de imersão com conforto e leveza.</p></div>
+          </article>
         </div>
-        <div class="card__img"><img src="assets/evento-coffee.webp" alt="Coffee break da Imersão Vida Memorável" loading="lazy"></div>
-      </article>
+      </div>
+      <p class="exp__hint">Arraste para o lado <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
     </div>
+  </div>
+  <div class="container exp__cta">
     <div class="cta-col center rv">
       <button class="btn btn--primary btn--lg js-open" type="button">Garantir minha vaga agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <span class="cta-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Lote atual com o menor valor disponível</span>
@@ -1102,6 +1119,25 @@ const CONFIG = {
     });
   };
   if (cards.length && !reduced) { stackTick(); addEventListener('scroll', stackTick, { passive: true }); addEventListener('resize', stackTick); }
+
+  /* ---------- experiência: seção presa com cards horizontais ---------- */
+  const pin = $('#expPin'), track = $('#expTrack'), xcards = $$('.xcard'), expFill = $('#expFill'), expNum = $('#expNum');
+  const mqDesk = matchMedia('(min-width: 901px)');
+  const expTick = () => {
+    if (!pin || !track) return;
+    if (!mqDesk.matches || reduced) { track.style.transform = ''; return; }
+    const r = pin.getBoundingClientRect();
+    const total = pin.offsetHeight - innerHeight;
+    const p = Math.max(0, Math.min(1, -r.top / Math.max(1, total)));
+    const padL = parseFloat(getComputedStyle(track.parentElement).paddingLeft) || 0;
+    const max = Math.max(0, track.scrollWidth + padL * 2 - innerWidth);
+    track.style.transform = `translate3d(${-p * max}px,0,0)`;
+    const idx = Math.round(p * (xcards.length - 1));
+    xcards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+    if (expFill) expFill.style.width = ((idx + 1) / xcards.length * 100) + '%';
+    if (expNum) expNum.textContent = String(idx + 1).padStart(2, '0');
+  };
+  if (pin) { expTick(); addEventListener('scroll', expTick, { passive: true }); addEventListener('resize', expTick); }
 
   /* ---------- lead modal ---------- */
   const modal = $('#modal'), form = $('#leadForm');
