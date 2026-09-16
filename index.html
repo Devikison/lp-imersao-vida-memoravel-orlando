@@ -247,16 +247,18 @@ a{color:inherit}
 .photo--wide{aspect-ratio:5/4}
 .photo--frame::before{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.35);z-index:1;pointer-events:none}
 .photo-ornament{position:absolute;inset:auto;z-index:0;border-radius:var(--r-xl);border:2px solid var(--gold-soft);width:100%;height:100%;top:22px;left:22px;pointer-events:none}
-.badge-float{position:absolute;z-index:2;display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:var(--r-md);background:var(--white);box-shadow:var(--shadow-lg);border:1px solid rgba(201,165,92,.25)}
-.badge-float b{font-family:var(--serif);font-size:40px;line-height:1;color:var(--red);font-weight:600}
-.badge-float span{font-size:13px;line-height:1.4;color:var(--ink-2);max-width:18ch}
+.badge-float{position:absolute;z-index:2;display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.82) 0%,rgba(255,255,255,.55) 100%);backdrop-filter:blur(20px) saturate(170%);-webkit-backdrop-filter:blur(20px) saturate(170%);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(201,165,92,.35),0 0 0 1px rgba(201,165,92,.22),0 26px 52px -26px rgba(6,26,56,.5);overflow:hidden}
+.badge-float::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(118deg,rgba(255,255,255,.7) 0%,rgba(255,255,255,0) 46%);pointer-events:none}
+.badge-float::after{content:"";position:absolute;left:22px;right:22px;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.8}
+.badge-float b{position:relative;font-family:var(--serif);font-size:40px;line-height:1;color:var(--red);font-weight:600;font-variant-numeric:tabular-nums;min-width:4.2ch}
+.badge-float span{position:relative;font-size:13px;line-height:1.4;color:var(--navy);max-width:18ch}
 .badge-float--br{right:-18px;bottom:36px}
 .badge-float--bl{left:-18px;bottom:36px}
 .badge-float--tr{right:-18px;top:36px}
 @media (max-width:600px){.badge-float{padding:14px 16px}.badge-float b{font-size:32px}.badge-float--br,.badge-float--tr{right:8px}.badge-float--bl{left:8px}}
 .split__copy{display:flex;flex-direction:column;gap:22px}
 .split__copy p{max-width:56ch}
-.quote-line{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.5vw,32px);line-height:1.3;color:var(--navy)}
+.quote-line{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(24px,2.5vw,32px);line-height:1.3;color:var(--navy)}
 .on-navy .quote-line{color:var(--gold-2)}
 
 /* ============================================================
@@ -286,7 +288,7 @@ a{color:inherit}
 .qcard__mark svg{width:34px;height:34px;filter:drop-shadow(0 0 6px rgba(230,205,143,.35))}
 .qcard p{position:relative;font-family:var(--serif);font-size:clamp(22px,2vw,26px);line-height:1.38;color:var(--navy);flex:1}
 .qcard__n{position:relative;font-size:11.5px;font-weight:700;letter-spacing:.16em;color:var(--gold);padding-top:14px;border-top:1px solid rgba(201,165,92,.28);font-variant-numeric:tabular-nums}
-.thesis{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(34px,4.8vw,64px);line-height:1.1;color:var(--navy)}
+.thesis{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(34px,4.8vw,64px);line-height:1.1;color:var(--navy)}
 .thesis .u{background:linear-gradient(transparent 62%,rgba(201,165,92,.45) 62%)}
 .thesis-sub{font-size:16px;color:var(--muted);max-width:44ch;margin-inline:auto}
 
@@ -387,7 +389,7 @@ a{color:inherit}
 .proof__stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(40px,5vw,64px)}
 @media (max-width:700px){.proof__stats{grid-template-columns:1fr}}
 .pstat{padding:24px 26px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(230,205,143,.22);display:flex;flex-direction:column;gap:4px;backdrop-filter:blur(6px)}
-.pstat b{font-family:var(--serif);font-size:40px;line-height:1;color:var(--gold-2);font-weight:500}
+.pstat b{font-family:var(--serif);font-size:40px;line-height:1;color:var(--gold-2);font-weight:500;font-variant-numeric:tabular-nums}
 .pstat span{font-size:14px;color:rgba(255,253,249,.78)}
 
 /* ============================================================
@@ -479,7 +481,7 @@ a{color:inherit}
 .auth__bio{max-width:60ch;font-size:16.5px;line-height:1.75;color:var(--ink-2)}
 .qbox{padding:24px 26px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--navy-3),var(--navy-deep));color:#fff;position:relative;overflow:hidden}
 .qbox::before{content:"“";position:absolute;right:18px;top:-22px;font-family:var(--serif);font-size:140px;line-height:1;color:rgba(230,205,143,.22)}
-.qbox p{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.3vw,28px);line-height:1.34;color:var(--gold-3);position:relative;max-width:30ch}
+.qbox p{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(22px,2.3vw,28px);line-height:1.34;color:var(--gold-3);position:relative;max-width:30ch}
 .auth__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
 .auth__stats div{padding:16px 18px;border-radius:var(--r-sm);background:var(--cream);display:flex;flex-direction:column;gap:3px}
 .auth__stats b{font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);line-height:1;color:var(--navy);font-weight:600}
@@ -492,7 +494,7 @@ a{color:inherit}
 .story p{color:rgba(255,253,249,.86)}
 .story .photo{box-shadow:0 50px 90px -40px rgba(0,0,0,.8)}
 .story__quote{padding:26px 28px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(230,205,143,.28);display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(6px)}
-.story__quote p{font-family:var(--serif);font-style:italic;font-size:clamp(23px,2.4vw,30px);line-height:1.3;color:var(--gold-2)}
+.story__quote p{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(23px,2.4vw,30px);line-height:1.3;color:var(--gold-2)}
 .story__quote cite{font-style:normal;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;display:inline-flex;align-items:center;gap:10px}
 
 
@@ -704,7 +706,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
     <div class="split__media rv rv--left">
       <span class="photo-ornament"></span>
       <div class="photo photo--frame"><img src="assets/vivi-palco-branco.webp" alt="Vivi Marques ao vivo na Imersão Vida Memorável" loading="lazy"></div>
-      <div class="badge-float badge-float--br"><b>8.000+</b><span>mulheres transformaram sua vida só em 2025</span></div>
+      <div class="badge-float badge-float--br"><b data-count="8000" data-suffix="+">8.000+</b><span>mulheres transformaram sua vida só em 2025</span></div>
     </div>
     <div class="split__copy">
       <p class="lead rv" data-d="2">Mulheres com a vida organizada por fora, com fé declarada e com tudo que precisariam ter para estar bem. Que já tinham lido, ido à terapia, feito cursos. E que descobriram dentro da imersão o que nenhum desses outros caminhos havia alcançado.</p>
@@ -907,8 +909,8 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
       </div>
     </div>
     <div class="proof__stats">
-      <div class="pstat rv" data-d="1"><b>8.000+</b><span>mulheres transformadas em 2025</span></div>
-      <div class="pstat rv" data-d="2"><b>100%</b><span>presencial, com Vivi&nbsp;Marques ao vivo</span></div>
+      <div class="pstat rv" data-d="1"><b data-count="8000" data-suffix="+">8.000+</b><span>mulheres transformadas em 2025</span></div>
+      <div class="pstat rv" data-d="2"><b data-count="100" data-suffix="%">100%</b><span>presencial, com Vivi&nbsp;Marques ao vivo</span></div>
       <div class="pstat rv" data-d="3"><b>Orlando</b><span>Flórida · 21 de novembro de 2026</span></div>
     </div>
   </div>
@@ -1007,7 +1009,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
     <div class="split__media rv rv--left">
       <span class="photo-ornament"></span>
       <div class="photo photo--frame"><img src="assets/vivi-retrato.webp" alt="Vivi Marques" loading="lazy"></div>
-      <div class="badge-float badge-float--br"><b>8.000+</b><span>mulheres em 2025</span></div>
+      <div class="badge-float badge-float--br"><b data-count="8000" data-suffix="+">8.000+</b><span>mulheres em 2025</span></div>
     </div>
     <div class="split__copy">
       <span class="eyebrow rv">Quem vai estar com você nesse dia</span>
@@ -1018,7 +1020,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
       <p class="auth__bio rv" data-d="3">Diplomata, escritora e empresária. Pedagoga, especialista em comportamento humano e em psicopedagogia clínica e institucional. Mentora de mulheres que desejam sair do modo sobrevivência e triplicar seus resultados financeiros através do domínio das emoções.</p>
       <p class="auth__bio rv" data-d="3">Vivi conduz mulheres a um novo nível de maturidade emocional, identidade e posicionamento, entendendo que prosperidade real começa de dentro para fora. Sua formação em neurociência e comportamento humano sustenta um método que vai além do discurso: ela entende como a mente resiste à mudança e o que realmente funciona para quebrar isso. Com atuação internacional e uma mensagem relevante para diferentes culturas, ela contribui para experiências que geram transformação genuína, conexão e impacto duradouro.</p>
       <div class="auth__stats rv" data-d="4">
-        <div><b>8.000+</b><small>mulheres em 2025</small></div>
+        <div><b data-count="8000" data-suffix="+">8.000+</b><small>mulheres em 2025</small></div>
         <div><b><span data-bind="careerYears">20</span>+</b><small>anos de carreira</small></div>
         <div><b>Bestseller</b><small>publicado</small></div>
       </div>
@@ -1177,8 +1179,25 @@ const CONFIG = {
 
   /* bindings */
   $$('[data-bind]').forEach(el => { const k = el.dataset.bind; if (CONFIG[k] !== undefined) el.textContent = CONFIG[k]; });
+  $$('[data-bind="careerYears"]').forEach(el => el.dataset.count = CONFIG.careerYears);
   const pct = Math.max(0, Math.min(100, Number(CONFIG.lotPercent) || 0));
-  $$('[data-lot-pct]').forEach(el => el.textContent = pct);
+  $$('[data-lot-pct]').forEach(el => { el.textContent = pct; el.dataset.count = pct; });
+
+  /* contadores animados: sobem do zero quando entram na tela */
+  const fmtNum = n => n.toLocaleString('pt-BR');
+  const runCount = el => {
+    if (el.dataset.done) return; el.dataset.done = '1';
+    const target = Number(el.dataset.count) || 0, suffix = el.dataset.suffix || '';
+    if (reduced) { el.textContent = fmtNum(target) + suffix; return; }
+    const dur = 1700, t0 = performance.now();
+    const step = now => { const p = Math.min(1, (now - t0) / dur); const e = 1 - Math.pow(1 - p, 3); el.textContent = fmtNum(Math.round(target * e)) + suffix; if (p < 1) requestAnimationFrame(step); };
+    el.textContent = '0' + suffix; requestAnimationFrame(step);
+  };
+  const countEls = $$('[data-count]');
+  if ('IntersectionObserver' in window) {
+    const cio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { runCount(en.target); cio.unobserve(en.target); } }), { threshold: 0.35 });
+    countEls.forEach(el => cio.observe(el));
+  } else countEls.forEach(runCount);
   requestAnimationFrame(() => {
     $$('[data-lot-fill]').forEach(el => el.style.width = pct + '%');
     $$('[data-lot-ring]').forEach(el => el.style.strokeDashoffset = (157 - 157 * pct / 100));
