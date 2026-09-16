@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imersão Vida Memorável Orlando</title>
+<meta name="description" content="Imersão presencial de 1 dia com Vivi Marques em Orlando, Flórida, 24 de novembro de 2026. Vagas limitadas pela capacidade do espaço.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  color-scheme:light;
+  --white:#FFFDF9;
+  --cream:#F7F3EC;
+  --cream-2:#EFE9DE;
+  --navy:#0B2447;
+  --navy-deep:#061A38;
+  --navy-2:#123468;
+  --navy-3:#1B4587;
+  --red:#B5182F;
+  --red-2:#8E1226;
+  --red-glow:rgba(181,24,47,.45);
+  --gold:#C9A55C;
+  --gold-2:#E6CD8F;
+  --gold-3:#F3E4BF;
+  --gold-soft:rgba(201,165,92,.35);
+  --ink:#121826;
+  --ink-2:#2B3445;
+  --muted:#5B6472;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --r-xl:32px;--r-lg:26px;--r-md:20px;--r-sm:14px;
+  --container:1180px;
+  --gutter:clamp(20px,4vw,44px);
+  --ease:cubic-bezier(.22,.8,.24,1);
+  --shadow-lg:0 40px 80px -36px rgba(6,26,56,.45),0 10px 24px -14px rgba(6,26,56,.2);
+  --shadow-md:0 24px 48px -28px rgba(6,26,56,.35);
+  --header-h:76px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+button{font:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:500;color:var(--navy);text-wrap:balance;line-height:1.1}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.container{max-width:var(--container);margin:0 auto;padding-inline:var(--gutter)}
+.narrow{max-width:860px}
+.section{position:relative;padding-block:clamp(80px,10vw,140px)}
+.on-navy{background:var(--navy);color:var(--white)}
+.on-navy h1,.on-navy h2,.on-navy h3{color:var(--white)}
+.on-cream{background:var(--cream)}
+.h2{font-size:clamp(34px,4.4vw,58px);line-height:1.08;letter-spacing:-.01em}
+.h2 em,.h1 em{font-style:italic;color:var(--red)}
+.on-navy .h2 em,.on-navy .h1 em{color:var(--gold-2)}
+.lead{font-size:clamp(17px,1.5vw,19.5px);line-height:1.65;color:var(--ink-2);max-width:58ch}
+.on-navy .lead{color:rgba(255,253,249,.86)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:"";width:28px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+.on-navy .eyebrow{color:var(--gold-2)}
+.stack-gap{display:flex;flex-direction:column;gap:22px}
+.center{text-align:center;align-items:center}
+.center .lead{margin-inline:auto}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.08s}.rv[data-d="2"]{transition-delay:.16s}.rv[data-d="3"]{transition-delay:.24s}.rv[data-d="4"]{transition-delay:.32s}.rv[data-d="5"]{transition-delay:.4s}.rv[data-d="6"]{transition-delay:.48s}.rv[data-d="7"]{transition-delay:.56s}
+.rv--left{transform:translateX(-40px)}
+.rv--right{transform:translateX(40px)}
+.rv--scale{transform:scale(.94)}
+
+/* curved dividers */
+.curve{position:absolute;left:0;right:0;width:100%;height:clamp(48px,8vw,120px);display:block;pointer-events:none;z-index:2}
+.curve--bottom{bottom:-1px}
+.curve--top{top:-1px;transform:scaleY(-1)}
+.curve svg{width:100%;height:100%;display:block}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:18px 34px;border:0;border-radius:999px;cursor:pointer;text-decoration:none;font-family:var(--sans);font-size:15.5px;font-weight:600;letter-spacing:.01em;line-height:1;white-space:nowrap;overflow:hidden;isolation:isolate;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s,color .35s}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);transform:translateX(-130%);transition:transform .8s var(--ease);z-index:-1}
+.btn:hover::before{transform:translateX(130%)}
+.btn__arrow{width:18px;height:18px;flex:none;transition:transform .35s var(--ease)}
+.btn:hover .btn__arrow{transform:translateX(5px)}
+.btn--primary{background:linear-gradient(135deg,#C81F37 0%,var(--red) 55%,var(--red-2) 100%);color:#fff;box-shadow:0 14px 34px -14px var(--red-glow),inset 0 1px 0 rgba(255,255,255,.22)}
+.btn--primary:hover{transform:translateY(-2px);box-shadow:0 22px 44px -16px var(--red-glow),0 0 0 3px rgba(201,165,92,.55),inset 0 1px 0 rgba(255,255,255,.22)}
+.btn--gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:var(--navy-deep);box-shadow:0 14px 34px -16px rgba(201,165,92,.6)}
+.btn--gold:hover{transform:translateY(-2px);box-shadow:0 22px 44px -16px rgba(201,165,92,.7),0 0 0 3px rgba(255,255,255,.35)}
+.btn--navy{background:linear-gradient(135deg,var(--navy-3),var(--navy));color:#fff;box-shadow:0 14px 34px -14px rgba(6,26,56,.6),inset 0 1px 0 rgba(255,255,255,.14)}
+.btn--navy:hover{transform:translateY(-2px);box-shadow:0 22px 44px -16px rgba(6,26,56,.65),0 0 0 3px rgba(201,165,92,.55),inset 0 1px 0 rgba(255,255,255,.14)}
+.btn--ghost{background:rgba(255,255,255,.06);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(230,205,143,.7);backdrop-filter:blur(6px)}
+.btn--ghost:hover{background:rgba(230,205,143,.14);transform:translateY(-2px);box-shadow:inset 0 0 0 1.5px var(--gold-2)}
+.btn--ghost-navy{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--navy)}
+.btn--ghost-navy:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+.btn--lg{padding:21px 42px;font-size:16.5px}
+.btn--sm{padding:12px 20px;font-size:13.5px}
+.btn--block{width:100%}
+.btn:active{transform:translateY(0) scale(.99)}
+.cta-note{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+.cta-note svg{width:14px;height:14px;color:var(--gold)}
+.on-navy .cta-note{color:rgba(255,253,249,.72)}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
+.cta-col{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.center .cta-col{align-items:center}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(6,26,56,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(230,205,143,.16);transition:background .3s,box-shadow .3s}
+.header.is-scrolled{background:rgba(6,26,56,.92);box-shadow:0 12px 40px -20px rgba(0,0,0,.6)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{height:40px;width:auto}
+.brand__sub{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--gold-3);border-left:1px solid rgba(230,205,143,.4);padding-left:14px;line-height:1.2}
+.header__right{display:flex;align-items:center;gap:18px}
+.header__lot{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-3)}
+.header__lot i{width:110px;height:4px;border-radius:4px;background:rgba(255,255,255,.14);position:relative;overflow:hidden}
+.header__lot i b{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-2));border-radius:4px;transition:width 1.2s var(--ease) .4s}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;background:var(--navy-deep);color:var(--white);overflow:hidden;min-height:calc(100svh - var(--header-h));display:flex;align-items:center;padding-block:clamp(72px,9vw,120px) clamp(120px,14vw,190px)}
+.hero__bg{position:absolute;inset:0;left:38%;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:62% 12%}
+.hero__bg::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy-deep) 0%,rgba(6,26,56,.92) 14%,rgba(6,26,56,.55) 32%,rgba(6,26,56,.18) 55%,rgba(6,26,56,.1) 100%)}
+@media (min-width:1500px){.hero__bg{left:44%}}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,26,56,.35) 0%,rgba(6,26,56,0) 30%,rgba(6,26,56,0) 60%,var(--navy-deep) 100%)}
+.hero__glow{position:absolute;left:-10%;top:-20%;width:60vw;height:60vw;max-width:800px;max-height:800px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,165,92,.22),rgba(201,165,92,0) 70%);pointer-events:none;z-index:0}
+.hero__inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:center}
+.hero__copy{display:flex;flex-direction:column;gap:26px;max-width:640px}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:10px 18px 10px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(230,205,143,.4);backdrop-filter:blur(8px);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-3)}
+.pill i{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold));display:grid;place-items:center;color:var(--navy-deep)}
+.pill i svg{width:14px;height:14px}
+.h1{font-size:clamp(40px,5.6vw,74px);line-height:1.04;letter-spacing:-.015em;color:#fff}
+.hero .lead{font-size:clamp(17px,1.5vw,20px);color:rgba(255,253,249,.88);max-width:54ch}
+.hero .lead b{font-weight:600;color:#fff}
+.lot-card{display:flex;align-items:center;gap:18px;padding:16px 20px;border-radius:var(--r-md);background:rgba(255,255,255,.07);border:1px solid rgba(230,205,143,.28);backdrop-filter:blur(10px);max-width:460px}
+.lot-card__ring{position:relative;width:58px;height:58px;flex:none}
+.lot-card__ring svg{width:58px;height:58px;transform:rotate(-90deg)}
+.lot-card__ring circle{fill:none;stroke-width:5}
+.lot-card__ring .track{stroke:rgba(255,255,255,.14)}
+.lot-card__ring .prog{stroke:var(--gold-2);stroke-linecap:round;stroke-dasharray:157;stroke-dashoffset:157;transition:stroke-dashoffset 1.4s var(--ease) .5s}
+.lot-card__ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--gold-3);font-variant-numeric:tabular-nums}
+.lot-card div{display:flex;flex-direction:column;gap:2px}
+.lot-card strong{font-size:14px;font-weight:600;color:#fff}
+.lot-card span{font-size:12.5px;color:rgba(255,253,249,.7)}
+.hero__chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-size:13px;font-weight:500;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:rgba(255,253,249,.9)}
+.chip svg{width:14px;height:14px;color:var(--gold-2)}
+.hero__side{position:relative;display:flex;justify-content:flex-end}
+.float-card{position:absolute;right:0;bottom:-10px;display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:var(--r-md);background:rgba(255,253,249,.96);color:var(--navy);box-shadow:var(--shadow-lg);max-width:300px}
+.float-card b{font-family:var(--serif);font-size:38px;line-height:1;color:var(--red);font-weight:600}
+.float-card span{font-size:13px;line-height:1.4;color:var(--ink-2)}
+.hero__mobile-img{display:none}
+@media (prefers-reduced-motion:no-preference){
+  .hero [data-in]{animation:vmIn 1s var(--ease) both}
+  .hero [data-in="1"]{animation-delay:.05s}.hero [data-in="2"]{animation-delay:.18s}.hero [data-in="3"]{animation-delay:.32s}.hero [data-in="4"]{animation-delay:.46s}.hero [data-in="5"]{animation-delay:.6s}.hero [data-in="6"]{animation-delay:.74s}
+  @keyframes vmIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .hero__bg img{animation:heroZoom 12s var(--ease) both}
+  @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+}
+@media (max-width:900px){
+  .hero{min-height:0;padding-top:0;padding-bottom:110px}
+  .hero__inner{grid-template-columns:1fr;gap:0}
+  .hero__bg{display:none}
+  .hero__side{display:none}
+  .hero__mobile-img{display:block;position:relative;margin:0 calc(-1*var(--gutter)) 28px;aspect-ratio:4/4.4;overflow:hidden}
+  .hero__mobile-img img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+  .hero__mobile-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,26,56,.1) 0%,rgba(6,26,56,0) 40%,var(--navy-deep) 100%)}
+  .hero__copy{max-width:none}
+}
+
+/* marquee */
+.marquee{background:var(--navy-deep);border-top:1px solid rgba(230,205,143,.16);border-bottom:1px solid rgba(230,205,143,.16);overflow:hidden;padding-block:16px}
+.marquee__track{display:flex;gap:56px;width:max-content;animation:marquee 34s linear infinite}
+.marquee__track span{font-family:var(--serif);font-size:20px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2);white-space:nowrap;display:inline-flex;align-items:center;gap:56px}
+.marquee__track span::after{content:"★";font-size:11px;color:var(--gold)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee__track{animation:none}}
+
+/* ============================================================
+   SPLIT (photo + text)
+   ============================================================ */
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,6vw,96px);align-items:center}
+.split--rev .split__media{order:2}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:44px}.split--rev .split__media{order:0}}
+.split__media{position:relative}
+.photo{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5;max-width:100%;background:var(--cream-2)}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.photo:hover img{transform:scale(1.04)}
+.photo--wide{aspect-ratio:5/4}
+.photo--frame::before{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.35);z-index:1;pointer-events:none}
+.photo-ornament{position:absolute;inset:auto;z-index:0;border-radius:var(--r-xl);border:2px solid var(--gold-soft);width:100%;height:100%;top:22px;left:22px;pointer-events:none}
+.badge-float{position:absolute;z-index:2;display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:var(--r-md);background:var(--white);box-shadow:var(--shadow-lg);border:1px solid rgba(201,165,92,.25)}
+.badge-float b{font-family:var(--serif);font-size:40px;line-height:1;color:var(--red);font-weight:600}
+.badge-float span{font-size:13px;line-height:1.4;color:var(--ink-2);max-width:18ch}
+.badge-float--br{right:-18px;bottom:36px}
+.badge-float--bl{left:-18px;bottom:36px}
+.badge-float--tr{right:-18px;top:36px}
+@media (max-width:600px){.badge-float{padding:14px 16px}.badge-float b{font-size:32px}.badge-float--br,.badge-float--tr{right:8px}.badge-float--bl{left:8px}}
+.split__copy{display:flex;flex-direction:column;gap:22px}
+.split__copy p{max-width:56ch}
+.quote-line{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.5vw,32px);line-height:1.3;color:var(--navy);padding-left:22px;border-left:3px solid var(--gold);border-radius:2px}
+.on-navy .quote-line{color:var(--gold-2)}
+
+/* ============================================================
+   VIRADA
+   ============================================================ */
+.virada{background:var(--cream);position:relative;overflow:hidden}
+.virada::before{content:"";position:absolute;right:-20%;top:-20%;width:60vw;height:60vw;max-width:900px;max-height:900px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,165,92,.16),rgba(201,165,92,0) 70%);pointer-events:none}
+.stat-inline{display:flex;flex-direction:column;gap:6px;padding:22px 26px;border-radius:var(--r-md);background:var(--white);border:1px solid rgba(201,165,92,.3);box-shadow:var(--shadow-md);max-width:420px}
+.stat-inline b{font-family:var(--serif);font-size:clamp(46px,5vw,64px);line-height:1;color:var(--navy);font-weight:500}
+.stat-inline span{font-size:15px;line-height:1.55;color:var(--ink-2)}
+
+/* ============================================================
+   IDENTIFICAÇÃO
+   ============================================================ */
+.ident{position:relative;background:var(--white);overflow:hidden}
+.ident__blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none}
+.ident__blob--1{left:-10%;top:10%;width:38vw;height:38vw;background:rgba(201,165,92,.25)}
+.ident__blob--2{right:-8%;bottom:0;width:34vw;height:34vw;background:rgba(11,36,71,.12)}
+.ident__inner{position:relative;display:flex;flex-direction:column;gap:clamp(44px,5vw,64px)}
+.qcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+@media (max-width:900px){.qcards{grid-template-columns:1fr}}
+.qcard{position:relative;padding:38px 32px 32px;border-radius:var(--r-lg);background:var(--cream);border:1px solid rgba(201,165,92,.22);display:flex;flex-direction:column;gap:18px;transition:transform .5s var(--ease),box-shadow .5s,background .5s}
+.qcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);background:var(--white)}
+.qcard__mark{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold));display:grid;place-items:center;font-family:var(--serif);font-size:44px;line-height:1;color:var(--navy-deep);padding-top:16px}
+.qcard p{font-family:var(--serif);font-size:clamp(22px,2vw,26px);line-height:1.36;color:var(--ink)}
+.thesis{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(34px,4.8vw,64px);line-height:1.1;color:var(--navy)}
+.thesis .u{background:linear-gradient(transparent 62%,rgba(201,165,92,.45) 62%)}
+.thesis-sub{font-size:16px;color:var(--muted);max-width:44ch;margin-inline:auto}
+
+/* ============================================================
+   3 MOVIMENTOS (scroll stacking)
+   ============================================================ */
+.mov{background:linear-gradient(180deg,var(--navy-deep) 0%,var(--navy) 60%,var(--navy-2) 100%);color:var(--white);position:relative}
+.mov__head{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;margin-bottom:clamp(44px,5vw,72px)}
+.mov__head .lead{max-width:48ch}
+.stack{position:relative;display:flex;flex-direction:column;gap:32px;padding-bottom:clamp(40px,6vw,80px)}
+.scard{position:sticky;top:calc(var(--header-h) + 24px + var(--i)*22px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;border-radius:var(--r-xl);background:var(--white);color:var(--ink);overflow:hidden;box-shadow:var(--shadow-lg);transform-origin:top center;will-change:transform;min-height:420px}
+.scard__img{position:relative;min-height:320px}
+.scard__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.scard__img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,26,56,0) 60%,rgba(255,253,249,.0) 100%)}
+.scard__num{position:absolute;left:22px;top:22px;z-index:2;width:64px;height:64px;border-radius:50%;background:rgba(255,253,249,.94);display:grid;place-items:center;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy);box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
+.scard__body{padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:18px}
+.scard__body .eyebrow{color:var(--gold)}
+.scard__body h3{font-size:clamp(30px,3.2vw,44px);line-height:1.08}
+.scard__body p{font-size:clamp(16.5px,1.3vw,18.5px);line-height:1.7;color:var(--ink-2);max-width:48ch}
+.scard__body ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.scard__body li{font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--cream);color:var(--navy);border:1px solid rgba(201,165,92,.3)}
+@media (max-width:900px){.scard{grid-template-columns:1fr;min-height:0;top:calc(var(--header-h) + 12px + var(--i)*14px)}.scard__img{min-height:0;aspect-ratio:16/10}}
+
+/* ============================================================
+   PARA QUEM É
+   ============================================================ */
+.who{background:var(--white)}
+.recog{display:flex;flex-direction:column;gap:14px}
+.recog__item{display:flex;gap:18px;padding:24px 26px;border-radius:var(--r-md);background:var(--cream);border:1px solid transparent;transition:transform .45s var(--ease),box-shadow .45s,background .45s,border-color .45s}
+.recog__item:hover{background:var(--white);border-color:rgba(201,165,92,.35);transform:translateX(6px);box-shadow:var(--shadow-md)}
+.recog__ic{flex:none;width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--navy-3),var(--navy));display:grid;place-items:center;color:var(--gold-2)}
+.recog__ic svg{width:20px;height:20px}
+.recog__item p{font-family:var(--serif);font-size:clamp(20px,1.9vw,24px);line-height:1.4;color:var(--ink)}
+
+/* ============================================================
+   EXPERIÊNCIA
+   ============================================================ */
+.exp{background:var(--cream);position:relative}
+.exp__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:1000px){.exp__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.exp__grid{grid-template-columns:1fr}}
+.card{position:relative;padding:30px 28px 32px;border-radius:var(--r-lg);background:var(--white);border:1px solid rgba(201,165,92,.2);display:flex;flex-direction:column;gap:16px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s,border-color .5s}
+.card::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2),var(--gold));opacity:0;transition:opacity .5s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:rgba(201,165,92,.45)}
+.card:hover::before{opacity:1}
+.card__top{display:flex;align-items:center;justify-content:space-between}
+.card__icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy-3),var(--navy));color:var(--gold-2);box-shadow:0 12px 26px -14px rgba(6,26,56,.7);transition:transform .5s var(--ease)}
+.card:hover .card__icon{transform:rotate(-6deg) scale(1.06)}
+.card__icon svg{width:24px;height:24px}
+.card__n{font-family:var(--serif);font-size:15px;letter-spacing:.16em;color:var(--gold)}
+.card h3{font-size:24px;font-weight:600;line-height:1.2}
+.card p{font-size:15.5px;line-height:1.65;color:var(--ink-2)}
+.card--photo{grid-column:span 2;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--navy);color:#fff;border-color:transparent}
+.card--photo h3{color:#fff}
+.card--photo p{color:rgba(255,253,249,.82)}
+.card--photo .card__icon{background:rgba(255,255,255,.08);border:1px solid rgba(230,205,143,.35)}
+.card--photo .card__body{padding:32px 30px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.card--photo .card__img{position:relative;min-height:240px}
+.card--photo .card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:1000px){.card--photo{grid-column:span 2}}
+@media (max-width:620px){.card--photo{grid-column:span 1;grid-template-columns:1fr}.card--photo .card__img{aspect-ratio:16/10;min-height:0}}
+
+/* ============================================================
+   DEPOIMENTOS
+   ============================================================ */
+.proof{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--white);position:relative;overflow:hidden}
+.proof::before{content:"";position:absolute;left:50%;top:-30%;width:80vw;height:80vw;max-width:1100px;max-height:1100px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(201,165,92,.14),rgba(201,165,92,0) 70%);pointer-events:none}
+.vcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+@media (max-width:900px){.vcards{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
+.vcard{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:9/16;max-width:100%;background:var(--navy-2);box-shadow:var(--shadow-lg);cursor:pointer;border:0;padding:0;text-align:left;color:#fff;transition:transform .5s var(--ease),box-shadow .5s}
+.vcard:hover{transform:translateY(-8px);box-shadow:0 50px 90px -40px rgba(0,0,0,.7)}
+.vcard img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.vcard:hover img{transform:scale(1.05)}
+.vcard__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(255,253,249,.92);display:grid;place-items:center;color:var(--red);box-shadow:0 0 0 10px rgba(255,253,249,.18),0 20px 40px -14px rgba(0,0,0,.6);transition:transform .5s var(--ease),box-shadow .5s}
+.vcard:hover .vcard__play{transform:translate(-50%,-50%) scale(1.08);box-shadow:0 0 0 16px rgba(255,253,249,.22),0 20px 40px -14px rgba(0,0,0,.6)}
+.vcard__play svg{width:28px;height:28px;margin-left:4px}
+.vcard__tag{position:absolute;left:16px;top:16px;padding:8px 12px;border-radius:999px;background:rgba(6,26,56,.7);backdrop-filter:blur(6px);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-3);display:inline-flex;align-items:center;gap:6px}
+.vcard__tag i{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(181,24,47,.35)}
+.gallery{margin-top:clamp(48px,6vw,80px);overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.gallery__track{display:flex;gap:18px;width:max-content;animation:gallery 46s linear infinite}
+.gallery__track:hover{animation-play-state:paused}
+.gallery__track figure{margin:0;width:260px;aspect-ratio:4/3;border-radius:var(--r-md);overflow:hidden;flex:none;box-shadow:var(--shadow-md)}
+.gallery__track figure.tall{aspect-ratio:3/4;width:200px}
+.gallery__track img{width:100%;height:100%;object-fit:cover}
+@keyframes gallery{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.gallery__track{animation:none}}
+.proof__stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(40px,5vw,64px)}
+@media (max-width:700px){.proof__stats{grid-template-columns:1fr}}
+.pstat{padding:24px 26px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(230,205,143,.22);display:flex;flex-direction:column;gap:4px;backdrop-filter:blur(6px)}
+.pstat b{font-family:var(--serif);font-size:40px;line-height:1;color:var(--gold-2);font-weight:500}
+.pstat span{font-size:14px;color:rgba(255,253,249,.78)}
+
+/* ============================================================
+   QUANDO E ONDE
+   ============================================================ */
+.when{background:var(--white)}
+.info{border-radius:var(--r-xl);background:var(--white);border:1px solid rgba(201,165,92,.3);box-shadow:var(--shadow-lg);overflow:hidden}
+.info__head{padding:22px 28px;background:linear-gradient(135deg,var(--navy-3),var(--navy-deep));color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.info__head b{font-family:var(--serif);font-size:24px;font-weight:500}
+.urgency{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--red);padding:9px 14px;border-radius:999px}
+.urgency i{width:7px;height:7px;background:#fff;border-radius:50%;box-shadow:0 0 0 3px rgba(255,255,255,.3);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(255,255,255,.12)}}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.fact{padding:22px 26px;display:flex;gap:14px;align-items:flex-start;border-bottom:1px solid rgba(201,165,92,.2)}
+.fact:nth-child(odd){border-right:1px solid rgba(201,165,92,.2)}
+.fact__ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--cream);display:grid;place-items:center;color:var(--red)}
+.fact__ic svg{width:18px;height:18px}
+.fact div{display:flex;flex-direction:column;gap:3px}
+.fact small{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.fact span{font-family:var(--serif);font-size:clamp(20px,2vw,25px);line-height:1.15;color:var(--navy)}
+@media (max-width:520px){.facts{grid-template-columns:1fr}.fact:nth-child(odd){border-right:0}}
+.info__foot{padding:22px 26px 26px;display:flex;flex-direction:column;gap:16px;background:var(--cream)}
+.chips-row{display:flex;flex-wrap:wrap;gap:8px}
+.chips-row span{font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--white);border:1px solid rgba(201,165,92,.35);color:var(--navy)}
+
+/* ============================================================
+   INVESTIMENTO
+   ============================================================ */
+.invest{background:var(--cream);position:relative}
+.ticket{position:relative;border-radius:var(--r-xl);background:var(--white);box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid rgba(201,165,92,.3)}
+.ticket__head{padding:28px 30px;background:linear-gradient(135deg,var(--navy-3) 0%,var(--navy-deep) 100%);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;position:relative;overflow:hidden}
+.ticket__head::after{content:"";position:absolute;right:-40px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,165,92,.35),rgba(201,165,92,0))}
+.ticket__head b{font-family:var(--serif);font-size:28px;font-weight:500;position:relative}
+.ticket__lot{position:relative;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-2),var(--gold));padding:8px 12px;border-radius:999px}
+.ticket__perf{position:relative;height:0;border-top:2px dashed rgba(201,165,92,.4);margin:0 22px}
+.ticket__perf::before,.ticket__perf::after{content:"";position:absolute;top:-13px;width:26px;height:26px;border-radius:50%;background:var(--cream)}
+.ticket__perf::before{left:-35px}.ticket__perf::after{right:-35px}
+.ticket__body{padding:30px;display:flex;flex-direction:column;gap:24px}
+.ticket__facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ticket__facts div{padding:14px 16px;border-radius:var(--r-sm);background:var(--cream);display:flex;flex-direction:column;gap:4px}
+.ticket__facts small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ticket__facts span{font-family:var(--serif);font-size:22px;line-height:1.1;color:var(--navy)}
+.ticket__price{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--navy);text-align:center}
+.lot{display:flex;flex-direction:column;gap:8px}
+.lot__bar{height:8px;border-radius:8px;background:var(--cream-2);overflow:hidden}
+.lot__fill{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--red-2),var(--red),#D64A5F);transition:width 1.4s var(--ease) .4s}
+.lot__label{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.ticket__note{font-size:12.5px;color:var(--muted);text-align:center;line-height:1.5}
+.points{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.points li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink-2)}
+.points li svg{flex:none;width:22px;height:22px;color:var(--gold);margin-top:2px}
+
+/* ============================================================
+   AUTORIDADE
+   ============================================================ */
+.auth{background:var(--white);position:relative;overflow:hidden}
+.auth__name{font-size:clamp(50px,6.4vw,84px);line-height:.96;letter-spacing:-.015em}
+.auth__name span{color:var(--red);font-style:italic}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.creds li{font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px;background:var(--cream);border:1px solid rgba(201,165,92,.3);color:var(--navy)}
+.auth__bio{max-width:60ch;font-size:16.5px;line-height:1.75;color:var(--ink-2)}
+.qbox{padding:24px 26px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--navy-3),var(--navy-deep));color:#fff;position:relative;overflow:hidden}
+.qbox::before{content:"“";position:absolute;right:18px;top:-22px;font-family:var(--serif);font-size:140px;line-height:1;color:rgba(230,205,143,.22)}
+.qbox p{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.3vw,28px);line-height:1.34;color:var(--gold-3);position:relative;max-width:30ch}
+.auth__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.auth__stats div{padding:16px 18px;border-radius:var(--r-sm);background:var(--cream);display:flex;flex-direction:column;gap:3px}
+.auth__stats b{font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);line-height:1;color:var(--navy);font-weight:600}
+.auth__stats small{font-size:12.5px;color:var(--muted)}
+
+/* ============================================================
+   HISTÓRIA
+   ============================================================ */
+.story{background:linear-gradient(180deg,var(--navy-deep),var(--navy));color:var(--white);position:relative;overflow:hidden}
+.story p{color:rgba(255,253,249,.86)}
+.story .photo{box-shadow:0 50px 90px -40px rgba(0,0,0,.8)}
+.story__quote{padding:26px 28px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(230,205,143,.28);display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(6px)}
+.story__quote p{font-family:var(--serif);font-style:italic;font-size:clamp(23px,2.4vw,30px);line-height:1.3;color:var(--gold-2)}
+.story__quote cite{font-style:normal;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;display:inline-flex;align-items:center;gap:10px}
+.story__quote cite::before{content:"";width:22px;height:2px;background:var(--gold)}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{background:var(--cream)}
+.faq__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,88px);align-items:start}
+@media (max-width:900px){.faq__grid{grid-template-columns:1fr}}
+.faq__intro{display:flex;flex-direction:column;gap:20px;position:sticky;top:calc(var(--header-h) + 32px)}
+@media (max-width:900px){.faq__intro{position:static}}
+.team{padding:24px 26px;border-radius:var(--r-lg);background:var(--white);border:1px solid rgba(201,165,92,.3);display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-md)}
+.team b{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--navy)}
+.team p{font-size:15.5px;color:var(--ink-2)}
+.faq__list{display:flex;flex-direction:column;gap:12px}
+.faq__item{border-radius:var(--r-md);background:var(--white);border:1px solid rgba(201,165,92,.22);overflow:hidden;transition:box-shadow .4s,border-color .4s}
+.faq__item[open]{box-shadow:var(--shadow-md);border-color:rgba(201,165,92,.45)}
+.faq__item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 24px;font-family:var(--serif);font-size:clamp(21px,2vw,25px);font-weight:600;color:var(--navy)}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__sign{flex:none;width:34px;height:34px;border-radius:50%;background:var(--cream);color:var(--navy);display:grid;place-items:center;transition:background .3s,color .3s,transform .45s var(--ease)}
+.faq__sign svg{width:16px;height:16px}
+.faq__item[open] .faq__sign{background:var(--red);color:#fff;transform:rotate(45deg)}
+.faq__a{padding:0 24px 24px;font-size:16px;line-height:1.72;color:var(--ink-2);max-width:60ch}
+
+/* ============================================================
+   FECHAMENTO
+   ============================================================ */
+.final{position:relative;background:var(--navy-deep);color:#fff;overflow:hidden;padding-block:clamp(110px,14vw,180px)}
+.final__bg{position:absolute;inset:0}
+.final__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:.28}
+.final__bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(6,26,56,.2),var(--navy-deep) 75%)}
+.final__inner{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+.final h2{font-size:clamp(40px,5.8vw,76px);line-height:1.04;max-width:16ch;color:#fff}
+.final__date{display:inline-flex;align-items:center;gap:12px;font-family:var(--serif);font-size:22px;color:var(--gold-2)}
+.final__date::before,.final__date::after{content:"";width:34px;height:1px;background:var(--gold)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:#04122A;color:rgba(255,253,249,.85);padding-block:44px;font-size:12.5px;line-height:1.6}
+.footer__inner{display:flex;flex-direction:column;gap:18px}
+.footer__row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;align-items:center}
+.footer__row img{height:34px;width:auto}
+.footer a{color:var(--gold-2);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.footer__rule{height:1px;background:rgba(230,205,143,.2)}
+
+/* ============================================================
+   STICKY CTA (mobile) + MODALS
+   ============================================================ */
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:55;background:rgba(6,26,56,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(230,205,143,.3);border-radius:999px;padding:8px 8px 8px 18px;display:none;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6);margin-bottom:env(safe-area-inset-bottom,0px)}
+.sticky__txt{display:flex;flex-direction:column;gap:1px;min-width:0}
+.sticky__txt b{font-family:var(--serif);font-size:16px;color:#fff;font-weight:600}
+.sticky__txt small{font-size:11px;color:var(--gold-3)}
+@media (max-width:760px){.sticky{display:flex}body{padding-bottom:90px}.header__lot,.brand__sub{display:none}}
+
+.modal{position:fixed;inset:0;z-index:80;background:rgba(4,18,42,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px}
+.modal__box{width:min(100%,520px);max-height:100%;overflow-y:auto;background:var(--white);border-radius:var(--r-xl);padding:38px 38px 32px;display:flex;flex-direction:column;gap:26px;box-shadow:0 60px 120px -40px rgba(0,0,0,.7);animation:modalIn .5s var(--ease)}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.modal__head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.modal__head h3{font-size:32px;line-height:1.1}
+.modal__head p{font-size:15px;color:var(--ink-2)}
+.modal__x{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid rgba(201,165,92,.4);background:var(--cream);cursor:pointer;font-size:22px;color:var(--navy);display:grid;place-items:center;transition:background .25s,transform .3s}
+.modal__x:hover{background:var(--cream-2);transform:rotate(90deg)}
+.form{display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:var(--navy)}
+.field input{font:inherit;font-family:var(--sans);font-weight:400;font-size:16px;padding:15px 16px;border-radius:14px;border:1px solid rgba(201,165,92,.45);background:var(--white);color:var(--ink);outline:none;transition:border-color .25s,box-shadow .25s}
+.field input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(11,36,71,.08)}
+.form__safe{font-size:12.5px;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center;gap:8px}
+.form__safe svg{width:13px;height:13px;color:var(--gold)}
+@media (max-width:640px){.modal{padding:0}.modal__box{width:100%;height:100%;max-height:none;border-radius:0;padding:calc(28px + env(safe-area-inset-top,0px)) 22px calc(36px + env(safe-area-inset-bottom,0px));justify-content:center}}
+.vmodal{position:fixed;inset:0;z-index:85;background:rgba(4,18,42,.9);display:flex;align-items:center;justify-content:center;padding:20px}
+.vmodal__box{position:relative;width:min(100%,420px);aspect-ratio:9/16;max-height:92vh;border-radius:var(--r-lg);overflow:hidden;background:#000;box-shadow:0 60px 120px -40px rgba(0,0,0,.8)}
+.vmodal__box video{width:100%;height:100%;object-fit:contain;background:#000}
+.vmodal__x{position:absolute;right:12px;top:12px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,253,249,.92);color:var(--navy);font-size:22px;cursor:pointer;display:grid;place-items:center}
+.vmodal__name{position:absolute;left:14px;bottom:14px;z-index:2;padding:8px 14px;border-radius:999px;background:rgba(6,26,56,.75);color:var(--gold-3);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="brand" href="#top" aria-label="Vivi Marques">
+      <img src="assets/logo-vivi-marques.webp" alt="Vivi Marques">
+      <span class="brand__sub">Imersão Vida Memorável<br>Orlando · 2026</span>
+    </a>
+    <div class="header__right">
+      <span class="header__lot">Lote atual <i><b data-lot-fill></b></i> <span data-lot-pct>0</span>%</span>
+      <button class="btn btn--gold btn--sm js-open" type="button">Garantir vaga</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================================================ HERO -->
+<section class="hero">
+  <div class="hero__bg"><img src="assets/vivi-hero.webp" alt="Vivi Marques conduzindo a Imersão Vida Memorável" fetchpriority="high"></div>
+  <div class="hero__glow"></div>
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <div class="hero__mobile-img" data-in="1"><img src="assets/vivi-hero.webp" alt="Vivi Marques"></div>
+      <span class="pill" data-in="1"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i>Orlando, Flórida · 24 de novembro de 2026</span>
+      <h1 class="h1" data-in="2">Antes de cuidar de todo mundo de novo, faça a única coisa que ninguém pode fazer por você: <em>se transformar primeiro.</em></h1>
+      <p class="lead" data-in="3">Viva uma experiência <b>presencial e profunda de 1 dia</b> com Vivi Marques, onde você acessa o que <b>nenhum livro, terapia ou curso</b> conseguiu te destravar.</p>
+      <div class="cta-row" data-in="4">
+        <button class="btn btn--primary btn--lg js-open" type="button">Garantir minha vaga agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <a class="btn btn--ghost" href="#imersao" data-anchor>Como funciona a Imersão</a>
+      </div>
+      <div class="lot-card" data-in="5">
+        <div class="lot-card__ring"><svg viewBox="0 0 58 58"><circle class="track" cx="29" cy="29" r="25"/><circle class="prog" cx="29" cy="29" r="25" data-lot-ring/></svg><b><span data-lot-pct>0</span>%</b></div>
+        <div><strong>Vagas do lote atual preenchidas</strong><span>Limitadas pela capacidade do espaço. Sem lista de espera.</span></div>
+      </div>
+      <div class="hero__chips" data-in="6">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>8.000+ mulheres em 2025</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>100% presencial</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Apenas para mulheres</span>
+      </div>
+    </div>
+    <div class="hero__side" data-in="6">
+      <div class="float-card"><img src="assets/logo-vivi-marques.webp" alt="" style="height:26px;width:auto;filter:brightness(.55) sepia(1) saturate(1.6) hue-rotate(5deg)"><span><strong style="display:block;font-family:var(--serif);font-size:19px;color:var(--navy);font-weight:600;line-height:1.1">Vivi Marques</strong>Fundadora do Instituto VM · ao vivo em Orlando</span></div>
+    </div>
+  </div>
+  <div class="curve curve--bottom"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,70 C280,130 520,0 760,40 C1000,80 1240,110 1440,50 L1440,120 L0,120 Z" fill="#F7F3EC"/></svg></div>
+</section>
+
+<!-- ============================================================ VIRADA -->
+<section class="section virada">
+  <div class="container split">
+    <div class="split__media rv rv--left">
+      <span class="photo-ornament"></span>
+      <div class="photo photo--frame"><img src="assets/vivi-palco-branco.webp" alt="Vivi Marques ao vivo na Imersão Vida Memorável" loading="lazy"></div>
+      <div class="badge-float badge-float--br"><b>8.000+</b><span>mulheres transformaram sua vida só em 2025</span></div>
+    </div>
+    <div class="split__copy">
+      <span class="eyebrow rv">A grande virada</span>
+      <h2 class="h2 rv" data-d="1">Não é mais um curso. Não é conteúdo para consumir sozinha. <em>É uma experiência que abre o que está fechado.</em></h2>
+      <p class="lead rv" data-d="2">Mulheres com a vida organizada por fora, com fé declarada e com tudo que precisariam ter para estar bem. Que já tinham lido, ido à terapia, feito cursos. E que descobriram dentro da imersão o que nenhum desses outros caminhos havia alcançado.</p>
+      <p class="rv" data-d="3" style="font-weight:600;color:var(--navy);font-size:18px">Em 2026, essa transformação acontece em Orlando, Flórida.</p>
+      <p class="quote-line rv" data-d="4">Ninguém ensina de fora aquilo que ainda não atravessou por dentro.</p>
+      <div class="cta-col rv" data-d="5">
+        <button class="btn btn--primary js-open" type="button">Garantir minha vaga agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <span class="cta-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Vagas limitadas · Sem lista de espera</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Imersão Vida Memorável</span><span>Vivi Marques</span><span>Orlando · Flórida · 2026</span><span>Imersão Vida Memorável</span><span>Vivi Marques</span><span>Orlando · Flórida · 2026</span>
+    <span>Imersão Vida Memorável</span><span>Vivi Marques</span><span>Orlando · Flórida · 2026</span><span>Imersão Vida Memorável</span><span>Vivi Marques</span><span>Orlando · Flórida · 2026</span>
+  </div>
+</div>
+
+<!-- ============================================================ ISSO É PARA VOCÊ -->
+<section class="section ident">
+  <div class="ident__blob ident__blob--1"></div><div class="ident__blob ident__blob--2"></div>
+  <div class="container ident__inner">
+    <div class="stack-gap center">
+      <span class="eyebrow rv">Isso é para você</span>
+      <h2 class="h2 rv" data-d="1" style="max-width:24ch">Você tem carreira, tem fé, tem família. E em algum momento do dia uma voz pergunta: <em>quando é a minha vez?</em></h2>
+    </div>
+    <div class="qcards">
+      <div class="qcard rv" data-d="1"><span class="qcard__mark">“</span><p>Acorda, cumpre, entrega, dorme e repete. Em algum momento sente que está morrendo aos poucos sem que ninguém perceba.</p></div>
+      <div class="qcard rv" data-d="2"><span class="qcard__mark">“</span><p>Cuida dos filhos, aparece para a família, sorri nas fotos. Mas à noite, quando fecha a porta do quarto, sente um vazio que não consegue nomear.</p></div>
+      <div class="qcard rv" data-d="3"><span class="qcard__mark">“</span><p>Sabe exatamente o que precisa fazer. Não faz. E se pune por isso todo dia.</p></div>
+    </div>
+    <div class="stack-gap center" style="gap:18px">
+      <p class="thesis rv rv--scale">Vivendo a vida errada<br>dentro da <span class="u">vida certa.</span></p>
+      <p class="thesis-sub rv" data-d="1">Frase que resume o que milhares de mulheres sentem mas nunca souberam nomear.</p>
+      <div class="cta-col rv" data-d="2" style="margin-top:10px">
+        <button class="btn btn--primary btn--lg js-open" type="button">Quero a minha vez agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="curve curve--bottom"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,40 C300,120 600,110 860,60 C1100,15 1300,20 1440,70 L1440,120 L0,120 Z" fill="#061A38"/></svg></div>
+</section>
+
+<!-- ============================================================ A IMERSÃO — 3 MOVIMENTOS (scroll stacking) -->
+<section class="section mov" id="imersao">
+  <div class="container">
+    <div class="mov__head">
+      <span class="eyebrow rv">A Imersão</span>
+      <h2 class="h2 rv" data-d="1">Uma imersão. Um dia. <em>Uma transformação para a vida inteira.</em></h2>
+      <p class="lead rv" data-d="2">Uma jornada em 3 movimentos que muda não só quem você é, mas a vida que você constrói:</p>
+    </div>
+    <div class="stack" id="stack">
+      <article class="scard" style="--i:0">
+        <div class="scard__img"><span class="scard__num">01</span><img src="assets/vivi-conduzindo.webp" alt="Vivi Marques conduzindo a imersão ao vivo" loading="lazy"></div>
+        <div class="scard__body">
+          <span class="eyebrow">Primeiro movimento</span>
+          <h3>O que você vai acessar</h3>
+          <p>A clareza de quem você é quando tira os papéis que cumpre todo dia. Mãe, esposa, profissional, filha. Quem é você quando tira tudo isso?</p>
+          <ul><li>Clareza</li><li>Identidade</li><li>Quem você é sem os papéis</li></ul>
+        </div>
+      </article>
+      <article class="scard" style="--i:1">
+        <div class="scard__img"><span class="scard__num">02</span><img src="assets/evento-material.webp" alt="Participante preenchendo o material da metodologia Vida Memorável" loading="lazy"></div>
+        <div class="scard__body">
+          <span class="eyebrow">Segundo movimento</span>
+          <h3>O que você vai soltar</h3>
+          <p>O peso que carregava sem perceber. A ferida que não fechava. A culpa que ancorava. O padrão que você repetia sem conseguir parar.</p>
+          <ul><li>O peso</li><li>A ferida</li><li>A culpa</li><li>O padrão</li></ul>
+        </div>
+      </article>
+      <article class="scard" style="--i:2">
+        <div class="scard__img"><span class="scard__num">03</span><img src="assets/evento-dinamica.webp" alt="Abraço emocionado durante dinâmica da imersão" loading="lazy"></div>
+        <div class="scard__body">
+          <span class="eyebrow">Terceiro movimento</span>
+          <h3>Quem você vai encontrar</h3>
+          <p>Mulheres no mesmo nível que você. Que têm a vida organizada por fora e sabem que falta algo que nenhuma conquista de fora vai preencher.</p>
+          <ul><li>Mulheres no mesmo nível</li><li>Propósito real</li><li>Fé viva</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PARA QUEM É -->
+<section class="section who">
+  <div class="container split split--rev">
+    <div class="split__media rv rv--right">
+      <div class="photo photo--frame"><img src="assets/evento-entrega.webp" alt="Mulher em momento de entrega na imersão" loading="lazy"></div>
+      <div class="badge-float badge-float--bl"><b>1 dia</b><span>presencial, ao vivo com Vivi Marques</span></div>
+    </div>
+    <div class="split__copy">
+      <span class="eyebrow rv">Para quem é</span>
+      <h2 class="h2 rv" data-d="1">Para quem é essa <em>Imersão?</em></h2>
+      <p class="lead rv" data-d="2">Se você se reconhece em alguma dessas frases, este dia foi feito para você.</p>
+      <div class="recog">
+        <div class="recog__item rv" data-d="2"><span class="recog__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Já leu, já foi em terapia, já fez curso. Sabe tudo. Continua presa. Porque o bloqueio não é de informação. É de acesso interno.</p></div>
+        <div class="recog__item rv" data-d="3"><span class="recog__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Tem amigas, tem família. Mas não tem ninguém com quem falar de propósito real, de fé viva, de sonhos que ainda não foram realizados.</p></div>
+        <div class="recog__item rv" data-d="4"><span class="recog__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Carrega uma ferida que ainda não sarou. Pode até ter perdoado, mas o corpo ainda lateja.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ A EXPERIÊNCIA -->
+<section class="section exp">
+  <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,50 C240,120 480,110 720,60 C960,10 1200,20 1440,80 L1440,120 L0,120 Z" fill="#FFFDF9"/></svg></div>
+  <div class="container stack-gap" style="gap:clamp(40px,5vw,60px)">
+    <div class="stack-gap center">
+      <span class="eyebrow rv">A experiência</span>
+      <h2 class="h2 rv" data-d="1">O que você vai encontrar <em>dentro da Imersão?</em></h2>
+    </div>
+    <div class="exp__grid">
+      <article class="card card--photo rv" data-d="1">
+        <div class="card__img"><img src="assets/evento-plateia.webp" alt="Plateia da Imersão Vida Memorável" loading="lazy"></div>
+        <div class="card__body">
+          <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="card__n">01</span></div>
+          <h3>Um dia de imersão presencial</h3>
+          <p>Com Vivi Marques ao vivo, em Orlando. Não pela tela. Ao vivo.</p>
+        </div>
+      </article>
+      <article class="card rv" data-d="2">
+        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21z"/><path d="M21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5A2.5 2.5 0 0 1 21 21z"/></svg></span><span class="card__n">02</span></div>
+        <h3>Metodologia Vida Memorável</h3>
+        <p>A mesma metodologia que transformou a vida de mais de 8.000 mulheres só em 2025.</p>
+      </article>
+      <article class="card rv" data-d="1">
+        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="14" r="4"/><path d="M11 11l9-9M16 6l2 2M19 3l2 2"/></svg></span><span class="card__n">03</span></div>
+        <h3>Experiência, não conteúdo</h3>
+        <p>Não é mais um curso. Não é conteúdo para consumir sozinha. É uma experiência que abre o que está fechado.</p>
+      </article>
+      <article class="card rv" data-d="2">
+        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="card__n">04</span></div>
+        <h3>Dinâmicas de acesso interno</h3>
+        <p>Porque o bloqueio não é de informação. É de acesso interno.</p>
+      </article>
+      <article class="card rv" data-d="3">
+        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M14.5 20a5 5 0 0 1 7-3.5"/></svg></span><span class="card__n">05</span></div>
+        <h3>Mulheres no mesmo nível</h3>
+        <p>Um encontro com mulheres que também querem propósito real, fé viva e uma vida memorável.</p>
+      </article>
+      <article class="card rv" data-d="1">
+        <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2L6.7 19l1.4-6-4.6-4 6.1-.5z"/></svg></span><span class="card__n">06</span></div>
+        <h3>Transformação irreversível</h3>
+        <p>Elas não voltam melhoradas. Voltam irreversíveis.</p>
+      </article>
+      <article class="card card--photo rv" data-d="2">
+        <div class="card__body">
+          <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M7 5.5c0-1 1-1 1-2M11 5.5c0-1 1-1 1-2"/></svg></span><span class="card__n">07</span></div>
+          <h3>Um lindo coffee break</h3>
+          <p>Preparado com carinho para você viver o dia inteiro de imersão com conforto e leveza.</p>
+        </div>
+        <div class="card__img"><img src="assets/evento-coffee.webp" alt="Coffee break da Imersão Vida Memorável" loading="lazy"></div>
+      </article>
+    </div>
+    <div class="cta-col center rv">
+      <button class="btn btn--primary btn--lg js-open" type="button">Garantir minha vaga agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <span class="cta-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Lote atual com o menor valor disponível</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ DEPOIMENTOS -->
+<section class="section proof">
+  <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C260,0 540,10 800,60 C1060,110 1260,100 1440,40 L1440,120 L0,120 Z" fill="#F7F3EC"/></svg></div>
+  <div class="container">
+    <div class="stack-gap center" style="margin-bottom:clamp(40px,5vw,60px)">
+      <span class="eyebrow rv">Quem já viveu</span>
+      <h2 class="h2 rv" data-d="1" style="max-width:20ch">Elas foram. Voltaram diferentes. <em>Não melhoradas. Irreversíveis.</em></h2>
+      <p class="lead rv" data-d="2">Toque para assistir ao depoimento de quem já viveu a Imersão Vida Memorável.</p>
+    </div>
+    <div class="vcards">
+      <button class="vcard rv" data-d="1" type="button" data-video="mara" aria-label="Assistir depoimento de Mara Lívia"><img src="assets/depoimento-mara.webp" alt="Depoimento Mara Lívia" loading="lazy"><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
+      <button class="vcard rv" data-d="2" type="button" data-video="luana" aria-label="Assistir depoimento de Luana Gabriela"><img src="assets/depoimento-luana.webp" alt="Depoimento Luana Gabriela" loading="lazy"><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
+      <button class="vcard rv" data-d="3" type="button" data-video="roseli" aria-label="Assistir depoimento de Roseli"><img src="assets/depoimento-roseli.webp" alt="Depoimento Roseli" loading="lazy"><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
+    </div>
+    <div class="gallery rv" aria-hidden="true">
+      <div class="gallery__track">
+        <figure><img src="assets/evento-grupo-vivi.webp" alt="" loading="lazy"></figure>
+        <figure class="tall"><img src="assets/evento-aplauso.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/evento-livro.webp" alt="" loading="lazy"></figure>
+        <figure class="tall"><img src="assets/evento-abraco.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/vivi-autografo.webp" alt="" loading="lazy"></figure>
+        <figure class="tall"><img src="assets/evento-transformacao.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/evento-experiencia.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/evento-grupo.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/evento-grupo-vivi.webp" alt="" loading="lazy"></figure>
+        <figure class="tall"><img src="assets/evento-aplauso.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/evento-livro.webp" alt="" loading="lazy"></figure>
+        <figure class="tall"><img src="assets/evento-abraco.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/vivi-autografo.webp" alt="" loading="lazy"></figure>
+        <figure class="tall"><img src="assets/evento-transformacao.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/evento-experiencia.webp" alt="" loading="lazy"></figure>
+        <figure><img src="assets/evento-grupo.webp" alt="" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="proof__stats">
+      <div class="pstat rv" data-d="1"><b>8.000+</b><span>mulheres transformadas em 2025</span></div>
+      <div class="pstat rv" data-d="2"><b>100%</b><span>presencial, com Vivi Marques ao vivo</span></div>
+      <div class="pstat rv" data-d="3"><b>Orlando</b><span>Flórida · 24 de novembro de 2026</span></div>
+    </div>
+  </div>
+  <div class="curve curve--bottom"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C240,120 520,100 760,50 C1000,0 1240,20 1440,70 L1440,120 L0,120 Z" fill="#FFFDF9"/></svg></div>
+</section>
+
+<!-- ============================================================ QUANDO E ONDE -->
+<section class="section when">
+  <div class="container split">
+    <div class="split__media rv rv--left">
+      <div class="photo photo--wide photo--frame"><img src="assets/evento-estrutura.webp" alt="Estrutura do evento" loading="lazy"></div>
+      <div class="badge-float badge-float--tr"><b>24<small style="font-size:16px;font-family:var(--sans);font-weight:700;margin-left:4px">NOV</small></b><span>Orlando, Flórida · 2026</span></div>
+    </div>
+    <div class="split__copy">
+      <span class="eyebrow rv">Quando e onde</span>
+      <h2 class="h2 rv" data-d="1">Quando e onde vai acontecer a <em>Imersão Vida Memorável?</em></h2>
+      <div class="info rv" data-d="2">
+        <div class="info__head"><b>Convite oficial</b><span class="urgency"><i></i>Vagas limitadas — lote atual</span></div>
+        <div class="facts">
+          <div class="fact"><span class="fact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><small>Data</small><span>24 de novembro de 2026</span></div></div>
+          <div class="fact"><span class="fact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Horário</small><span data-bind="eventTime">11h às 18h</span></div></div>
+          <div class="fact"><span class="fact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small>Cidade</small><span>Orlando, Flórida</span></div></div>
+          <div class="fact"><span class="fact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></span><div><small>Local</small><span data-bind="venue">Local a confirmar</span></div></div>
+        </div>
+        <div class="info__foot">
+          <div class="chips-row"><span>Mulheres do mesmo nível</span><span>Estrutura</span><span>Ambiente acolhedor</span></div>
+          <p style="font-size:14.5px;color:var(--ink-2)">Vagas limitadas pela capacidade do espaço. Quando lotar, não há lista de espera.</p>
+          <button class="btn btn--navy btn--block js-open" type="button">Garantir minha vaga agora <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ INVESTIMENTO -->
+<section class="section invest">
+  <div class="container split">
+    <div class="split__copy">
+      <span class="eyebrow rv">Lote atual</span>
+      <h2 class="h2 rv" data-d="1">Os ingressos do lote atual são os de <em>menor valor disponível.</em></h2>
+      <p class="lead rv" data-d="2">As vagas são limitadas pela capacidade do espaço. Quando lotar, não há lista de espera e não há nova data confirmada.</p>
+      <ul class="points rv" data-d="3">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Fale com a equipe e receba as condições do lote atual</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Vaga garantida somente após confirmação</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Lote atual encerra ao atingir a capacidade do espaço</li>
+      </ul>
+    </div>
+    <div class="split__media rv rv--right">
+      <div class="ticket">
+        <div class="ticket__head"><b>Imersão Vida Memorável</b><span class="ticket__lot">Lote atual · Ingresso</span></div>
+        <div class="ticket__perf"></div>
+        <div class="ticket__body">
+          <div class="ticket__facts">
+            <div><small>Data</small><span>24 NOV</span></div>
+            <div><small>Local</small><span>Orlando</span></div>
+            <div><small>Formato</small><span>Presencial</span></div>
+          </div>
+          <p class="ticket__price">Consulte valor e disponibilidade</p>
+          <button class="btn btn--primary btn--block btn--lg js-open" type="button">Falar com a equipe <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <div class="lot">
+            <div class="lot__bar"><div class="lot__fill" data-lot-fill></div></div>
+            <span class="lot__label"><span><b data-lot-pct>0</b>% do lote atual vendido</span><span>Vagas limitadas</span></span>
+          </div>
+          <p class="ticket__note">As vagas são limitadas pela capacidade do espaço. Quando lotar, não há lista de espera e não há nova data confirmada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ AUTORIDADE -->
+<section class="section auth">
+  <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,70 C300,0 620,20 860,70 C1100,120 1300,90 1440,40 L1440,120 L0,120 Z" fill="#F7F3EC"/></svg></div>
+  <div class="container split">
+    <div class="split__media rv rv--left">
+      <span class="photo-ornament"></span>
+      <div class="photo photo--frame"><img src="assets/vivi-retrato.webp" alt="Vivi Marques" loading="lazy"></div>
+      <div class="badge-float badge-float--br"><b>8.000+</b><span>mulheres em 2025</span></div>
+    </div>
+    <div class="split__copy">
+      <span class="eyebrow rv">Quem vai estar com você nesse dia</span>
+      <h2 class="auth__name rv" data-d="1">Vivi <span>Marques</span></h2>
+      <ul class="creds rv" data-d="2">
+        <li>Mentora</li><li>Escritora best-seller</li><li>Master coach</li><li>Fundadora do Instituto VM</li><li>Diplomata</li><li>Palestrante educacional</li>
+      </ul>
+      <p class="auth__bio rv" data-d="3">Diplomata, escritora e empresária. Pedagoga, especialista em comportamento humano e em psicopedagogia clínica e institucional. Mentora de mulheres que desejam sair do modo sobrevivência e triplicar seus resultados financeiros através do domínio das emoções.</p>
+      <p class="auth__bio rv" data-d="3">Vivi conduz mulheres a um novo nível de maturidade emocional, identidade e posicionamento, entendendo que prosperidade real começa de dentro para fora. Sua formação em neurociência e comportamento humano sustenta um método que vai além do discurso: ela entende como a mente resiste à mudança e o que realmente funciona para quebrar isso. Com atuação internacional e uma mensagem relevante para diferentes culturas, ela contribui para experiências que geram transformação genuína, conexão e impacto duradouro.</p>
+      <div class="auth__stats rv" data-d="4">
+        <div><b>8.000+</b><small>mulheres em 2025</small></div>
+        <div><b><span data-bind="careerYears">20</span>+</b><small>anos de carreira</small></div>
+        <div><b>Bestseller</b><small>publicado</small></div>
+      </div>
+      <div class="qbox rv" data-d="5"><p>Nada na minha vida foi linear. Tive perdas. E é de cima delas que eu falo com você.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ HISTÓRIA -->
+<section class="section story">
+  <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,50 C260,120 520,100 760,50 C1000,0 1240,20 1440,80 L1440,120 L0,120 Z" fill="#FFFDF9"/></svg></div>
+  <div class="container split split--rev">
+    <div class="split__media rv rv--right">
+      <div class="photo photo--wide photo--frame"><img src="assets/vivi-autografo.webp" alt="Vivi Marques autografando o livro" loading="lazy"></div>
+    </div>
+    <div class="split__copy">
+      <span class="eyebrow rv">A história que forjou o método</span>
+      <h2 class="h2 rv" data-d="1">Ninguém ensina de fora aquilo que ainda <em>não atravessou por dentro.</em></h2>
+      <p class="lead rv" data-d="2">A virada começou quando ela precisou aprender a dedicar a vida a alguém.</p>
+      <p class="rv" data-d="3">Nessa jornada, percebeu que só conseguimos oferecer ao outro aquilo que primeiro cultivamos dentro de nós. E foi nesse processo que encontrou as respostas que também precisava para a própria vida. Cada ferida que ela atravessou se tornou parte do método que hoje transborda em outras mulheres.</p>
+      <div class="story__quote rv" data-d="4">
+        <p>Tudo o que você precisa já está dentro de você. Basta treinar a mente para vencer os obstáculos invisíveis que te seguram.</p>
+        <cite>Vivi Marques</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FAQ -->
+<section class="section faq">
+  <div class="curve curve--top"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C240,0 520,20 760,60 C1000,100 1240,110 1440,50 L1440,120 L0,120 Z" fill="#0B2447"/></svg></div>
+  <div class="container faq__grid">
+    <div class="faq__intro">
+      <span class="eyebrow rv">FAQ &amp; Suporte</span>
+      <h2 class="h2 rv" data-d="1">Ficou com alguma <em>dúvida?</em></h2>
+      <div class="team rv" data-d="2">
+        <b>Equipe Imersão Vida Memorável</b>
+        <p>Um time preparado para esclarecer cada detalhe e te ajudar a garantir sua vaga.</p>
+        <div class="cta-col">
+          <a class="btn btn--navy" href="#" data-wa target="_blank" rel="noopener"><svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.2c.2-.6.2-1.1.2-1.2l-.5-.3z"/></svg>Falar no WhatsApp</a>
+          <span class="cta-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Resposta em até 1 hora útil</span>
+        </div>
+      </div>
+    </div>
+    <div class="faq__list">
+      <details class="faq__item rv" data-d="1" open>
+        <summary>Quem pode participar? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq__a">A imersão é exclusiva para mulheres que querem ter uma vida memorável. Mulheres que têm carreira, fé e família, e sentem que chegou a vez delas.</p>
+      </details>
+      <details class="faq__item rv" data-d="2">
+        <summary>O evento é presencial? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq__a">Sim. 100% presencial, no dia 24 de novembro de 2026, em Orlando, Flórida, <span data-bind="eventTime">11h às 18h</span>, com a Vivi Marques ao vivo. Não é pela tela.</p>
+      </details>
+      <details class="faq__item rv" data-d="3">
+        <summary>As vagas são limitadas? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq__a">Sim. As vagas são limitadas pela capacidade do espaço. Quando lotar, não há lista de espera e não há nova data confirmada.</p>
+      </details>
+      <details class="faq__item rv" data-d="4">
+        <summary>Como garanto a minha vaga? <span class="faq__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq__a">Clique em “Falar com a equipe”, preencha seus dados e você será direcionada para o WhatsApp. Nossa equipe confirma o valor do lote atual, as condições de pagamento e a disponibilidade de vaga.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FECHAMENTO -->
+<section class="final">
+  <div class="final__bg"><img src="assets/evento-grupo-vivi.webp" alt="" loading="lazy"></div>
+  <div class="container final__inner">
+    <span class="eyebrow rv">É a sua vez</span>
+    <h2 class="rv" data-d="1">O seu momento de viver uma vida memorável é <em style="color:var(--gold-2)">agora.</em></h2>
+    <span class="final__date rv" data-d="2">24 de novembro de 2026 · Orlando, Flórida</span>
+    <div class="cta-row rv" data-d="3" style="justify-content:center">
+      <button class="btn btn--primary btn--lg js-open" type="button">Garantir minha vaga <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <a class="btn btn--ghost btn--lg" href="#" data-wa target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+    <span class="cta-note rv" data-d="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Vagas limitadas pela capacidade do espaço · Sem lista de espera</span>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__row">
+      <img src="assets/logo-vivi-marques.webp" alt="Vivi Marques">
+      <span>Instituto VM LTDA © 2026 Instituto VM · <a href="https://vminstituto.com.br" target="_blank" rel="noopener">vminstituto.com.br</a> · CNPJ <span data-bind="cnpj">00.000.000/0001-00</span></span>
+    </div>
+    <div class="footer__rule"></div>
+    <p><a href="#">Política de privacidade</a> · Depoimentos são experiências individuais reais e não constituem garantia de resultado.</p>
+  </div>
+</footer>
+
+<!-- ============================================================ STICKY CTA -->
+<div class="sticky" id="sticky">
+  <div class="sticky__txt"><b>Orlando · 24 nov</b><small><span data-lot-pct>0</span>% do lote preenchido</small></div>
+  <button class="btn btn--primary btn--sm js-open" type="button" style="padding:14px 20px;font-size:14px">Garantir vaga</button>
+</div>
+
+<!-- ============================================================ MODAL FORM -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__head">
+      <div class="stack-gap" style="gap:10px">
+        <span class="eyebrow">Orlando, Flórida</span>
+        <h3 id="modalTitle">Garanta sua vaga</h3>
+        <p>Preencha para falar com a equipe no WhatsApp</p>
+      </div>
+      <button class="modal__x" type="button" id="modalClose" aria-label="Fechar">×</button>
+    </div>
+    <form class="form" id="leadForm" novalidate>
+      <label class="field" for="fNome">Nome*<input id="fNome" name="nome" type="text" required autocomplete="name"></label>
+      <label class="field" for="fEmail">E-mail*<input id="fEmail" name="email" type="email" required autocomplete="email"></label>
+      <label class="field" for="fTel">Telefone (WhatsApp)*<input id="fTel" name="telefone" type="tel" required autocomplete="tel" placeholder="+1 (___) ___-____"></label>
+      <button class="btn btn--primary btn--block btn--lg" type="submit" style="margin-top:8px">Falar no WhatsApp <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <span class="form__safe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Seus dados estão seguros e não serão compartilhados.</span>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================================ MODAL VIDEO -->
+<div class="vmodal" id="vmodal" hidden>
+  <div class="vmodal__box">
+    <button class="vmodal__x" type="button" id="vmodalClose" aria-label="Fechar">×</button>
+    <video id="vplayer" controls playsinline preload="metadata"></video>
+    <span class="vmodal__name" id="vname"></span>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO — edite aqui antes de publicar
+   ============================================================ */
+const CONFIG = {
+  lotPercent: 72,                       // % do lote atual vendido
+  eventTime: '11h às 18h',              // horário do evento
+  venue: 'Local a confirmar',           // endereço / venue em Orlando
+  whatsappNumber: '5511999999999',      // somente números, com DDI
+  careerYears: 20,                      // anos de carreira da Vivi
+  cnpj: '00.000.000/0001-00',           // CNPJ do rodapé
+  videos: {                             // depoimentos em vídeo (mp4) — coloque os arquivos em assets/videos/
+    mara:   { name: 'Mara Lívia',     src: 'assets/videos/Mara.mp4' },
+    luana:  { name: 'Luana Gabriela', src: 'assets/videos/Luana.mp4' },
+    roseli: { name: 'Roseli',         src: 'assets/videos/Roseli.mp4' }
+  }
+};
+
+(function(){
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* bindings */
+  $$('[data-bind]').forEach(el => { const k = el.dataset.bind; if (CONFIG[k] !== undefined) el.textContent = CONFIG[k]; });
+  const pct = Math.max(0, Math.min(100, Number(CONFIG.lotPercent) || 0));
+  $$('[data-lot-pct]').forEach(el => el.textContent = pct);
+  requestAnimationFrame(() => {
+    $$('[data-lot-fill]').forEach(el => el.style.width = pct + '%');
+    $$('[data-lot-ring]').forEach(el => el.style.strokeDashoffset = (157 - 157 * pct / 100));
+  });
+  const number = String(CONFIG.whatsappNumber).replace(/\D/g, '');
+  const waBase = 'https://wa.me/' + number + '?text=';
+  $$('[data-wa]').forEach(a => a.href = waBase + encodeURIComponent('Olá! Quero garantir minha vaga na Imersão Vida Memorável em Orlando (24/11).'));
+
+  /* header */
+  const header = $('#header');
+  const onScrollHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
+  onScrollHeader(); addEventListener('scroll', onScrollHeader, { passive: true });
+
+  /* ---------- smooth scroll (lerp) for mouse wheel ---------- */
+  let locked = false;
+  const smooth = (() => {
+    if (reduced || !matchMedia('(pointer: fine)').matches) return null;
+    let target = window.scrollY, current = target, raf = null, active = false;
+    const max = () => document.documentElement.scrollHeight - innerHeight;
+    const clamp = v => Math.max(0, Math.min(max(), v));
+    const loop = () => {
+      current += (target - current) * 0.085;
+      if (Math.abs(target - current) < 0.4) { current = target; window.scrollTo(0, current); raf = null; active = false; return; }
+      window.scrollTo(0, current); raf = requestAnimationFrame(loop);
+    };
+    addEventListener('wheel', e => {
+      if (locked || e.ctrlKey || e.metaKey) return;
+      e.preventDefault();
+      const d = e.deltaMode === 1 ? e.deltaY * 18 : e.deltaMode === 2 ? e.deltaY * innerHeight : e.deltaY;
+      if (!active) { target = current = window.scrollY; }
+      target = clamp(target + d); active = true;
+      if (!raf) raf = requestAnimationFrame(loop);
+    }, { passive: false });
+    addEventListener('scroll', () => { if (!active) { target = current = window.scrollY; } }, { passive: true });
+    return { to(y) { target = clamp(y); current = window.scrollY; active = true; if (!raf) raf = requestAnimationFrame(loop); } };
+  })();
+  $$('[data-anchor]').forEach(a => a.addEventListener('click', e => {
+    const t = $(a.getAttribute('href')); if (!t) return; e.preventDefault();
+    const y = t.getBoundingClientRect().top + window.scrollY - 60;
+    if (smooth) smooth.to(y); else window.scrollTo({ top: y, behavior: 'smooth' });
+  }));
+
+  /* ---------- reveal in/out ---------- */
+  const rv = $$('.rv');
+  if ('IntersectionObserver' in window && !reduced) {
+    const io = new IntersectionObserver(entries => entries.forEach(en => en.target.classList.toggle('in', en.isIntersecting)), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    rv.forEach(el => io.observe(el));
+  } else { rv.forEach(el => el.classList.add('in')); }
+
+  /* ---------- scroll stacking ---------- */
+  const cards = $$('#stack .scard');
+  const headerH = () => header.offsetHeight;
+  const stackTick = () => {
+    const n = cards.length;
+    cards.forEach((c, i) => {
+      if (i === n - 1) { c.style.transform = ''; c.style.filter = ''; return; }
+      const next = cards[i + 1].getBoundingClientRect();
+      const r = c.getBoundingClientRect();
+      const stickTop = headerH() + 24 + i * 22;
+      const gap = 32;
+      const start = r.top + r.height + gap;             // next card position when nothing covered
+      const end = stickTop + (i + 1) * 0 + 22;          // next card when fully stacked (its own sticky top ≈ ours + 22)
+      const span = Math.max(1, start - (r.top + 22));
+      const p = Math.max(0, Math.min(1, (start - next.top) / span));
+      c.style.transform = `scale(${1 - p * 0.06}) translateY(${-p * 6}px)`;
+      c.style.filter = `brightness(${1 - p * 0.22})`;
+    });
+  };
+  if (cards.length && !reduced) { stackTick(); addEventListener('scroll', stackTick, { passive: true }); addEventListener('resize', stackTick); }
+
+  /* ---------- lead modal ---------- */
+  const modal = $('#modal'), form = $('#leadForm');
+  let lastFocus = null;
+  const open = () => { lastFocus = document.activeElement; modal.hidden = false; document.body.style.overflow = 'hidden'; locked = true; setTimeout(() => $('#fNome').focus(), 30); };
+  const close = () => { modal.hidden = true; document.body.style.overflow = ''; locked = false; if (lastFocus) lastFocus.focus(); };
+  $$('.js-open').forEach(b => b.addEventListener('click', open));
+  $('#modalClose').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const f = new FormData(form);
+    const msg = `Olá! Sou ${f.get('nome')}. Quero garantir minha vaga na Imersão Vida Memorável em Orlando (24/11). E-mail: ${f.get('email')} · WhatsApp: ${f.get('telefone')}`;
+    window.open(waBase + encodeURIComponent(msg), '_blank', 'noopener');
+    close();
+  });
+
+  /* ---------- video modal ---------- */
+  const vmodal = $('#vmodal'), vplayer = $('#vplayer'), vname = $('#vname');
+  const vopen = key => { const v = CONFIG.videos[key]; if (!v) return; vplayer.src = v.src; vname.textContent = v.name; vmodal.hidden = false; document.body.style.overflow = 'hidden'; locked = true; vplayer.play().catch(() => {}); };
+  const vclose = () => { vplayer.pause(); vplayer.removeAttribute('src'); vplayer.load(); vmodal.hidden = true; document.body.style.overflow = ''; locked = false; };
+  $$('[data-video]').forEach(b => b.addEventListener('click', () => vopen(b.dataset.video)));
+  vplayer.addEventListener('error', () => { if (!vmodal.hidden) vname.textContent = 'Vídeo indisponível no momento'; });
+  $('#vmodalClose').addEventListener('click', vclose);
+  vmodal.addEventListener('click', e => { if (e.target === vmodal) vclose(); });
+  addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (!modal.hidden) close(); if (!vmodal.hidden) vclose(); });
+
+  /* ---------- FAQ: one open at a time ---------- */
+  const items = $$('.faq__item');
+  items.forEach(d => d.addEventListener('toggle', () => { if (d.open) items.forEach(o => { if (o !== d) o.open = false; }); }));
+})();
+</script>
+</body>
+</html>
