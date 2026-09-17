@@ -92,6 +92,7 @@ a{color:inherit}
 .on-navy .eyebrow{color:var(--gold-2)}
 .stack-gap{display:flex;flex-direction:column;gap:22px}
 .br-desk{display:none}@media (min-width:901px){.br-desk{display:inline}}
+.br-mob{display:none}@media (max-width:900px){.br-mob{display:inline}}
 .flag{display:inline-block;width:28px;height:auto;border-radius:4px;box-shadow:0 0 0 1px rgba(255,255,255,.28),0 2px 6px rgba(0,0,0,.25);vertical-align:middle;flex:none}
 .flag--xs{width:18px;border-radius:3px;vertical-align:-2px;margin-right:6px}
 .flag--md{width:36px;border-radius:5px;vertical-align:-4px;margin-right:10px;box-shadow:0 0 0 1px rgba(11,36,71,.15),0 2px 6px rgba(0,0,0,.18)}
@@ -141,6 +142,7 @@ a{color:inherit}
 .btn--sm{padding:12px 20px;font-size:13.5px}
 .btn--block{width:100%}
 .cta-note{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+.cta-note svg{flex:none}
 .cta-note svg{width:14px;height:14px;color:var(--gold)}
 .on-navy .cta-note{color:rgba(255,253,249,.72)}
 .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
@@ -162,7 +164,8 @@ a{color:inherit}
 .header__lot-r{display:flex;align-items:center;gap:12px}
 .header__lot i{width:clamp(72px,6vw,100px);height:4px;border-radius:4px;background:rgba(255,255,255,.14);position:relative;overflow:hidden}
 .header__lot i b{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-2));border-radius:4px;transition:width 1.2s var(--ease) .4s}
-@media (max-width:760px){.header{top:calc(env(safe-area-inset-top,0px) + 8px);margin-top:8px;width:calc(100% - 24px)}.header__inner{height:62px}.brand img{height:24px}}
+@media (max-width:760px){:root{--header-h:72px}
+.header{top:calc(env(safe-area-inset-top,0px) + 8px);margin-top:8px;width:calc(100% - 24px)}.header__inner{height:62px}.brand img{height:24px}}
 
 /* ============================================================
    HERO
@@ -233,12 +236,12 @@ a{color:inherit}
   @keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
 }
 @media (max-width:900px){
-  .hero{min-height:0;padding-top:0;padding-bottom:110px}
+  .hero{min-height:0;padding-top:0;padding-bottom:110px;margin-top:calc(-1*var(--header-h))}
   .hero__inner{grid-template-columns:1fr;gap:0}
   .hero__bg{display:none}
   .hero__side{display:none}
-  .hero__mobile-img{display:block;position:relative;margin:0 calc(-1*var(--gutter)) 16px;aspect-ratio:4/3.63;overflow:hidden}
-  .hero__mobile-img img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+  .hero__mobile-img{display:block;position:relative;margin:0 calc(-1*var(--gutter)) 16px;height:calc(100vw*.9075 + var(--header-h));overflow:hidden}
+  .hero__mobile-img img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
   .hero__mobile-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,26,56,.1) 0%,rgba(6,26,56,0) 40%,var(--navy-deep) 100%)}
   .hero__copy{max-width:none;gap:13px}
 }
@@ -477,11 +480,15 @@ a{color:inherit}
   .pass__stamp{align-self:center}
   .pass__grid{grid-template-columns:repeat(2,1fr);text-align:center}
   .pass__grid div{align-items:center}
-  .pass__route{grid-template-columns:1fr;gap:6px;justify-items:center;text-align:center}
+  .pass__route{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;padding:22px 14px 18px}
   .pass__city,.pass__city--to{align-items:center;text-align:center}
-  .pass__city b{font-size:30px;white-space:normal}
-  .pass__plane{transform:rotate(90deg);margin-block:6px}
-  .pass__plane i{width:22px}
+  .pass__city small{font-size:9.5px}
+  .pass__city b{font-size:clamp(19px,6.6vw,26px);white-space:nowrap}
+  .pass__city span{font-size:10.5px;line-height:1.25}
+  .pass__plane{gap:4px}
+  .pass__plane i{width:clamp(10px,3.2vw,20px)}
+  .pass__plane svg{width:22px;height:22px}
+  .flag--md{width:16px}
   .pass__foot{padding-inline:18px}
   .btn{white-space:normal;line-height:1.25;text-align:center}
 }
@@ -583,7 +590,9 @@ a{color:inherit}
 .final__bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(6,26,56,.2),var(--navy-deep) 75%)}
 .final__inner{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
 .final h2{font-size:clamp(36px,4.8vw,64px);line-height:1.08;max-width:24ch;color:#fff}
-.final__date{display:inline-flex;align-items:center;gap:12px;font-family:var(--serif);font-size:22px;color:var(--gold-2)}
+.final__date{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;font-family:var(--serif);font-size:22px;color:var(--gold-2)}
+.final__date-l1{display:inline-flex;align-items:center;gap:12px}
+.final__date-l1 .flag{margin-right:0}
 
 
 /* ============================================================
@@ -647,7 +656,8 @@ a{color:inherit}
    ============================================================ */
 @media (max-width:900px){
   .hero__copy,.split__copy,.faq__intro,.stack-gap,.scard__body,.card,.card--photo .card__body,.qcard,.team,.info__foot,.story__quote,.ticket__body,.recog__item{align-items:center;text-align:center}
-  .pill{align-self:center}
+  .pill{align-self:center;white-space:nowrap;font-size:clamp(8.5px,2.55vw,12px);letter-spacing:.02em;gap:8px;padding:7px 13px 7px 7px}
+  .pill .flag{width:clamp(16px,4.6vw,22px);height:auto}
   .cta-row,.hero__chips,.chips-row,.creds,.scard__body ul,.card__top,.footer__row,.info__head,.ticket__head,.lot__label,.eyebrow{justify-content:center}
   .cta-col{align-items:center}
   .lead,.split__copy p,.auth__bio,.scard__body p,.story p,.qbox p,.thesis-sub,.faq__intro p,.h2,.h1{margin-inline:auto}
@@ -682,7 +692,10 @@ a{color:inherit}
   .auth__stats div,.ticket__facts div{align-items:center}
   .fact{flex-direction:column;align-items:center;text-align:center;gap:10px}
   .fact div{align-items:center}
-  .badge-float{left:50%!important;right:auto!important;transform:translateX(-50%);bottom:-18px!important;top:auto!important;white-space:normal;width:max-content;max-width:calc(100% - 24px);justify-content:center;text-align:center}
+  .badge-float{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none;margin:14px auto 0;white-space:normal;width:max-content;max-width:calc(100% - 24px);justify-content:center;text-align:center}
+  .final__date{flex-direction:column;gap:4px;font-size:19px}
+  .final__date-l1{gap:8px}
+  .cta-note{flex-direction:column;gap:8px;text-align:center}
   .badge-float span{max-width:none}
   .split__media{margin-bottom:30px}
   .story__quote cite{justify-content:center}
@@ -766,7 +779,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
     <div class="split__media rv rv--left">
       <span class="photo-ornament"></span>
       <div class="photo photo--frame"><img src="assets/vivi-palco-branco.webp" alt="Vivi Marques ao vivo na Imersão Vida Memorável" loading="lazy"></div>
-      <div class="badge-float badge-float--br"><b data-count="8000" data-suffix="+">8.000+</b><span>mulheres transformaram sua vida só em 2025</span></div>
+      <div class="badge-float badge-float--br"><b data-count="8000" data-suffix="+">8.000+</b><span>mulheres transformaram<br class="br-mob"> sua vida só em 2025</span></div>
     </div>
     <div class="split__copy">
       <p class="lead rv" data-d="2">Mulheres com a vida organizada por fora, com fé declarada e com tudo que precisariam ter para estar bem. Que já tinham lido, ido à terapia, feito cursos. E que descobriram dentro da imersão o que nenhum desses outros caminhos havia alcançado.</p>
@@ -991,7 +1004,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
       <div class="pass__main">
         <div class="pass__bar">
           <span class="pass__brand"><img src="assets/logo-vivi-marques.webp" alt="">Imersão Vida Memorável</span>
-          <span class="pass__type">Cartão de embarque · Orlando 2026</span>
+          <span class="pass__type">Cartão de embarque<br class="br-mob"><span class="br-desk"> · </span>Orlando 2026</span>
         </div>
         <div class="pass__route">
           <div class="pass__city"><small>De</small><b>Você</b><span>A vida que você cuida todo dia</span></div>
@@ -1157,7 +1170,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
   <div class="container final__inner">
     <span class="eyebrow rv">É a sua vez</span>
     <h2 class="rv" data-d="1">O seu momento de viver uma vida memorável é <em style="color:var(--gold-2)">agora.</em></h2>
-    <span class="final__date rv" data-d="2"><img class="flag" src="assets/us-flag.svg" alt="Estados Unidos" style="margin-right:12px">21 de novembro de 2026 · Orlando, Flórida</span>
+    <span class="final__date rv" data-d="2"><span class="final__date-l1"><img class="flag" src="assets/us-flag.svg" alt="Estados Unidos">21 de novembro de 2026</span><span class="final__date-sep br-desk"> · </span><span class="final__date-l2">Orlando, Flórida</span></span>
     <div class="cta-row rv" data-d="3" style="justify-content:center">
       <button class="btn btn--primary btn--lg js-open" type="button">Garantir minha vaga <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <a class="btn btn--ghost btn--lg" href="#" data-wa target="_blank" rel="noopener">Falar no WhatsApp</a>
