@@ -364,7 +364,7 @@ a{color:inherit}
 .scard__body p{font-size:clamp(16.5px,1.3vw,18.5px);line-height:1.7;color:var(--ink-2);max-width:48ch}
 .scard__body ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .scard__body li{font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--cream);color:var(--navy);border:1px solid rgba(201,165,92,.3)}
-@media (max-width:900px){.scard{grid-template-columns:1fr;min-height:0;top:calc(var(--header-h) + 12px + var(--i)*14px)}.scard__img{min-height:0;aspect-ratio:16/10}}
+@media (max-width:900px){.scard{grid-template-columns:1fr;min-height:0;top:calc(var(--header-h) + 12px + var(--i)*14px)}.scard__img{min-height:0;aspect-ratio:16/10}.img-mob-top{object-position:center 15%}}
 
 /* ============================================================
    PARA QUEM É
@@ -865,7 +865,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
         </div>
       </article>
       <article class="scard" style="--i:1">
-        <div class="scard__img"><img src="assets/evento-abraco.webp" alt="Abraço emocionado" loading="lazy"></div>
+        <div class="scard__img"><img class="img-mob-top" src="assets/evento-abraco.webp" alt="Abraço emocionado" loading="lazy"></div>
         <div class="scard__body">
           <span class="eyebrow">Segundo movimento</span>
           <h3>O que você vai soltar</h3>
@@ -874,7 +874,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
         </div>
       </article>
       <article class="scard" style="--i:2">
-        <div class="scard__img"><img src="assets/evento-grupo.webp" alt="Grupo da imersão" loading="lazy"></div>
+        <div class="scard__img"><img class="img-mob-top" src="assets/evento-grupo.webp" alt="Grupo da imersão" loading="lazy"></div>
         <div class="scard__body">
           <span class="eyebrow">Terceiro movimento</span>
           <h3>Quem você vai encontrar</h3>
