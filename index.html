@@ -299,6 +299,17 @@ a{color:inherit}
 .badge-float--bl{left:-18px;bottom:36px}
 .badge-float--tr{right:-18px;top:36px}
 @media (max-width:600px){.badge-float{padding:14px 16px}.badge-float b{font-size:32px}.badge-float--br,.badge-float--tr{right:8px}.badge-float--bl{left:8px}}
+
+/* ============================================================
+   PLACEHOLDER DE IMAGEM (temporário — até o cliente enviar as fotos/vídeos)
+   ============================================================ */
+.img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:18px;background:linear-gradient(160deg,#FAC6DC 0%,#F17FAE 100%);color:#7A1240}
+.img-ph--abs{position:absolute;inset:0}
+.img-ph__dim{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,.65);padding:5px 12px;border-radius:999px;white-space:nowrap}
+.img-ph__label{font-family:var(--sans);font-size:12.5px;line-height:1.45;max-width:26ch}
+.img-ph.video-ph{background:linear-gradient(160deg,#B23A66 0%,#6E1339 100%);color:#FCE0EC}
+.img-ph.video-ph .img-ph__dim{background:rgba(255,255,255,.22);color:#FCE0EC}
+
 .split__copy{display:flex;flex-direction:column;gap:22px}
 .split__copy p{max-width:56ch}
 .quote-line{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(24px,2.5vw,32px);line-height:1.3;color:var(--navy)}
@@ -423,13 +434,11 @@ a{color:inherit}
 .vcard__tag{position:absolute;left:16px;top:16px;padding:8px 12px;border-radius:999px;background:rgba(6,26,56,.7);backdrop-filter:blur(6px);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-3);display:inline-flex;align-items:center;gap:6px}
 .vcard__tag i{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(181,24,47,.35)}
 .gallery{margin-top:clamp(48px,6vw,80px);overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.gallery__track{display:flex;gap:18px;width:max-content;animation:gallery 46s linear infinite}
-.gallery__track:hover{animation-play-state:paused}
-.gallery__track figure{margin:0;width:260px;aspect-ratio:4/3;border-radius:var(--r-md);overflow:hidden;flex:none;box-shadow:var(--shadow-md)}
+.gallery__track{display:flex;gap:18px;width:max-content;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.gallery__track.is-dragging{cursor:grabbing}
+.gallery__track figure{margin:0;width:260px;aspect-ratio:4/3;border-radius:var(--r-md);overflow:hidden;flex:none;box-shadow:var(--shadow-md);pointer-events:none}
 .gallery__track figure.tall{aspect-ratio:3/4;width:200px}
 .gallery__track img{width:100%;height:100%;object-fit:cover}
-@keyframes gallery{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.gallery__track{animation:none}}
 .proof__stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(40px,5vw,64px)}
 @media (max-width:700px){.proof__stats{grid-template-columns:1fr}}
 .pstat{padding:24px 26px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(230,205,143,.22);display:flex;flex-direction:column;gap:4px;backdrop-filter:blur(6px)}
@@ -777,7 +786,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
   <div class="container split">
     <div class="split__media rv rv--left">
       <span class="photo-ornament"></span>
-      <div class="photo photo--frame"><img src="assets/vivi-palco-branco.webp" alt="Vivi Marques ao vivo na Imersão Vida Memorável" loading="lazy"></div>
+      <div class="photo photo--frame"><div class="img-ph"><span class="img-ph__dim">1200×1500px</span><span class="img-ph__label">Foto vertical de Vivi Marques falando no palco, gesticulando, público desfocado ao fundo</span></div></div>
       <div class="badge-float badge-float--br"><b data-count="8000" data-suffix="+">8.000+</b><span>mulheres transformaram<br class="br-mob"> sua vida só em 2025</span></div>
     </div>
     <div class="split__copy">
@@ -834,7 +843,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
     </div>
     <div class="stack" id="stack" data-stack>
       <article class="scard" style="--i:0">
-        <div class="scard__img"><img src="assets/evento-entrega.webp" alt="Mulher em momento de entrega na imersão" loading="lazy"></div>
+        <div class="scard__img"><div class="img-ph img-ph--abs"><span class="img-ph__dim">1400×1600px</span><span class="img-ph__label">Foto de mulher em momento de entrega/emoção durante a imersão (close, expressão sincera)</span></div></div>
         <div class="scard__body">
           <span class="eyebrow">Primeiro movimento</span>
           <h3>O que você vai acessar</h3>
@@ -843,7 +852,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
         </div>
       </article>
       <article class="scard" style="--i:1">
-        <div class="scard__img"><img src="assets/evento-abraco.webp" alt="Abraço emocionado" loading="lazy"></div>
+        <div class="scard__img"><div class="img-ph img-ph--abs"><span class="img-ph__dim">1400×1600px</span><span class="img-ph__label">Foto de abraço emocionado entre participantes da imersão</span></div></div>
         <div class="scard__body">
           <span class="eyebrow">Segundo movimento</span>
           <h3>O que você vai soltar</h3>
@@ -852,7 +861,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
         </div>
       </article>
       <article class="scard" style="--i:2">
-        <div class="scard__img"><img src="assets/evento-grupo.webp" alt="Grupo da imersão" loading="lazy"></div>
+        <div class="scard__img"><div class="img-ph img-ph--abs"><span class="img-ph__dim">1400×1600px</span><span class="img-ph__label">Foto do grupo de mulheres reunidas durante a imersão</span></div></div>
         <div class="scard__body">
           <span class="eyebrow">Terceiro movimento</span>
           <h3>Quem você vai encontrar</h3>
@@ -869,7 +878,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
   <div class="container"><div class="divider divider--edge divider--top" aria-hidden="true"><span class="divider__line"></span><span class="divider__stars"><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__main"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i><i class="divider__mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.7 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-5.9 3.5 1.5-6.7L2.5 9.3l6.8-.6z"/></svg></i></span><span class="divider__line divider__line--r"></span></div></div>
   <div class="container split split--rev">
     <div class="split__media rv rv--right">
-      <div class="photo photo--frame"><img src="assets/evento-aplauso.webp" alt="Participante aplaudindo na imersão" loading="lazy"></div>
+      <div class="photo photo--frame"><div class="img-ph"><span class="img-ph__dim">1200×1500px</span><span class="img-ph__label">Foto vertical de participante aplaudindo/vibrando durante a imersão</span></div></div>
       <div class="badge-float badge-float--bl"><b>1 dia</b><span>presencial, ao vivo com Vivi&nbsp;Marques</span></div>
     </div>
     <div class="split__copy">
@@ -898,37 +907,37 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
       <div class="exp__trackwrap">
         <div class="exp__track" id="expTrack">
           <article class="xcard is-active">
-            <img src="assets/vivi-conduzindo.webp" alt="Vivi Marques conduzindo a imersão ao vivo" loading="lazy" style="object-position:center 18%">
+            <div class="img-ph img-ph--abs"><span class="img-ph__dim">1200×1340px</span><span class="img-ph__label">Foto de Vivi Marques conduzindo a imersão ao vivo, próxima ao público</span></div>
             <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span></div>
             <div class="xcard__body"><h3>Um dia de imersão presencial</h3><p>Com Vivi&nbsp;Marques ao vivo, em Orlando. Não pela tela. Ao vivo.</p></div>
           </article>
           <article class="xcard">
-            <img src="assets/evento-material.webp" alt="Participante preenchendo o material da metodologia Vida Memorável" loading="lazy">
+            <div class="img-ph img-ph--abs"><span class="img-ph__dim">1200×1340px</span><span class="img-ph__label">Foto de participante preenchendo o material/apostila da metodologia</span></div>
             <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21z"/><path d="M21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5A2.5 2.5 0 0 1 21 21z"/></svg></span></div>
             <div class="xcard__body"><h3>Metodologia Vida Memorável</h3><p>A mesma metodologia que transformou a vida de mais de 8.000 mulheres só em 2025.</p></div>
           </article>
           <article class="xcard">
-            <img src="assets/evento-experiencia.webp" alt="Participantes vivendo a experiência da imersão" loading="lazy">
+            <div class="img-ph img-ph--abs"><span class="img-ph__dim">1200×1340px</span><span class="img-ph__label">Foto de participantes vivendo uma dinâmica/experiência em grupo</span></div>
             <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="14" r="4"/><path d="M11 11l9-9M16 6l2 2M19 3l2 2"/></svg></span></div>
             <div class="xcard__body"><h3>Experiência, não conteúdo</h3><p>Não é mais um curso. Não é conteúdo para consumir sozinha. É uma experiência que abre o que está fechado.</p></div>
           </article>
           <article class="xcard">
-            <img src="assets/evento-dinamica.webp" alt="Abraço emocionado durante dinâmica da imersão" loading="lazy" style="object-position:center 25%">
+            <div class="img-ph img-ph--abs"><span class="img-ph__dim">1200×1340px</span><span class="img-ph__label">Foto de abraço emocionado durante dinâmica da imersão</span></div>
             <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span></div>
             <div class="xcard__body"><h3>Dinâmicas de acesso interno</h3><p>Porque o bloqueio não é de informação. É de acesso interno.</p></div>
           </article>
           <article class="xcard">
-            <img src="assets/evento-grupo-vivi.webp" alt="Grupo de mulheres da imersão com Vivi Marques" loading="lazy" style="object-position:center 30%">
+            <div class="img-ph img-ph--abs"><span class="img-ph__dim">1200×1340px</span><span class="img-ph__label">Foto do grupo de mulheres reunidas com a Vivi Marques</span></div>
             <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M14.5 20a5 5 0 0 1 7-3.5"/></svg></span></div>
             <div class="xcard__body"><h3>Mulheres no mesmo nível</h3><p>Um encontro com mulheres que também querem propósito real, fé viva e uma vida memorável.</p></div>
           </article>
           <article class="xcard">
-            <img src="assets/evento-transformacao.webp" alt="Abraço de transformação ao fim da imersão" loading="lazy" style="object-position:center 30%">
+            <div class="img-ph img-ph--abs"><span class="img-ph__dim">1200×1340px</span><span class="img-ph__label">Foto de abraço de transformação ao final da imersão</span></div>
             <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2L6.7 19l1.4-6-4.6-4 6.1-.5z"/></svg></span></div>
             <div class="xcard__body"><h3>Transformação irreversível</h3><p>Elas não voltam melhoradas. Voltam irreversíveis.</p></div>
           </article>
           <article class="xcard">
-            <img src="assets/evento-coffee.webp" alt="Coffee break da Imersão Vida Memorável" loading="lazy" style="object-position:center 40%">
+            <div class="img-ph img-ph--abs"><span class="img-ph__dim">1200×1340px</span><span class="img-ph__label">Foto do coffee break preparado para o evento</span></div>
             <div class="xcard__top"><span class="xcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16M7 5.5c0-1 1-1 1-2M11 5.5c0-1 1-1 1-2"/></svg></span></div>
             <div class="xcard__body"><h3>Um lindo coffee break</h3><p>Preparado com carinho para você viver o dia inteiro de imersão com conforto e leveza.</p></div>
           </article>
@@ -955,28 +964,28 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
       <p class="lead rv" data-d="2">Toque para assistir ao depoimento de quem já viveu a Imersão Vida Memorável.</p>
     </div>
     <div class="vcards">
-      <button class="vcard rv" data-d="1" type="button" data-video="mara" aria-label="Assistir depoimento de Mara Lívia"><img src="assets/depoimento-mara.webp" alt="Depoimento Mara Lívia" loading="lazy"><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
-      <button class="vcard rv" data-d="2" type="button" data-video="luana" aria-label="Assistir depoimento de Luana Gabriela"><img src="assets/depoimento-luana.webp" alt="Depoimento Luana Gabriela" loading="lazy"><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
-      <button class="vcard rv" data-d="3" type="button" data-video="roseli" aria-label="Assistir depoimento de Roseli"><img src="assets/depoimento-roseli.webp" alt="Depoimento Roseli" loading="lazy"><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
+      <button class="vcard rv" data-d="1" type="button" data-video="mara" aria-label="Assistir depoimento de Mara Lívia"><div class="img-ph video-ph"><span class="img-ph__dim">1080×1920px</span><span class="img-ph__label">Capa do vídeo-depoimento de Mara Lívia (vertical, estilo Reels/Stories)</span></div><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
+      <button class="vcard rv" data-d="2" type="button" data-video="luana" aria-label="Assistir depoimento de Luana Gabriela"><div class="img-ph video-ph"><span class="img-ph__dim">1080×1920px</span><span class="img-ph__label">Capa do vídeo-depoimento de Luana Gabriela (vertical, estilo Reels/Stories)</span></div><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
+      <button class="vcard rv" data-d="3" type="button" data-video="roseli" aria-label="Assistir depoimento de Roseli"><div class="img-ph video-ph"><span class="img-ph__dim">1080×1920px</span><span class="img-ph__label">Capa do vídeo-depoimento de Roseli (vertical, estilo Reels/Stories)</span></div><span class="vcard__tag"><i></i>Depoimento</span><span class="vcard__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
     </div>
     <div class="gallery rv" aria-hidden="true">
       <div class="gallery__track">
-        <figure><img src="assets/evento-grupo-vivi.webp" alt="" loading="lazy"></figure>
-        <figure class="tall"><img src="assets/evento-aplauso.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/evento-livro.webp" alt="" loading="lazy"></figure>
-        <figure class="tall"><img src="assets/evento-abraco.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/vivi-autografo.webp" alt="" loading="lazy"></figure>
-        <figure class="tall"><img src="assets/evento-transformacao.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/evento-experiencia.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/evento-grupo.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/evento-grupo-vivi.webp" alt="" loading="lazy"></figure>
-        <figure class="tall"><img src="assets/evento-aplauso.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/evento-livro.webp" alt="" loading="lazy"></figure>
-        <figure class="tall"><img src="assets/evento-abraco.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/vivi-autografo.webp" alt="" loading="lazy"></figure>
-        <figure class="tall"><img src="assets/evento-transformacao.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/evento-experiencia.webp" alt="" loading="lazy"></figure>
-        <figure><img src="assets/evento-grupo.webp" alt="" loading="lazy"></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto do grupo reunido com a Vivi Marques</span></div></figure>
+        <figure class="tall"><div class="img-ph"><span class="img-ph__dim">900×1200px</span><span class="img-ph__label">Foto de participante aplaudindo</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto do livro best-seller da Vivi Marques</span></div></figure>
+        <figure class="tall"><div class="img-ph"><span class="img-ph__dim">900×1200px</span><span class="img-ph__label">Foto de abraço emocionado</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto de Vivi autografando o livro</span></div></figure>
+        <figure class="tall"><div class="img-ph"><span class="img-ph__dim">900×1200px</span><span class="img-ph__label">Foto de abraço de transformação</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto de participantes vivendo a experiência</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto do grupo de participantes</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto do grupo reunido com a Vivi Marques</span></div></figure>
+        <figure class="tall"><div class="img-ph"><span class="img-ph__dim">900×1200px</span><span class="img-ph__label">Foto de participante aplaudindo</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto do livro best-seller da Vivi Marques</span></div></figure>
+        <figure class="tall"><div class="img-ph"><span class="img-ph__dim">900×1200px</span><span class="img-ph__label">Foto de abraço emocionado</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto de Vivi autografando o livro</span></div></figure>
+        <figure class="tall"><div class="img-ph"><span class="img-ph__dim">900×1200px</span><span class="img-ph__label">Foto de abraço de transformação</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto de participantes vivendo a experiência</span></div></figure>
+        <figure><div class="img-ph"><span class="img-ph__dim">1200×900px</span><span class="img-ph__label">Foto do grupo de participantes</span></div></figure>
       </div>
     </div>
     <div class="proof__stats">
@@ -1080,7 +1089,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
   <div class="container split">
     <div class="split__media rv rv--left">
       <span class="photo-ornament"></span>
-      <div class="photo photo--frame"><img src="assets/vivi-retrato.webp" alt="Vivi Marques" loading="lazy"></div>
+      <div class="photo photo--frame"><div class="img-ph"><span class="img-ph__dim">1200×1500px</span><span class="img-ph__label">Retrato profissional da Vivi Marques (rosto e busto, bem iluminado)</span></div></div>
       <div class="badge-float badge-float--br"><b data-count="8000" data-suffix="+">8.000+</b><span>mulheres em 2025</span></div>
     </div>
     <div class="split__copy">
@@ -1112,7 +1121,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
   </div>
   <div class="container split split--rev">
     <div class="split__media rv rv--right">
-      <div class="photo photo--wide photo--frame"><img src="assets/vivi-autografo.webp" alt="Vivi Marques autografando o livro" loading="lazy"></div>
+      <div class="photo photo--wide photo--frame"><div class="img-ph"><span class="img-ph__dim">1500×1200px</span><span class="img-ph__label">Foto horizontal de Vivi Marques autografando o livro</span></div></div>
     </div>
     <div class="split__copy">
       <p class="lead rv" data-d="2">A virada começou quando ela precisou aprender a dedicar a vida a alguém.</p>
@@ -1165,7 +1174,7 @@ html{scrollbar-width:auto;scrollbar-color:var(--red) var(--cream-2)}
 
 <!-- ============================================================ FECHAMENTO -->
 <section class="final on-navy">
-  <div class="final__bg"><img src="assets/evento-grupo-vivi.webp" alt="" loading="lazy"></div>
+  <div class="final__bg"><div class="img-ph"><span class="img-ph__dim">1920×1080px</span><span class="img-ph__label">Foto horizontal ampla do grupo/evento (fundo com leve escurecimento por cima)</span></div></div>
   <div class="container final__inner">
     <span class="eyebrow rv">É a sua vez</span>
     <h2 class="rv" data-d="1">O seu momento de viver uma vida memorável é <em style="color:var(--gold-2)">agora.</em></h2>
@@ -1400,6 +1409,48 @@ const CONFIG = {
   };
   notch(); addEventListener('resize', notch); addEventListener('load', notch);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(notch);
+
+  /* ---------- galeria: arrastar/soltar fluido (mouse e toque), desktop e mobile ---------- */
+  (function(){
+    const track = $('.gallery__track');
+    if (!track) return;
+    let pos = 0, dragging = false, startX = 0, startPos = 0, lastX = 0, lastT = 0, vel = 0, setWidth = 0, lastFrame = null;
+    const speed = reduced ? 0 : 34; // px/s de deslocamento automático
+    const measure = () => { setWidth = track.scrollWidth / 2 || 1; };
+    measure();
+    addEventListener('resize', measure);
+    const wrap = () => { if (pos <= -setWidth) pos += setWidth; else if (pos > 0) pos -= setWidth; };
+    const render = () => { track.style.transform = `translate3d(${pos}px,0,0)`; };
+    const loop = now => {
+      if (lastFrame == null) lastFrame = now;
+      const dt = (now - lastFrame) / 1000; lastFrame = now;
+      if (!dragging) {
+        if (Math.abs(vel) > 3) { pos += vel * dt; vel *= 0.95; }
+        else { vel = 0; pos -= speed * dt; }
+        wrap(); render();
+      }
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+    track.addEventListener('pointerdown', e => {
+      dragging = true; vel = 0; track.classList.add('is-dragging');
+      startX = lastX = e.clientX; startPos = pos; lastT = performance.now();
+      track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      const x = e.clientX, dx = x - startX;
+      pos = startPos + dx; wrap(); render();
+      const now = performance.now(), dt = now - lastT;
+      if (dt > 0) vel = (x - lastX) / dt * 1000;
+      lastX = x; lastT = now;
+    });
+    const endDrag = () => { if (!dragging) return; dragging = false; track.classList.remove('is-dragging'); lastFrame = null; };
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointercancel', endDrag);
+    track.addEventListener('lostpointercapture', endDrag);
+    track.addEventListener('dragstart', e => e.preventDefault());
+  })();
 
   /* ---------- FAQ: one open at a time ---------- */
   const items = $$('.faq__item');
